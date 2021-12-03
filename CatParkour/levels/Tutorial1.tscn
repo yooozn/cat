@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=19]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=20]
 [ext_resource path="res://levels/Tutorial1.gd" type="Script" id=21]
+[ext_resource path="res://art/mattedarkgreen.tres" type="Material" id=22]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Tutorial1_Cube"
@@ -208,7 +209,7 @@ shape = SubResource( 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 0.690784, 0 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 22 )
 
 [node name="StaticBody" type="StaticBody" parent="Spatial/Cube003" index="0"]
 
@@ -219,7 +220,7 @@ shape = SubResource( 12 )
 transform = Transform( 1, 0, 0, 0, 1.13767, 0, 0, 0, 1, -16.6628, 1.88806, 0 )
 mesh = SubResource( 5 )
 skeleton = NodePath("../..")
-material/0 = null
+material/0 = ExtResource( 22 )
 
 [node name="StaticBody" type="StaticBody" parent="Spatial/Cube004" index="0"]
 
@@ -291,179 +292,175 @@ transform = Transform( 1, 0, 0, 0, 3.56224, 0, 0, 0, 6.15116, -134.324, 23.7384,
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -138.248, 22.7595, -0.278336 )
 mode = 1
 
-[node name="KeyObj2" parent="." index="8" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2093, 2.87619, -0.278336 )
-mode = 1
-
-[node name="1" parent="." index="9" instance=ExtResource( 6 )]
+[node name="1" parent="." index="8" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.435, 21.3174, -9.95798 )
 portalto = "2"
 
-[node name="2" parent="." index="10" instance=ExtResource( 6 )]
+[node name="2" parent="." index="9" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -129.435, 21.3174, -45.0868 )
 portalto = "1"
 
-[node name="WallKey2" parent="." index="11" instance=ExtResource( 1 )]
+[node name="WallKey2" parent="." index="10" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 3.39721, 0, 0, 0, 5.69877, -135.468, 23.7289, -54.8249 )
 
-[node name="Key" parent="." index="12" instance=ExtResource( 13 )]
+[node name="Key" parent="." index="11" instance=ExtResource( 13 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -123.139, 20.6132, -53.302 )
 
-[node name="Cube" parent="." index="13"]
+[node name="Cube" parent="." index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -595.346, 0 )
 
-[node name="Cube001" parent="." index="14"]
+[node name="Cube001" parent="." index="13"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -595.346, 0 )
 
-[node name="Cube002" parent="." index="15"]
+[node name="Cube002" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -595.346, 0 )
 
-[node name="Cube003" parent="." index="16"]
+[node name="Cube003" parent="." index="15"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, -594.655, 0 )
 
-[node name="Cube004" parent="." index="17"]
+[node name="Cube004" parent="." index="16"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6628, -593.699, 0 )
 
-[node name="Cube005" parent="." index="18"]
+[node name="Cube005" parent="." index="17"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0132, -595.346, 0 )
 
-[node name="Cube006" parent="." index="19"]
+[node name="Cube006" parent="." index="18"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8269, -587.7, 0 )
 
-[node name="Cube007" parent="." index="20"]
+[node name="Cube007" parent="." index="19"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -55.9355, -595.346, 0 )
 
-[node name="TextPlay" parent="." index="21" instance=ExtResource( 2 )]
+[node name="TextPlay" parent="." index="20" instance=ExtResource( 2 )]
 transform = Transform( 0.691904, 0, 0.72199, 0, 1, 0, -0.72199, 0, 0.691904, -7.07222, 0.141804, 3.45757 )
 text = "Jump by using space bar. You may need to sprint using shift to get the next jump."
 
-[node name="TextPlay2" parent="." index="22" instance=ExtResource( 2 )]
+[node name="TextPlay2" parent="." index="21" instance=ExtResource( 2 )]
 transform = Transform( 0.847094, 0, -0.531443, 0, 1, 0, 0.531443, 0, 0.847094, -26.5657, 0.141804, -3.41605 )
 text = "Looks like theres more runnin' and jumpin' ahead. Try not to fall down..."
 
-[node name="TextPlay7" parent="." index="23" instance=ExtResource( 2 )]
+[node name="TextPlay7" parent="." index="22" instance=ExtResource( 2 )]
 transform = Transform( 0.847094, 0, -0.531443, 0, 1, 0, 0.531443, 0, 0.847094, -88.8097, 7.88319, -2.56095 )
 text = "Some objects are movable with the E key. It looks like we'll need another platform to get across..."
 
-[node name="TextPlay8" parent="." index="24" instance=ExtResource( 2 )]
+[node name="TextPlay8" parent="." index="23" instance=ExtResource( 2 )]
 transform = Transform( 0.847094, 0, -0.531443, 0, 1, 0, 0.531443, 0, 0.847094, -114.834, 8.76508, -5.69891 )
 text = "Some movable object also do unique things. This one looks like a jump pad!"
 
-[node name="TextPlay4" parent="." index="25" instance=ExtResource( 2 )]
+[node name="TextPlay4" parent="." index="24" instance=ExtResource( 2 )]
 transform = Transform( 0.847094, 0, -0.531443, 0, 1, 0, 0.531443, 0, 0.847094, -141, 20.4039, -4.75707 )
 text = "This is a key object. It is used to unlock a different kind of locked door than a normal key."
 
-[node name="TextPlay5" parent="." index="26" instance=ExtResource( 2 )]
+[node name="TextPlay5" parent="." index="25" instance=ExtResource( 2 )]
 transform = Transform( 0.119253, 0, -0.992864, 0, 1, 0, 0.992864, 0, 0.119253, -132.643, 20.4039, -9.09803 )
 text = "Teleporters! They can be moved, so be careful not to put it anywhere too dangerous... Or atleast above ground..."
 
-[node name="TextPlay6" parent="." index="27" instance=ExtResource( 2 )]
+[node name="TextPlay6" parent="." index="26" instance=ExtResource( 2 )]
 transform = Transform( -0.774669, 0, -0.632367, 0, 1, 0, 0.632367, 0, -0.774669, -119.989, 20.4039, -57.3816 )
 text = "This key is used to unlock certain locked doors. Pick it up with E."
 
-[node name="TextPlay3" parent="." index="28" instance=ExtResource( 2 )]
+[node name="TextPlay3" parent="." index="27" instance=ExtResource( 2 )]
 transform = Transform( 0.215417, 0, -0.976522, 0, 1, 0, 0.976522, 0, 0.215417, -71.1733, 8.72658, -5.80934 )
 text = "You made it to the first checkpoint! If you do fall, you will respawn where this orb is. You can always reset by using N, or go to your last checkpoint with R."
 
-[node name="Checkpoint" parent="." index="29" instance=ExtResource( 8 )]
+[node name="Checkpoint" parent="." index="28" instance=ExtResource( 8 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -72.0476, 9.51646, 0 )
 
-[node name="Checkpoint2" parent="." index="30" instance=ExtResource( 8 )]
+[node name="Checkpoint2" parent="." index="29" instance=ExtResource( 8 )]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -128.821, 20.8799, 0 )
 
-[node name="PortalLVL1" parent="." index="31" instance=ExtResource( 7 )]
+[node name="PortalLVL1" parent="." index="30" instance=ExtResource( 7 )]
 transform = Transform( -0.0412305, 0, 0.99915, 0, 1, 0, -0.99915, 0, -0.0412305, -140.61, 21.2216, -54.0958 )
 scene = "res://levels/testmap2.tscn"
 level_text = "to Hub"
 
-[node name="TestEMvorpm,emt 2" parent="." index="32" instance=ExtResource( 15 )]
+[node name="TestEMvorpm,emt 2" parent="." index="31" instance=ExtResource( 15 )]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="33"]
+[node name="MeshInstance" type="MeshInstance" parent="." index="32"]
 transform = Transform( 17.1847, 0, 2.38419e-07, 0, 14.4518, 0, -4.09715e-06, 0, 1, -108.069, 15.4256, -6.36245 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance2" type="MeshInstance" parent="." index="34"]
+[node name="MeshInstance2" type="MeshInstance" parent="." index="33"]
 transform = Transform( 17.1847, 0, 2.38419e-07, 0, 7.07822, 0, -4.09715e-06, 0, 1, -117.437, 23.7191, -6.13802 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance6" type="MeshInstance" parent="." index="35"]
+[node name="MeshInstance6" type="MeshInstance" parent="." index="34"]
 transform = Transform( 1.06374e-06, 0, -1, 0, 7.07822, 0, 5.46329, 0, 1.94707e-07, -125.947, 23.7191, -8.89324 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance7" type="MeshInstance" parent="." index="36"]
+[node name="MeshInstance7" type="MeshInstance" parent="." index="35"]
 transform = Transform( -1.54136e-06, 0, 1, 0, 7.07822, 0, -5.46329, 0, -2.8213e-07, -133.34, 23.7191, -8.6866 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance8" type="MeshInstance" parent="." index="37"]
+[node name="MeshInstance8" type="MeshInstance" parent="." index="36"]
 transform = Transform( -1.54136e-06, -7.84066, -4.37114e-08, 0, -3.42726e-07, 1, -5.46329, 2.21208e-06, 1.23323e-14, -129.546, 20.1747, -8.68661 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance9" type="MeshInstance" parent="." index="38"]
+[node name="MeshInstance9" type="MeshInstance" parent="." index="37"]
 transform = Transform( -4.86132e-06, -7.84066, -4.37114e-08, 0, -3.42726e-07, 1, -17.2308, 2.21208e-06, 1.23323e-14, -129.546, 20.2323, -51.9408 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance10" type="MeshInstance" parent="." index="39"]
+[node name="MeshInstance10" type="MeshInstance" parent="." index="38"]
 transform = Transform( 27.0981, -3.01654e-06, -1.04216e-14, 0, -5.53048e-07, 1, -6.46069e-06, -12.6523, -4.37114e-08, -129.546, 20.2131, -55.1823 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance11" type="MeshInstance" parent="." index="40"]
+[node name="MeshInstance11" type="MeshInstance" parent="." index="39"]
 transform = Transform( 27.0981, 0, 2.38419e-07, 0, 6.97964, 0, -6.46069e-06, 0, 1, -129.546, 23.4627, -60.2206 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance12" type="MeshInstance" parent="." index="41"]
+[node name="MeshInstance12" type="MeshInstance" parent="." index="40"]
 transform = Transform( -7.64519e-06, 0, 1, 0, 6.97964, 0, -27.0981, 0, -2.8213e-07, -142.002, 23.8759, -62.1595 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance13" type="MeshInstance" parent="." index="42"]
+[node name="MeshInstance13" type="MeshInstance" parent="." index="41"]
 transform = Transform( 8.50654e-06, 0, -1, 0, 6.97964, 0, 27.0981, 0, 3.13916e-07, -117.804, 23.3658, -62.1595 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance14" type="MeshInstance" parent="." index="43"]
+[node name="MeshInstance14" type="MeshInstance" parent="." index="42"]
 transform = Transform( 1.70928e-06, 0, -1, 0, 6.97964, 0, 5.44501, 0, 3.13916e-07, -126.066, 23.5928, -46.3332 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance16" type="MeshInstance" parent="." index="44"]
+[node name="MeshInstance16" type="MeshInstance" parent="." index="43"]
 transform = Transform( -2.32822e-06, 0, 1, 0, 6.97964, 0, -5.80113, 0, -4.01339e-07, -133.345, 23.6353, -46.1262 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance15" type="MeshInstance" parent="." index="45"]
+[node name="MeshInstance15" type="MeshInstance" parent="." index="44"]
 transform = Transform( -8.57106, 0, -1.50996e-07, 0, 6.97964, 0, 1.29419e-06, 0, -1, -121.732, 23.6606, -49.0481 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance17" type="MeshInstance" parent="." index="46"]
+[node name="MeshInstance17" type="MeshInstance" parent="." index="45"]
 transform = Transform( -8.57106, 0, -1.50996e-07, 0, 6.97964, 0, 1.29419e-06, 0, -1, -137.613, 23.6974, -49.0481 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="." index="47"]
+[node name="MeshInstance3" type="MeshInstance" parent="." index="46"]
 transform = Transform( -6.76145e-07, -3.8128e-06, 1, -15.4684, -5.90731e-07, -4.37114e-08, 6.76146e-07, -13.5144, -2.8213e-07, -116.669, 12.6242, 0.283626 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance4" type="MeshInstance" parent="." index="48"]
+[node name="MeshInstance4" type="MeshInstance" parent="." index="47"]
 transform = Transform( 25.5227, -3.07622e-06, -1.04216e-14, 0, -5.63991e-07, 1, -6.08509e-06, -12.9026, -4.37114e-08, -129.354, 20.1552, 0.283628 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance5" type="MeshInstance" parent="." index="49"]
+[node name="MeshInstance5" type="MeshInstance" parent="." index="48"]
 transform = Transform( 24.9164, -3.31508e-06, -1.04216e-14, 0, -6.07783e-07, 1, -5.94054e-06, -13.9044, -4.37114e-08, -121.253, 8.83828, 0.283627 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="Timer" parent="." index="50" instance=ExtResource( 19 )]
+[node name="Timer" parent="." index="49" instance=ExtResource( 19 )]
 
-[node name="TimerStop" parent="." index="51" instance=ExtResource( 20 )]
+[node name="TimerStop" parent="." index="50" instance=ExtResource( 20 )]
 transform = Transform( 1.26685, 0, 0, 0, 5.33784, 0, 0, 0, 1.75174, -138.754, 21.5472, -53.609 )
