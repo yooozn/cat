@@ -73,7 +73,7 @@ func _on_NewGame_pressed():
 			file.close()
 	Animations.transition = true
 	yield(get_tree().create_timer(.5),"timeout")
-	get_tree().change_scene("res://StartScreen.tscn")
+	get_tree().change_scene("res://levels/Tutorial1.tscn")
 	
 
 
