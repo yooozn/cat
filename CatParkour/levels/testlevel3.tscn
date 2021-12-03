@@ -85,7 +85,7 @@ transform = Transform( 1.06339, 0, 0, 0, 1.3764, 0, 0, 0, 0.469253, -0.377967, 2
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 5.28782, 0, 0, 0, 0.454627, -0.0606475, 4.6164, 23.362 )
+transform = Transform( 1, 0, 0, 0, 5.28782, 0, 0, 0, 0.218678, -0.215871, 1.75572, 20.0482 )
 
 [node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 10 )]
 
