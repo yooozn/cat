@@ -25,6 +25,7 @@ var portalZoom = false
 #Pickup Object variable
 onready var pickUP = $camerapivot/SpringArm/Camera/PickUP
 onready var pickLoc = $camerapivot/SpringArm/Camera/PickLoc
+onready var eyes = $camerapivot/SpringArm/Camera/eyes
 var pickObject
 var pickObjectLocation
 var carrying = false
@@ -218,6 +219,7 @@ func _input(event):
 		camera_pivot.rotation_degrees.x = clamp(camera_pivot.rotation_degrees.x, min_pitch, max_pitch)
 
 func _physics_process(delta):
+	
 	
 	mouse_sensitivity = pStats.sens
 	if portalZoom == false:

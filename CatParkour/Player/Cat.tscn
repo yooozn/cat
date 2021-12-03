@@ -222,6 +222,9 @@ visible = false
 layers = 512
 texture = ExtResource( 13 )
 
+[node name="eyes" type="Spatial" parent="camerapivot/SpringArm/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.219852, -0.362492 )
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0

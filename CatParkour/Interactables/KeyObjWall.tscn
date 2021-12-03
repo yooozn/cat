@@ -70,7 +70,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 next_pass = SubResource( 22 )
 params_diffuse_mode = 4
 params_specular_mode = 3
-albedo_color = Color( 1, 0.792157, 0, 1 )
+albedo_color = Color( 1, 0.576471, 0, 1 )
 metallic_specular = 0.4
 roughness = 0.7
 
