@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://levels/DirectionalLight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://levels/floatingIsland1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://levels/testmap2.gd" type="Script" id=11]
 [ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=13]
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConcavePolygonShape" id=1]
@@ -204,8 +205,12 @@ transform = Transform( -0.541587, 0, -0.44349, 0, 0.5, 0, 0.44349, 0, -0.541587,
 [node name="TestEMvorpm,emt 2" parent="." index="28" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5438, 0 )
 
-[node name="WallKey" parent="." index="29" instance=ExtResource( 12 )]
+[node name="door1" parent="." index="29" instance=ExtResource( 12 )]
 transform = Transform( 1.10248, -0.305502, 0, 0.154486, 1.7509, 0, 0, 0, 0.511215, -12.2246, 14.6649, 18.48 )
 
 [node name="KeyObj" parent="." index="30" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87203, 15.1316, 10.7099 )
+
+[node name="Doorlock" parent="." index="31" instance=ExtResource( 13 )]
+transform = Transform( -0.00436462, -0.0560293, 0.294689, 0.00495893, 0.294667, 0.0560985, -0.299927, 0.0056873, -0.00336087, -12.2907, 14.5484, 17.8535 )
+doorNum = "door1"

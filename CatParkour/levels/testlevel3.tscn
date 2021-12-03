@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://levels/testlevel3.gd" type="Script" id=1]
 [ext_resource path="res://Object1.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=11]
 [ext_resource path="res://levels/MatteGreen.tres" type="Material" id=12]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -32,7 +34,7 @@ material/0 = ExtResource( 12 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 3.45351, 0, 0, 0, 0.0884369, 0, 0, 0, 1.19212, 16.4624, 0, 0 )
+transform = Transform( 3.45351, 0, 0, 0, 0.0884369, 0, 0, 0, 1.19212, 18.8228, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 12 )
 
@@ -42,13 +44,14 @@ material/0 = ExtResource( 12 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 1.43235, 0, 0, 0, 0.0884369, 0, 0, 0, 1.19212, -0.581614, 0, -17.6398 )
+transform = Transform( 1.43235, 0, 0, 0, 0.0884369, 0, 0, 0, 1.19212, -0.581614, 0, -15.9308 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 12 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Cat" parent="." instance=ExtResource( 4 )]
@@ -56,27 +59,28 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.782293, 0 )
 
 [node name="KeyObj" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53765, 0.418841, -17.8039 )
+visible = false
 mode = 1
 
 [node name="RigidBody" parent="." instance=ExtResource( 2 )]
 transform = Transform( 5.32932, 0, 0, 0, 0.58143, 0, 0, 0, 5.0492, -5.22005, 0, 0 )
 
 [node name="RigidBody2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 5.32932, 0, 0, 0, 0.58143, 0, 0, 0, 5.0492, 21.5879, 0, 0 )
+transform = Transform( 5.32932, 0, 0, 0, 0.58143, 0, 0, 0, 5.0492, 23.9483, 0, 0 )
 
 [node name="RigidBody3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 5.32932, 0, 0, 0, 0.58143, 0, 0, 0, 5.0492, -0.662037, 0, -20.5468 )
+transform = Transform( 5.32932, 0, 0, 0, 0.58143, 0, 0, 0, 5.0492, -0.662037, 0, -18.8378 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0101, 4.42866, 23.4899 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0101, 1.51, 20.0528 )
 scene = "res://levels/testmap2.tscn"
 level_text = "Back to Hub"
 
 [node name="Death" parent="." instance=ExtResource( 8 )]
 transform = Transform( 24.4178, 0, 0, 0, 1, 0, 0, 0, 39.4213, 0, -6.59087, 0 )
 
-[node name="WallKey" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1.3764, 0, 0, 0, 1, -0.318694, 5.27934, 23.4106 )
+[node name="door1" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1.06339, 0, 0, 0, 1.3764, 0, 0, 0, 0.469253, -0.377967, 2.1878, 20.079 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
@@ -88,3 +92,10 @@ transform = Transform( 1, 0, 0, 0, 5.28782, 0, 0, 0, 0.454627, -0.0606475, 4.616
 [node name="TextPlay" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.552966, 0, -0.429218, 0, 0.7, 0, 0.429218, 0, 0.552966, -3.14364, 0, -2.6108 )
 text = "Looks like you will have to move alot of platforms..."
+
+[node name="Doorlock" parent="." instance=ExtResource( 13 )]
+transform = Transform( -8.74228e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.74228e-09, -0.321049, 1.89593, 19.5405 )
+doorNum = "door1"
+
+[node name="KeyObj2" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.399636, 0.357945, -15.3646 )

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://KeyObjectModel.tscn" type="PackedScene" id=1]
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=7]
 script/source = "extends RigidBody
 
 var pick = false
@@ -11,6 +11,11 @@ var interact = false
 var pickUP = false
 var eyes
 var TURN_SPEED = 2
+var startPos
+var playerCarrying = false
+func _ready():
+	startPos = global_transform
+
 func _process(delta):
 	if gravPick == true:
 		gravity_scale = 0
@@ -18,8 +23,8 @@ func _process(delta):
 		turn(GlobalWorld.player.SpriteLocation, 2, delta)
 		yield(get_tree().create_timer(.1),\"timeout\")
 		interact = true
-		eyes = GlobalWorld.player.eyes
 	elif gravPick == false:
+		playerCarrying = false
 		gravity_scale = 1
 		collision_layer = 1
 		interact = false
@@ -81,10 +86,11 @@ extents = Vector3( 0.2138, 0.239731, 0.244263 )
 
 [sub_resource type="BoxShape" id=4]
 
-[node name="KeyObj" type="RigidBody" groups=["Key", "Objects", "TPable"]]
+[node name="KeyObj" type="RigidBody" groups=["Key", "KeyNew", "Objects", "TPable"]]
+mode = 1
 contacts_reported = 1
 contact_monitor = true
-script = SubResource( 5 )
+script = SubResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.020592, -0.308335 )
@@ -101,7 +107,7 @@ material/0 = SubResource( 6 )
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 3 )
 
-[node name="KeyArea" type="Area" parent="."]
+[node name="KeyArea" type="Area" parent="." groups=["KeyNew"]]
 
 [node name="CollisionShape" type="CollisionShape" parent="KeyArea"]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
