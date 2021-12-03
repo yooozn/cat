@@ -52,13 +52,13 @@ func _on_CheckBox_toggled(button_pressed):
 #	var bPress = buttonPress.instance()
 #	get_parent().add_child(bPress)
 	if button_pressed == true:
-		print("true")
+#		print("true")
 		OS.window_fullscreen = true
 		GlobalWorld.fullscreen = true
 	elif button_pressed == false:
 		GlobalWorld.fullscreen = false
 		OS.window_fullscreen = false
-		print("false")
+#		print("false")
 
 
 func _on_CheckBox_pressed():

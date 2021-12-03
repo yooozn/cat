@@ -450,7 +450,7 @@ func _handle_movement(delta):
 		pickTrue = false
 	else:
 		pickObject = null
-	print(carrying)
+#	print(carrying)
 	if pickObject:
 		if !pickObject.is_in_group("Objects") or pickObject.pick == true or Input.is_action_just_pressed("shoot")\
 		and pickObject.interact == true or \

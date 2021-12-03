@@ -26,7 +26,7 @@ func _process(delta):
 		time += delta
 		if time >= .5:
 			get_tree().change_scene(scene)
-			print(scene)
+#			print(scene)
 	if $Start.is_hovered() and hover == false:
 		hover = true
 		var b = buttonHover.instance()
