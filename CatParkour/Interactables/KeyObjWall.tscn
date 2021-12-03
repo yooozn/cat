@@ -27,9 +27,9 @@ func _process(delta):
 		shrinkSound.play()
 		queue_free()
 
-func _on_WallKey_body_entered(body):
-	if body.is_in_group(\"Key\"):
-		lock = false
+#func _on_WallKey_body_entered(body):
+#	if body.is_in_group(\"Key\"):
+#		lock = false
 		
 		
 		

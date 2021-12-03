@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://KeyObjectModel.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends RigidBody
+
+var pick = false
+var gravPick = false
+var interact = false
+var pickUP = false
+var eyes
+var TURN_SPEED = 2
+var startPos
+var playerCarrying = false
+func _ready():
+	startPos = global_transform
+
+func _process(delta):
+	if gravPick == true:
+		gravity_scale = 0
+		collision_layer = 2
+		turn(GlobalWorld.player.SpriteLocation, 2, delta)
+		yield(get_tree().create_timer(.1),\"timeout\")
+		interact = true
+	elif gravPick == false:
+		playerCarrying = false
+		gravity_scale = 1
+		collision_layer = 1
+		interact = false
+	if GlobalWorld.player.carrying == false:
+		gravPick = false
+
+func turn(target, rotationSpeed, delta):
+	var global_pos = global_transform.origin
+	var wtransform = global_transform.looking_at(Vector3(target.x, global_pos.y, target.z),Vector3(0,1,0))
+	var wrotation = Quat(global_transform.basis).slerp(Quat(wtransform.basis),rotationSpeed*delta)
+	
+	global_transform = Transform(Basis(wrotation), global_transform.origin)
+
+#func _on_RigidBody_body_entered(body):
+#	pick = true
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+#
+#
+#func _on_RigidBody_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+#	pick = true
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+
+
+#func _on_Area_area_entered(area):
+#	pick = true
+#	print(pick)
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+
+
+#func _on_Area_body_entered(body):
+#	pick = true
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+
+#
+#func _on_KeyArea_body_entered(body):
+#	if body.is_in_group(\"Lock\"):
+#		body.lock = false
+#
+#
+#func _on_KeyArea_area_entered(area):
+#	if area.is_in_group(\"Lock\"):
+#		area.lock = false
+"
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.319543, 0.322982, 1.66291 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 1, 0.654902, 0, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.2138, 0.239731, 0.244263 )
+
+[sub_resource type="BoxShape" id=4]
+
+[node name="KeyObj" type="RigidBody" groups=["Key", "KeyNew", "Objects", "TPable"]]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+script = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.020592, -0.308335 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = SubResource( 6 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )
+
+[node name="KeyArea" type="Area" parent="." groups=["KeyNew"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="KeyArea"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="KeyObject" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.765161, -0.138277 )
+
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

@@ -25,7 +25,7 @@ var portalZoom = false
 #Pickup Object variable
 onready var pickUP = $camerapivot/SpringArm/Camera/PickUP
 onready var pickLoc = $camerapivot/SpringArm/Camera/PickLoc
-onready var eyes = $camerapivot/SpringArm/Camera/eyes
+onready var eyes = $camerapivot/SpringArm/Camera/eyes.get_global_transform()
 var pickObject
 var pickObjectLocation
 var carrying = false
@@ -458,9 +458,12 @@ func _handle_movement(delta):
 		and pickObject.interact == true or \
 		Input.is_action_just_pressed("interact") and pickObject.interact == true:
 			carrying = false
-			pickObject = null
 			shootable = true
 			Animations.interact = false
+			if pickObject.is_in_group("KeyNew"):
+				pickObject.global_transform = pickObject.startPos
+				print("didit")
+			pickObject = null
 	elif !pickObject and pickTrue == false:
 		crossPICKbool = false
 #	print(carrying) 

@@ -69,7 +69,7 @@ func turn(target, rotationSpeed, delta):
 "
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 1.0056, 1.00349, 1 )
+extents = Vector3( 0.319543, 0.322982, 1.66291 )
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -87,7 +87,7 @@ contact_monitor = true
 script = SubResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -0.020592, -0.308335 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
