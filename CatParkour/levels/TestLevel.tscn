@@ -1,0 +1,106 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemy1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Checkpoint.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interactables/Health.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interactables/WallKey.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=8]
+[ext_resource path="res://levels/DirectionalLight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://levels/WorldEnvironment.tres" type="Environment" id=10]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ShootUnlock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DashUnlock.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=16]
+[ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=17]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.027451, 0.372549, 0.227451, 1 )
+metallic_specular = 0.0
+
+[node name="TestLevel" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 19.7897, 0, 0, 0, 0.0654912, 0, 0, 0, 17.4321, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 8 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 2.15578, 0, 0, 0, 0.0654912, 0, 0, 0, 1.60097, 5.23507, 1.47023, 7.04414 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Cat" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06915, 0 )
+
+[node name="DirectionalLight" parent="." instance=ExtResource( 9 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 10 )
+
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.03141, 0.906197, 0 )
+
+[node name="DoubleJumpRefresh" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.37374, 0, 0, 0, 0.2, 0, 0, 0, 3.59374, 0.675853, 3.7173, 0 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 4.64224, -4.68621 )
+
+[node name="Health" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.17227, 0.434491, -3.20631 )
+
+[node name="WallKey" parent="." instance=ExtResource( 6 )]
+transform = Transform( 6.5723, 0, 0, 0, 3.12317, 0, 0, 0, 1, 0, 2.61529, -7.8149 )
+
+[node name="Key" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.40818, 0.689578, 0 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 11 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6134, 1.03104, 3.19544 )
+scene = "res://levels/testmap2.tscn"
+level_text = "Back to hub"
+
+[node name="DoubleJumpUnlock" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22093, 0.97483, -3.30895 )
+
+[node name="ShootUnlock" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.07331, 0.708552, 0 )
+
+[node name="DashUnlock" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71259, 0.945754, 2.40299 )
+
+[node name="RigidBody" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.21982, 1.0249, 4.83314 )
+contacts_reported = 5
+
+[node name="JumpPad" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17451, 0.653057, -3.5859 )
+jumpheight = 50.0
+
+[node name="Teleporter" parent="." instance=ExtResource( 17 )]
+transform = Transform( 0.999728, -0.0233329, 0, 0.0233329, 0.999728, 0, 0, 0, 1, -9.02009, 1.45433, -9.44335 )
+portalto = "Teleporter2"
+
+[node name="Teleporter2" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22598, 1.42202, 0 )
+portalto = "Teleporter"

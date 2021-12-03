@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Dash.gd" type="Script" id=1]
+[ext_resource path="res://Audio/dash.wav" type="AudioStream" id=2]
+
+[node name="Dash" type="AudioStreamPlayer3D"]
+stream = ExtResource( 2 )
+unit_db = 11.0
+script = ExtResource( 1 )

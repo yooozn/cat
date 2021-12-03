@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/NewEnvrionmentTest.tres" type="Environment" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="PlaneMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.786564, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 4.74763, 0, 0, 0, 4.74763, 0, 0, 0, 4.74763, 0, -1.57707, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../MeshInstance")
+material/0 = null
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.865081, 0.249845, -0.434985, 0, 0.86714, 0.498064, 0.501631, -0.430866, 0.750147, 0.578471, 13.2927, 7.83755 )
+light_energy = 2.0
+shadow_enabled = true
+shadow_color = Color( 0.6, 0.6, 0.6, 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.599305, 0.143804, -0.787499, 0.00887917, 0.982478, 0.186166, 0.800471, -0.118562, 0.587527, -4.74035, 2.00884, 4.18612 )

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://JumpPad.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.172549, 1, 0, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.626092, 1, 0.666499 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.718304, 0.223263, 0.731472 )
+
+[node name="JumpPad" type="RigidBody" groups=["Objects", "TPable"]]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="JumpArea" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="JumpArea"]
+transform = Transform( 1.2, 0, 0, 0, 0.5, 0, 0, 0, 1.2, 0, 0.351669, 0 )
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="JumpArea" to="." method="_on_JumpArea_body_entered"]
+[connection signal="body_exited" from="JumpArea" to="." method="_on_JumpArea_body_exited"]
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

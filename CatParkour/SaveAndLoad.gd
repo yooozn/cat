@@ -1,0 +1,129 @@
+extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+var save_path = "user://save.dat"
+onready var buttonHover = preload("res://ButtonHover.tscn")
+onready var buttonPress = preload("res://ButtonPress.tscn")
+var hover = false
+var hover1 = false
+var hover2 = false
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	var file = File.new()
+	if file.file_exists(save_path):
+		$Continue.visible = true
+	else:
+		$Continue.visible = false
+
+
+func _process(delta):
+	if $NewGame.is_hovered() and hover == false:
+		hover = true
+		var b = buttonHover.instance()
+		get_parent().add_child(b)
+	if !$NewGame.is_hovered():
+		hover = false
+	if $Save.is_hovered() and hover1 == false:
+		hover1 = true
+		var b = buttonHover.instance()
+		get_parent().add_child(b)
+	if !$Save.is_hovered():
+		hover1 = false
+	if $Continue.is_hovered() and hover2 == false:
+		hover2 = true
+		var b = buttonHover.instance()
+		get_parent().add_child(b)
+	if !$Continue.is_hovered():
+		hover2 = false
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_NewGame_pressed():
+	var b = buttonPress.instance()
+	get_parent().add_child(b)
+	var file = File.new()
+	pStats.dubJumpUnlock = false
+	pStats.shootUnlock = false
+	pStats.dashUnlock = false
+	Times.level1 = 0
+	Times.level2 = 0
+	Times.level3 = 0
+	Times.level4 = 0
+	if file.file_exists(save_path):
+		var error = file.open(save_path, File.WRITE)
+		var data = {
+		"dashUnlock" : pStats.dashUnlock,
+		"dubJumpUnlock" : pStats.dubJumpUnlock,
+		"shootUnlock" : pStats.shootUnlock,
+		"Sens" : pStats.sens,
+		"fullscreen" : GlobalWorld.fullscreen,
+		"level1Time" : Times.level1,
+		"level2Time" : Times.level2,
+		"level3Time" : Times.level3,
+		"level4Time" : Times.level4,
+		"tutorialTime" : Times.tutorial,
+		}
+		if error == OK:
+			file.store_var(data)
+			file.close()
+	Animations.transition = true
+	yield(get_tree().create_timer(.5),"timeout")
+	get_tree().change_scene("res://StartScreen.tscn")
+	
+
+
+func _on_Continue_pressed():
+	var b = buttonPress.instance()
+	get_parent().add_child(b)
+	var file = File.new()
+	if file.file_exists(save_path):
+		var error = file.open(save_path, File.READ)
+		if error == OK:
+			var player_data = file.get_var()
+			file.close()
+			print(player_data)
+			print("continue")
+			pStats.dashUnlock = player_data["dashUnlock"]
+			pStats.dubJumpUnlock = player_data["dubJumpUnlock"]
+			pStats.shootUnlock = player_data["shootUnlock"]
+			pStats.sens = player_data["Sens"]
+			GlobalWorld.fullscreen = player_data["fullscreen"]
+			Times.level1 = player_data["level1Time"]
+			Times.level2 = player_data["level2Time"]
+			Times.level3 = player_data["level3Time"]
+			Times.level4 = player_data["level3Time"]
+			Times.tutorial = player_data["tutorialTime"]
+			Animations.transition = true
+			yield(get_tree().create_timer(.5),"timeout")
+			get_tree().change_scene("res://StartScreen.tscn")
+
+
+func _on_Save_pressed():
+	var b = buttonPress.instance()
+	get_parent().add_child(b)
+	var data = {
+		"dashUnlock" : pStats.dashUnlock,
+		"dubJumpUnlock" : pStats.dubJumpUnlock,
+		"shootUnlock" : pStats.shootUnlock,
+		"Sens" : pStats.sens,
+		"fullscreen" : GlobalWorld.fullscreen,
+		"level1Time" : Times.level1,
+		"level2Time" : Times.level2,
+		"level3Time" : Times.level3,
+		"level4Time" : Times.level4,
+		"tutorialTime" : Times.tutorial,
+	}
+	var file = File.new()
+	var error = file.open(save_path, File.WRITE)
+	if error == OK:
+		file.store_var(data)
+		file.close()
+		print("saved")
+	
+	
+	

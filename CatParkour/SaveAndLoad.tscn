@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/TextGeneric.tres" type="DynamicFont" id=1]
+[ext_resource path="res://SaveAndLoad.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Background"
+length = 14.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4, 6, 8, 10, 12, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.615686, 0.270588, 1 ), Color( 0.180392, 0.760784, 0.678431, 1 ), Color( 0.0196078, 0.258824, 0.45098, 1 ), Color( 0.196078, 0.262745, 0.713726, 1 ), Color( 0.133333, 0.0509804, 0.337255, 1 ), Color( 0.701961, 0.113725, 0.721569, 1 ), Color( 0.054902, 0.392157, 0.392157, 1 ), Color( 0, 0.615686, 0.270588, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.180392, 0.760784, 0.678431, 1 ) ]
+}
+
+[node name="SaveAndLoad" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="ColorRect" parent="."]
+margin_right = 1302.0
+margin_bottom = 736.0
+color = Color( 0.180392, 0.760784, 0.678431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="."]
+margin_left = 526.0
+margin_top = 237.0
+margin_right = 811.0
+margin_bottom = 301.0
+custom_colors/font_color = Color( 0.913725, 0.913725, 0.913725, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.745098, 0.745098, 0.745098, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "New Game"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="."]
+visible = false
+margin_left = 526.0
+margin_top = 301.0
+margin_right = 811.0
+margin_bottom = 365.0
+custom_colors/font_color = Color( 0.913725, 0.913725, 0.913725, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.745098, 0.745098, 0.745098, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Save"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="Button" parent="."]
+margin_left = 526.0
+margin_top = 365.0
+margin_right = 811.0
+margin_bottom = 429.0
+custom_colors/font_color = Color( 0.843137, 0.843137, 0.843137, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.768627, 0.768627, 0.768627, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Continue"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Background = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[connection signal="pressed" from="NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]

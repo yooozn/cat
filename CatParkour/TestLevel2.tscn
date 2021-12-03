@@ -1,0 +1,263 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/test/TestLevel2.glb" type="PackedScene" id=2]
+[ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactables/WallKey.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
+[ext_resource path="res://TestLevel2.gd" type="Script" id=9]
+[ext_resource path="res://levels/DirectionalLight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=11]
+[ext_resource path="res://art/ToonShader.tres" type="Material" id=12]
+[ext_resource path="res://KeyRespawn.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DubJumpUnlockRespawn.tscn" type="PackedScene" id=14]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.005
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=25]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0, 1, 0.368627, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=7]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=23]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0.368627, 0.0666667, 0.188235, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=26]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0, 1, 0.368627, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=27]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0, 1, 0.368627, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=28]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0, 0.254902, 1, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=11]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="SpatialMaterial" id=24]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 0.368627, 0.0666667, 0.188235, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=12]
+data = PoolVector3Array( 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1 )
+
+[sub_resource type="ProceduralSky" id=13]
+sky_top_color = Color( 0.631373, 0.854902, 0.976471, 1 )
+sky_horizon_color = Color( 0.682353, 0.717647, 0.054902, 1 )
+ground_bottom_color = Color( 0.411765, 0.584314, 0.756863, 1 )
+ground_horizon_color = Color( 0.388235, 0.027451, 0.635294, 1 )
+sun_color = Color( 0.537255, 0.698039, 1, 1 )
+
+[sub_resource type="Environment" id=14]
+background_mode = 2
+background_sky = SubResource( 13 )
+background_sky_custom_fov = 71.3
+
+[node name="TestLevel2" instance=ExtResource( 2 )]
+script = ExtResource( 9 )
+
+[node name="Cube002" parent="." index="2"]
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube002" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube002/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Cube003" parent="." index="3"]
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube003" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube003/StaticBody" index="0"]
+shape = SubResource( 2 )
+
+[node name="Cube004" parent="." index="4"]
+transform = Transform( 2.3009, 0, 0, 0, 0.278997, 0, 0, 0, 2.35821, 7.13828, -0.666081, 3.05511 )
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube004" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube004/StaticBody" index="0"]
+shape = SubResource( 3 )
+
+[node name="Cube005" parent="." index="5"]
+transform = Transform( 1.0029, 0, 0, 0, 0.278997, 0, 0, 0, 1.23639, -9.21689, 4.06865, 8.08731 )
+material/0 = SubResource( 25 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube005" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube005/StaticBody" index="0"]
+shape = SubResource( 4 )
+
+[node name="Cube006" parent="." index="6"]
+transform = Transform( 1.0029, 0, 0, 0, 0.278997, 0, 0, 0, 1.23639, 13.2328, -0.666081, 4.71686 )
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube006" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube006/StaticBody" index="0"]
+shape = SubResource( 5 )
+
+[node name="Cube007" parent="." index="7"]
+transform = Transform( 1.0029, 0, 0, 0, 0.278997, 0, 0, 0, 1.23639, 16.8698, -0.666081, 1.30377 )
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube007" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube007/StaticBody" index="0"]
+shape = SubResource( 6 )
+
+[node name="Cube008" parent="." index="8"]
+transform = Transform( 2.3009, 0, 0, 0, 0.278997, 0, 0, 0, 2.35821, 23.0313, -0.666081, 3.05511 )
+material/0 = ExtResource( 12 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube008" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube008/StaticBody" index="0"]
+shape = SubResource( 7 )
+
+[node name="Cube009" parent="." index="9"]
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube009" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube009/StaticBody" index="0"]
+shape = SubResource( 8 )
+
+[node name="Cube010" parent="." index="10"]
+transform = Transform( 1.0029, 0, 0, 0, 0.278997, 0, 0, 0, 1.23639, -9.21689, 6.99703, 11.9019 )
+material/0 = SubResource( 26 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube010" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube010/StaticBody" index="0"]
+shape = SubResource( 9 )
+
+[node name="Cube011" parent="." index="11"]
+transform = Transform( 1.0029, 0, 0, 0, 0.278997, 0, 0, 0, 1.23639, -13.1527, 10.9775, 11.9019 )
+material/0 = SubResource( 27 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube011" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube011/StaticBody" index="0"]
+shape = SubResource( 10 )
+
+[node name="Cube012" parent="." index="12"]
+transform = Transform( 2.8844, 0, 0, 0, 0.278997, 0, 0, 0, 3.8105, -13.1527, 13.2815, 3.64274 )
+material/0 = SubResource( 28 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube012" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube012/StaticBody" index="0"]
+shape = SubResource( 11 )
+
+[node name="Cube013" parent="." index="13"]
+material/0 = SubResource( 24 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube013" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube013/StaticBody" index="0"]
+shape = SubResource( 12 )
+
+[node name="Cat" parent="." index="14" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52434, 0.948526, 2.11812 )
+
+[node name="WallKey" parent="." index="15" instance=ExtResource( 4 )]
+transform = Transform( 0.269202, 0, 0, 0, 2.34927, 0, 0, 0, 4.22135, -14.1157, 1.69926, 2.99808 )
+
+[node name="Key" parent="." index="16" instance=ExtResource( 5 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 23.452, 0.166797, 2.8776 )
+
+[node name="DoubleJumpUnlock" parent="." index="17" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2991, 0.348305, 3.05971 )
+
+[node name="PortalLVL1" parent="." index="18" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.775, 14.5346, -2.36333 )
+scene = "res://levels/testmap2.tscn"
+level_text = "Back to Hub"
+
+[node name="Timer" parent="." index="19" instance=ExtResource( 7 )]
+
+[node name="TimerStop" parent="." index="20" instance=ExtResource( 8 )]
+transform = Transform( 2.12449, 0, 0, 0, 3.93947, 0, 0, 0, 2.11557, -13.4881, 14.5407, 1.84887 )
+
+[node name="DirectionalLight" parent="." index="21" instance=ExtResource( 10 )]
+transform = Transform( -0.554612, 0.704249, -0.443215, 0, 0.53264, 0.846342, 0.832109, 0.469391, -0.295409, -40.1091, 25.0895, 0 )
+
+[node name="Death" parent="." index="22" instance=ExtResource( 11 )]
+transform = Transform( 53.5652, 0, 0, 0, 1, 0, 0, 0, 23.6569, 5.27046, -10.011, -1.14901 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="23"]
+environment = SubResource( 14 )
+
+[node name="KeyRespawn" parent="." index="24" instance=ExtResource( 13 )]
+transform = Transform( 5.64166, 0, 0, 0, 1, 0, 0, 0, 2.0616, 0, -6.64894, 0 )
+
+[node name="DubJumpRespawn" parent="." index="25" instance=ExtResource( 14 )]
+transform = Transform( 4.35234, 0, 0, 0, 1, 0, 0, 0, 3.5966, 0, -4.23633, 0 )

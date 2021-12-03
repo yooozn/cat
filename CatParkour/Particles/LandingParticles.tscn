@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Particles/LandingParticles.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.465839, 0.838509, 1 )
+colors = PoolColorArray( 0.123535, 0.0647836, 0, 1, 0.498535, 0.261439, 0, 1, 0.79541, 0.417124, 0, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.603261, 0.794318 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.148864 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+flatness = 1.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.03
+initial_velocity_random = 0.32
+scale = 1.41
+scale_random = 0.87
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="SphereMesh" id=7]
+radius = 0.05
+height = 0.1
+
+[node name="Particles" type="Particles"]
+material_override = SubResource( 1 )
+amount = 25
+lifetime = 2.3
+speed_scale = 2.0
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
+script = ExtResource( 1 )

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Audio/Popsound1.wav" type="AudioStream" id=1]
+[ext_resource path="res://EnemyDeath.gd" type="Script" id=2]
+
+[node name="EnemyDeath" type="AudioStreamPlayer3D"]
+stream = ExtResource( 1 )
+unit_db = 8.0
+script = ExtResource( 2 )

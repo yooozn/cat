@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Popsound1.wav-cf58e72153c705d4b1df169d77f29eb4.sample"
+
+[deps]
+
+source_file="res://Audio/Popsound1.wav"
+dest_files=[ "res://.import/Popsound1.wav-cf58e72153c705d4b1df169d77f29eb4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

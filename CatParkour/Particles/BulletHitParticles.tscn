@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/BulletHitParticles.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.0186335, 0.149068, 0.341615, 0.621118, 0.863354 )
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0, 0, 1, 1, 0.439453, 0, 1, 0.998047, 1, 0, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.918478, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="ParticlesMaterial" id=8]
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.77
+initial_velocity_random = 1.0
+scale = 0.1
+scale_random = 1.0
+scale_curve = SubResource( 7 )
+color_ramp = SubResource( 5 )
+
+[sub_resource type="CapsuleMesh" id=9]
+radius = 0.05
+mid_height = 0.001
+
+[node name="Particles" type="Particles"]
+material_override = SubResource( 3 )
+amount = 100
+lifetime = 1.5
+speed_scale = 2.66
+explosiveness = 1.0
+process_material = SubResource( 8 )
+draw_pass_1 = SubResource( 9 )
+script = ExtResource( 1 )

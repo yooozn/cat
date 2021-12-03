@@ -1,0 +1,233 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://fonts/TextGeneric.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=24]
+script/source = "extends Area
+
+onready var particles = preload(\"res://Particles/WallExplode.tscn\")
+onready var ParticleNoise = preload(\"res://EnemyDeath.tscn\")
+var text = false
+var lock = true
+
+func _ready():
+	$AnimationPlayer.play(\"idle\")
+	
+
+func _process(delta):
+	if lock == false:
+		$AnimationPlayer.play(\"Opened\")
+		yield(get_tree().create_timer(1.5),\"timeout\")
+		var particle = particles.instance()
+		get_parent().add_child(particle)
+		particle.global_transform = global_transform
+		var shrinkSound = ParticleNoise.instance()
+		get_parent().add_child(shrinkSound)
+		shrinkSound.translation = translation
+		shrinkSound.play()
+		queue_free()
+
+func _on_WallKey_body_entered(body):
+	if body.is_in_group(\"Key\"):
+		lock = false
+		
+		
+		
+		
+		
+#		if GlobalWorld.player.key == true and text == false:
+#			$Text.play(\"2\")
+#			text = true
+#			yield(get_tree().create_timer(2),\"timeout\")
+#			text = false
+#		elif GlobalWorld.player.key == false and text == false:
+#			$Text.play(\"1\")
+#			text = true
+#			yield(get_tree().create_timer(2),\"timeout\")
+#			text = false
+
+
+#
+#func _on_WallKey_body_exited(body):
+#	GlobalWorld.player.in_key_area = false
+#	$Text.stop()
+#	$Label.visible = false
+#	text = false
+"
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_unshaded = true
+params_cull_mode = 1
+params_grow = true
+params_grow_amount = 0.005
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=23]
+next_pass = SubResource( 22 )
+params_diffuse_mode = 4
+params_specular_mode = 3
+albedo_color = Color( 1, 0.792157, 0, 1 )
+metallic_specular = 0.4
+roughness = 0.7
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "Opened"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+
+[sub_resource type="Animation" id=21]
+resource_name = "1"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "key required" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "2"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "interact   [e]" ]
+}
+
+[sub_resource type="Animation" id=20]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="WallKey" type="Area" groups=["Lock"]]
+script = SubResource( 24 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2.05115, 0, 0, 0, 1.45391, 0, 0, 0, 1.69045, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 2 )
+material/0 = SubResource( 23 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Opened = SubResource( 4 )
+anims/idle = SubResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 561.0
+margin_top = 210.0
+margin_right = 644.0
+margin_bottom = 248.0
+custom_fonts/font = ExtResource( 2 )
+text = "key required"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="AnimationPlayer" parent="."]
+anims/1 = SubResource( 21 )
+anims/2 = SubResource( 19 )
+anims/RESET = SubResource( 20 )
+
+[connection signal="body_entered" from="." to="." method="_on_WallKey_body_entered"]

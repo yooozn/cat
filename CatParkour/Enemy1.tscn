@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scripts/Enemy1.gd" type="Script" id=1]
+[ext_resource path="res://Audio/pop3.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/headshotpop3.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/Popsound1.wav" type="AudioStream" id=4]
+
+[sub_resource type="BoxShape" id=8]
+
+[sub_resource type="SphereShape" id=9]
+radius = 1.11
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0, 0.215686, 0.631373, 1 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1.45011, 1, 1.78126 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 0.476059, 1.09622, 0.488458 )
+
+[node name="Enemy" type="KinematicBody" groups=["Enemy", "TPable"]]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.447781, 0, 0, 0, 0.707784, 0, 0, 0, 0.419873, 0, -0.00717264, 0 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 0.320009, 0, 0, 0, 0.2869, 0, 0, 0, 0.316684, 0, 1.05425, 0 )
+shape = SubResource( 9 )
+
+[node name="head" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="head"]
+transform = Transform( 0.418187, 0, 0, 0, 0.366956, 0, 0, 0, 0.380101, 0, 1.07318, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="head"]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.06516, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="body" type="Area" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="body"]
+transform = Transform( 0.4, 0, 0, 0, 0.7, 0, 0, 0, 0.4, 0, 0, 0 )
+mesh = SubResource( 4 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="body"]
+transform = Transform( 0.501799, 0, 0, 0, 0.7, 0, 0, 0, 0.479027, 0, 0, 0 )
+shape = SubResource( 6 )
+
+[node name="targetArea" type="Area" parent="."]
+transform = Transform( 1.62643, 0, 0, 0, 1, 0, 0, 0, 1.63582, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="targetArea"]
+transform = Transform( 4.67458, 0, 0, 0, 0.272, 0, 0, 0, 3.20872, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[node name="PlayerHit" type="Area" parent="."]
+transform = Transform( 1.23774, 0, 0, 0, 1, 0, 0, 0, 1.2439, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PlayerHit"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.339539, 0 )
+shape = SubResource( 10 )
+
+[node name="PlayerIHRtimer" type="Timer" parent="."]
+
+[node name="hit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+unit_size = 8.0
+
+[node name="hitHead" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_size = 8.0
+
+[node name="deathsound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = 4.0
+
+[connection signal="body_entered" from="head" to="." method="_on_head_body_entered"]
+[connection signal="body_entered" from="body" to="." method="_on_body_body_entered"]
+[connection signal="body_entered" from="targetArea" to="." method="_on_targetArea_body_entered"]
+[connection signal="body_entered" from="PlayerHit" to="." method="_on_PlayerHit_body_entered"]
+[connection signal="body_exited" from="PlayerHit" to="." method="_on_PlayerHit_body_exited"]
+[connection signal="timeout" from="PlayerIHRtimer" to="." method="_on_PlayerIHRtimer_timeout"]
