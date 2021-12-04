@@ -280,7 +280,7 @@ transform = Transform( 2.51522, 0, 0, 0, 1, 0, 0, 0, 3.2917, -58.9943, 0, 0 )
 jumpheight = 45.0
 
 [node name="JumpPad2" parent="." index="4" instance=ExtResource( 11 )]
-transform = Transform( 1.76864, 0, 0, 0, 1, 0, 0, 0, 1.09693, -103.425, 9.01578, -0.238994 )
+transform = Transform( 0.755934, 0, 0, 0, 1, 0, 0, 0, 2.02136, -104.24, 9.73764, -0.238994 )
 jumpheight = 40.0
 
 [node name="RigidBody" parent="." index="5" instance=ExtResource( 10 )]

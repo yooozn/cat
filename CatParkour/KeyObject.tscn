@@ -11,6 +11,8 @@ var interact = false
 var pickUP = false
 var eyes
 var TURN_SPEED = 2
+var hovered = false
+onready var shader = $MeshInstance.get_surface_material(0).next_pass
 func _process(delta):
 	if gravPick == true:
 		gravity_scale = 0
@@ -25,7 +27,14 @@ func _process(delta):
 		interact = false
 	if GlobalWorld.player.carrying == false:
 		gravPick = false
-
+	if shader:
+		if hovered == true and GlobalWorld.hovered == true:
+			shader.set_shader_param(\"strength\", 0.2)
+			print(\"hovered\")
+		else:
+			shader.set_shader_param(\"strength\", 0.0)
+	if GlobalWorld.hovered == false:
+		hovered = false
 func turn(target, rotationSpeed, delta):
 	var global_pos = global_transform.origin
 	var wtransform = global_transform.looking_at(Vector3(target.x, global_pos.y, target.z),Vector3(0,1,0))

@@ -1,12 +1,18 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://JumpPad.gd" type="Script" id=1]
+[ext_resource path="res://art/Interact.gdshader" type="Shader" id=2]
 
 [sub_resource type="BoxShape" id=1]
 
 [sub_resource type="CubeMesh" id=2]
 
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 2 )
+shader_param/strength = null
+
 [sub_resource type="SpatialMaterial" id=4]
+next_pass = SubResource( 6 )
 albedo_color = Color( 0.172549, 1, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]

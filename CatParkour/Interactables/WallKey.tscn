@@ -51,6 +51,7 @@ func _on_WallKey_body_exited(body):
 "
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 29.8705, 1, 0.720667 )
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -192,7 +193,7 @@ tracks/0/keys = {
 script = SubResource( 24 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 2.05115, 0, 0, 0, 1.45391, 0, 0, 0, 1.69045, 0, 0, 0 )
+transform = Transform( 0.288355, 0, 0, 0, 1.45391, 0, 0, 0, 1.69045, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

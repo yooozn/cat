@@ -11,3 +11,6 @@ func _on_Area_body_entered(body):
 		yield(get_tree().create_timer(.5),"timeout")
 		door.lock = false
 		queue_free()
+		GlobalWorld.player.carrying = false
+		body.queue_free()
+		print("keykill")

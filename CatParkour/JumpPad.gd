@@ -4,7 +4,8 @@ export(float) var jumpheight
 var gravPick = false
 var interact = false
 var pickUP = false
-
+var hovered = false
+onready var shader = $MeshInstance.get_surface_material(0).next_pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -26,7 +27,14 @@ func _process(delta):
 		interact = false
 	if GlobalWorld.player.carrying == false:
 		gravPick = false
-
+	if shader:
+		if hovered == true and GlobalWorld.hovered == true:
+			shader.set_shader_param("strength", 0.2)
+			print("hovered")
+		else:
+			shader.set_shader_param("strength", 0.0)
+	if GlobalWorld.hovered == false:
+		hovered = false
 func _on_JumpArea_body_entered(body):
 	if body.is_in_group("Player"):
 		GlobalWorld.player.y_velocity = jumpheight

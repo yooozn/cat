@@ -98,14 +98,13 @@ contacts_reported = 5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17451, 0.653057, -3.5859 )
 jumpheight = 50.0
 
-[node name="Teleporter" parent="." instance=ExtResource( 17 )]
-transform = Transform( 0.999728, -0.0233329, 0, 0.0233329, 0.999728, 0, 0, 0, 1, -9.02009, 1.45433, -9.44335 )
-portalto = "Teleporter2"
-
-[node name="Teleporter2" parent="." instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.22598, 1.42202, 0 )
-portalto = "Teleporter"
-
 [node name="TextPlay" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.93296, 0, 0.359981, 0, 1, 0, -0.359981, 0, 0.93296, -4.22133, 0.0193617, 6.10883 )
 text = "Each orb grants abilities. Most cubes are interactable with E.                                    All controls: Sprint - Shift, Jump - Space, WASD, E - Interact, L-Click - shoot, P - Pause, N - Reset, R-Click - Shift POV, F - Dash, Space - Double Jump"
+
+[node name="Teleporter2" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19131, 1.07594, 0 )
+portalto = "Teleporter"
+
+[node name="Teleporter" parent="." instance=ExtResource( 17 )]
+portalto = "Teleporter2"

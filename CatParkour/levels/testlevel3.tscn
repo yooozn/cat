@@ -51,7 +51,6 @@ material/0 = ExtResource( 12 )
 [node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Cat" parent="." instance=ExtResource( 4 )]

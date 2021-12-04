@@ -430,6 +430,8 @@ func _handle_movement(delta):
 					pickObjectLocation = pickObj.global_transform.origin
 					if pickObj.pick == false and pickObj.interact == false:
 						Animations.interact = true
+						pickObj.hovered = true
+						GlobalWorld.hovered = true
 						if Input.is_action_just_pressed("interact") and carrying == false:
 							pickObj.pickUP = true
 							carrying = true
@@ -444,12 +446,14 @@ func _handle_movement(delta):
 		pickUPsprite.global_transform.origin = $camerapivot/SpringArm/Camera/PickLoc2.global_transform.origin
 		Animations.interact = false
 		pickTrue = false
+		GlobalWorld.hovered = false
 	if carrying == true:
 		shootable = false
 		pickObject.gravPick = true
 		Animations.interact = false
 		pickObject.global_transform.origin = $camerapivot/SpringArm/Camera/PickLoc/Sprite3D.global_transform.origin
 		pickTrue = false
+		pickObject.hovered = false
 	else:
 		pickObject = null
 #	print(carrying)

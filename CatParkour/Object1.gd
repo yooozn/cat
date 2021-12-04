@@ -5,11 +5,18 @@ var gravPick = false
 var interact = false
 var pickUP = false
 var global_pos1
+var hovered = false
+#var shadermat = $MeshInstance.get_surface_material(0)
+onready var shader = $MeshInstance.get_surface_material(0).next_pass
+#func _ready():
+#	var shader = $MeshInstance.get_surface_material(0).next_pass
+
 func _process(delta):
 	if gravPick == true:
 		gravity_scale = 0
 		collision_layer = 2
 #		turn(GlobalWorld.player.SpriteLocation, 2, delta)
+		hovered = false
 		if GlobalWorld.player.y_velocity > -.01 or GlobalWorld.player.y_velocity < -.01:
 			interact = false
 			GlobalWorld.player.crossPICKbool = true
@@ -23,6 +30,14 @@ func _process(delta):
 		interact = false
 	if GlobalWorld.player.carrying == false:
 		gravPick = false
+	if shader:
+		if hovered == true and GlobalWorld.hovered == true:
+			shader.set_shader_param("strength", 0.3)
+		else:
+			shader.set_shader_param("strength", 0.0)
+	if GlobalWorld.hovered == false:
+		hovered = false
+#	print(hovered)
 #	if pick == true:
 #		yield(get_tree().create_timer(.02),"timeout")
 #		pick = false
