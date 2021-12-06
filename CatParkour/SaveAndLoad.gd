@@ -10,34 +10,40 @@ onready var buttonPress = preload("res://ButtonPress.tscn")
 var hover = false
 var hover1 = false
 var hover2 = false
+var Zoom = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var file = File.new()
 	if file.file_exists(save_path):
-		$Continue.visible = true
+		$CenterContainer/VBoxContainer/Continue.visible = true
 	else:
-		$Continue.visible = false
+		$CenterContainer/VBoxContainer/Continue.visible = false
 
 
 func _process(delta):
-	if $NewGame.is_hovered() and hover == false:
+	if $CenterContainer/VBoxContainer/NewGame.is_hovered() and hover == false:
 		hover = true
 		var b = buttonHover.instance()
 		get_parent().add_child(b)
-	if !$NewGame.is_hovered():
+	if !$CenterContainer/VBoxContainer/NewGame.is_hovered():
 		hover = false
-	if $Save.is_hovered() and hover1 == false:
+	if $CenterContainer/VBoxContainer/Save.is_hovered() and hover1 == false:
 		hover1 = true
 		var b = buttonHover.instance()
 		get_parent().add_child(b)
-	if !$Save.is_hovered():
+	if !$CenterContainer/VBoxContainer/Save.is_hovered():
 		hover1 = false
-	if $Continue.is_hovered() and hover2 == false:
+	if $CenterContainer/VBoxContainer/Continue.is_hovered() and hover2 == false:
 		hover2 = true
 		var b = buttonHover.instance()
 		get_parent().add_child(b)
-	if !$Continue.is_hovered():
+	if !$CenterContainer/VBoxContainer/Continue.is_hovered():
 		hover2 = false
+	if Zoom == true:
+		yield(get_tree().create_timer(.13),"timeout")
+		$Spatial/Camera.fov = lerp($Spatial/Camera.fov, 0, .03)
+
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -71,6 +77,7 @@ func _on_NewGame_pressed():
 		if error == OK:
 			file.store_var(data)
 			file.close()
+	Zoom = true
 	Animations.transition = true
 	yield(get_tree().create_timer(.5),"timeout")
 	get_tree().change_scene("res://levels/Tutorial1.tscn")
@@ -98,6 +105,7 @@ func _on_Continue_pressed():
 			Times.level3 = player_data["level3Time"]
 			Times.level4 = player_data["level3Time"]
 			Times.tutorial = player_data["tutorialTime"]
+			Zoom = true
 			Animations.transition = true
 			yield(get_tree().create_timer(.5),"timeout")
 			get_tree().change_scene("res://StartScreen.tscn")

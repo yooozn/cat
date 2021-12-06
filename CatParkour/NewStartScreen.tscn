@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://catparkourstartscreen.tscn" type="PackedScene" id=1]
+[ext_resource path="res://NewStartScreen.gd" type="Script" id=2]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/CatLogo.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("catparkourstartscreen:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "start"
+length = 15.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("catparkourstartscreen:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="catparkourstartscreen" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, -1, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.99996, 0.00893598, 2.32821e-10, -0.00860927, 0.963401, 0.267928, 0.0023942, -0.267917, 0.963439, 0.150537, 2.65003, 5.23426 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/start = SubResource( 2 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 3 )]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -337.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+margin_left = 490.0
+margin_top = 41.0
+margin_right = 790.0
+margin_bottom = 341.0
+rect_min_size = Vector2( 300, 300 )
+texture = ExtResource( 4 )
+expand = true
