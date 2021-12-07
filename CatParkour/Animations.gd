@@ -6,6 +6,7 @@ var heal = false
 var transition = false
 var hovered = false
 var interact = false
+var deathZoom = false
 func _ready():
 	$CanvasLayer/Hit.visible = false
 	$CanvasLayer/Heal.visible = false

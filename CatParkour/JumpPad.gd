@@ -30,7 +30,6 @@ func _process(delta):
 	if shader:
 		if hovered == true and GlobalWorld.hovered == true:
 			shader.set_shader_param("strength", 0.2)
-			print("hovered")
 		else:
 			shader.set_shader_param("strength", 0.0)
 	if GlobalWorld.hovered == false:

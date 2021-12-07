@@ -16,6 +16,9 @@ var mouse_sensitivity = pStats.sens
 var min_pitch = -90
 var max_pitch = 90
 
+#DeathZoom condition
+var deathZoom = false
+var CheckZoom = false
 #CheckPosCooldown
 var CheckPosCD = false
 
@@ -122,6 +125,17 @@ var pickUPspriteSPAWNLOC
 
 #Checkpoint position variable
 var CheckPos
+
+func _CameraZoom():
+		if pStats.third_person == true:
+			$camerapivot/SpringArm.spring_length = 2
+			$camerapivot/SpringArm/Camera.fov = 70
+		else:
+			$camerapivot/SpringArm.spring_length = 0
+			$camerapivot/SpringArm/Camera.fov = 46
+		CheckZoom = false
+
+
 func _ready():
 	GlobalWorld.player = self
 	$Transition.play("Transition")
@@ -143,9 +157,12 @@ func _process(delta):
 	if Input.is_key_pressed(KEY_Y):
 		OS.window_fullscreen = true
 	if Input.is_key_pressed(KEY_N):
-		get_tree().reload_current_scene()
-		if CheckPos:
-			translation = CheckPos
+		if GlobalWorld.Speedrun == false:
+			deathZoom = true
+			yield(get_tree().create_timer(.5),"timeout")
+			get_tree().reload_current_scene()
+		else:
+			get_tree().reload_current_scene()
 	DistanceSprite = $camerapivot/SpringArm/Camera/DashSprite.global_transform.origin - global_transform.origin
 	SpriteLocation = $camerapivot/SpringArm/Camera/DashSprite.global_transform.origin
 	$HealthText.text = str(health)
@@ -176,6 +193,9 @@ func _process(delta):
 			yield(get_tree().create_timer(.5),"timeout")
 			key_interact = false
 	
+	if deathZoom == true:
+		camera.fov = lerp(camera.fov, 10, .03)
+		Animations.transition = true
 	#if player is in key pickup range and presses interact
 	if key_pickup_range == true:
 		if Input.is_action_pressed("interact"):
@@ -191,6 +211,9 @@ func _process(delta):
 		if CheckPos:
 			health = pStats.health - 2
 			translation = CheckPos
+			deathZoom = true
+			yield(get_tree().create_timer(.5),"timeout")
+			deathZoom = false
 	
 	if headHit == true:
 		headTime += delta
@@ -211,6 +234,9 @@ func _process(delta):
 		crossPICK.visible = true
 	elif crossPICKbool == false:
 		crossPICK.visible = false
+	
+	if CheckZoom == true:
+		_CameraZoom()
 #	print(crossPICKbool)
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -329,6 +355,15 @@ func _handle_movement(delta):
 	
 	if Input.is_action_pressed("CheckPos") and CheckPosCD == false:
 		if GlobalWorld.Speedrun == false:
+			deathZoom = true
+			yield(get_tree().create_timer(.5),"timeout")
+			deathZoom = false
+			if pStats.third_person == true:
+				$camerapivot/SpringArm.spring_length = 2
+				$camerapivot/SpringArm/Camera.fov = 70
+			else:
+				$camerapivot/SpringArm.spring_length = 0
+				$camerapivot/SpringArm/Camera.fov = 46
 			global_transform.origin = CheckPos
 			CheckPosCD = true
 			if carrying == true:
@@ -339,6 +374,9 @@ func _handle_movement(delta):
 			yield(get_tree().create_timer(1.5),"timeout")
 			CheckPosCD = false
 		else:
+			deathZoom = true
+			yield(get_tree().create_timer(.5),"timeout")
+			deathZoom = false
 			get_tree().reload_current_scene()
 	
 	if Input.is_action_pressed("move_forward"):
@@ -501,3 +539,4 @@ func _handle_movement(delta):
 		jumpSound1.play()
 	velocity.y = y_velocity
 	velocity = move_and_slide(velocity, Vector3.UP)
+	

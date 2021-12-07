@@ -56,13 +56,10 @@ func _process(delta):
 	if shader:
 		if hovered == true and GlobalWorld.hovered == true:
 			shadernew.set_shader_param("strength", 0.1)
-			print("hovered")
 		else:
 			shadernew.set_shader_param("strength", 0.0)
-			print("not hovered")
 	if GlobalWorld.hovered == false:
 		hovered = false
-		print(GlobalWorld.hovered)
 #func _on_Area_body_entered(body):
 #	pick = true
 #	print(pick)
