@@ -173,6 +173,7 @@ spring_length = 2.0
 [node name="Camera" type="Camera" parent="camerapivot/SpringArm"]
 cull_mask = 1048063
 fov = 10.0
+far = 150.0
 
 [node name="PickUP" type="RayCast" parent="camerapivot/SpringArm/Camera"]
 transform = Transform( 1, 0, 0, 0, 0.989288, -0.14598, 0, 0.14598, 0.989288, 0, -0.191092, -1.3315 )

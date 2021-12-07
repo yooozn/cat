@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+onready var cloud1 = preload(\"res://art/Clouds/Cloud1.tscn\")
+onready var cloud2 = preload(\"res://art/Clouds/Cloud2.tscn\")
+onready var cloud3 = preload(\"res://art/Clouds/Cloud3.tscn\")
+onready var cloud4 = preload(\"res://art/Clouds/Cloud4.tscn\")
+var rng = RandomNumberGenerator.new()
+func _ready():
+	rng.randomize()
+
+func _process(delta):
+	pass
+
+func _on_Timer_timeout():
+	var cloudNum = randi() % 18
+	var locationX = rng.randi_range(-45,45)
+	var locationY = rng.randi_range(-45,45)
+	var locationZ = rng.randi_range(-45,45)
+	var scaleNum = rng.randf_range(1.7, 2.3)
+	if cloudNum == 1:
+		var c = cloud1.instance()
+		get_parent().add_child(c)
+		c.translation = translation - Vector3(locationX, locationY, locationZ)
+		c.scale = scale * scaleNum
+		c.rotation = rotation
+	elif cloudNum == 2:
+		var c = cloud2.instance()
+		get_parent().add_child(c)
+		c.translation = translation - Vector3(locationX, locationY, locationZ)
+		c.scale = scale * scaleNum
+		c.rotation = rotation
+	elif cloudNum == 3:
+		var c = cloud3.instance()
+		get_parent().add_child(c)
+		c.translation = translation - Vector3(locationX, locationY, locationZ)
+		c.scale = scale * scaleNum
+		c.rotation = rotation
+	elif cloudNum == 4:
+		var c = cloud4.instance()
+		get_parent().add_child(c)
+		c.translation = translation - Vector3(locationX, locationY, locationZ)
+		c.scale = scale * scaleNum
+		c.rotation = rotation
+	else:
+		pass
+"
+
+[node name="CloudsSpawner" type="Spatial"]
+script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

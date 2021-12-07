@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://levels/Tutorial1.gd" type="Script" id=21]
 [ext_resource path="res://art/mattedarkgreen.tres" type="Material" id=22]
 [ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=23]
+[ext_resource path="res://art/Clouds/CloudsSpawnerLevels.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Tutorial1_Cube"
@@ -391,81 +392,92 @@ transform = Transform( 1.06374e-06, 0, -1, 0, 7.07822, 0, 5.46329, 0, 1.94707e-0
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance7" type="MeshInstance" parent="." index="35"]
+[node name="MeshInstance18" type="MeshInstance" parent="." index="35"]
+transform = Transform( -8.75095, 0, -2.41861e-07, 0, 7.07822, 0, 8.24932e-07, 0, -1, -137.769, 23.7191, -6.24068 )
+mesh = SubResource( 18 )
+material/0 = ExtResource( 18 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="." index="36"]
 transform = Transform( -1.54136e-06, 0, 1, 0, 7.07822, 0, -5.46329, 0, -2.8213e-07, -133.34, 23.7191, -8.6866 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance8" type="MeshInstance" parent="." index="36"]
+[node name="MeshInstance8" type="MeshInstance" parent="." index="37"]
 transform = Transform( -1.54136e-06, -7.84066, -4.37114e-08, 0, -3.42726e-07, 1, -5.46329, 2.21208e-06, 1.23323e-14, -129.546, 20.1747, -8.68661 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance9" type="MeshInstance" parent="." index="37"]
+[node name="MeshInstance9" type="MeshInstance" parent="." index="38"]
 transform = Transform( -4.86132e-06, -7.84066, -4.37114e-08, 0, -3.42726e-07, 1, -17.2308, 2.21208e-06, 1.23323e-14, -129.546, 20.2323, -51.9408 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance10" type="MeshInstance" parent="." index="38"]
+[node name="MeshInstance10" type="MeshInstance" parent="." index="39"]
 transform = Transform( 27.0981, -3.01654e-06, -1.04216e-14, 0, -5.53048e-07, 1, -6.46069e-06, -12.6523, -4.37114e-08, -129.546, 20.2131, -55.1823 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance11" type="MeshInstance" parent="." index="39"]
+[node name="MeshInstance11" type="MeshInstance" parent="." index="40"]
 transform = Transform( 27.0981, 0, 2.38419e-07, 0, 6.97964, 0, -6.46069e-06, 0, 1, -129.546, 23.4627, -60.2206 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance12" type="MeshInstance" parent="." index="40"]
+[node name="MeshInstance12" type="MeshInstance" parent="." index="41"]
 transform = Transform( -7.64519e-06, 0, 1, 0, 6.97964, 0, -27.0981, 0, -2.8213e-07, -142.002, 23.8759, -62.1595 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance13" type="MeshInstance" parent="." index="41"]
+[node name="MeshInstance13" type="MeshInstance" parent="." index="42"]
 transform = Transform( 8.50654e-06, 0, -1, 0, 6.97964, 0, 27.0981, 0, 3.13916e-07, -117.804, 23.3658, -62.1595 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance14" type="MeshInstance" parent="." index="42"]
+[node name="MeshInstance14" type="MeshInstance" parent="." index="43"]
 transform = Transform( 1.70928e-06, 0, -1, 0, 6.97964, 0, 5.44501, 0, 3.13916e-07, -126.066, 23.5928, -46.3332 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance16" type="MeshInstance" parent="." index="43"]
+[node name="MeshInstance16" type="MeshInstance" parent="." index="44"]
 transform = Transform( -2.32822e-06, 0, 1, 0, 6.97964, 0, -5.80113, 0, -4.01339e-07, -133.345, 23.6353, -46.1262 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance15" type="MeshInstance" parent="." index="44"]
+[node name="MeshInstance15" type="MeshInstance" parent="." index="45"]
 transform = Transform( -8.57106, 0, -1.50996e-07, 0, 6.97964, 0, 1.29419e-06, 0, -1, -121.732, 23.6606, -49.0481 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance17" type="MeshInstance" parent="." index="45"]
+[node name="MeshInstance17" type="MeshInstance" parent="." index="46"]
 transform = Transform( -8.57106, 0, -1.50996e-07, 0, 6.97964, 0, 1.29419e-06, 0, -1, -137.613, 23.6974, -49.0481 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance3" type="MeshInstance" parent="." index="46"]
+[node name="MeshInstance3" type="MeshInstance" parent="." index="47"]
 transform = Transform( -6.76145e-07, -3.8128e-06, 1, -15.4684, -5.90731e-07, -4.37114e-08, 6.76146e-07, -13.5144, -2.8213e-07, -116.669, 12.6242, 0.283626 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance4" type="MeshInstance" parent="." index="47"]
+[node name="MeshInstance4" type="MeshInstance" parent="." index="48"]
 transform = Transform( 25.5227, -3.07622e-06, -1.04216e-14, 0, -5.63991e-07, 1, -6.08509e-06, -12.9026, -4.37114e-08, -129.354, 20.1552, 0.283628 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="MeshInstance5" type="MeshInstance" parent="." index="48"]
+[node name="MeshInstance5" type="MeshInstance" parent="." index="49"]
 transform = Transform( 24.9164, -3.31508e-06, -1.04216e-14, 0, -6.07783e-07, 1, -5.94054e-06, -13.9044, -4.37114e-08, -121.253, 8.83828, 0.283627 )
 mesh = SubResource( 18 )
 material/0 = ExtResource( 18 )
 
-[node name="Timer" parent="." index="49" instance=ExtResource( 19 )]
+[node name="Timer" parent="." index="50" instance=ExtResource( 19 )]
 
-[node name="TimerStop" parent="." index="50" instance=ExtResource( 20 )]
+[node name="TimerStop" parent="." index="51" instance=ExtResource( 20 )]
 transform = Transform( 1.26685, 0, 0, 0, 5.33784, 0, 0, 0, 1.75174, -138.754, 21.5472, -53.609 )
 
-[node name="Doorlock" parent="." index="51" instance=ExtResource( 23 )]
+[node name="Doorlock" parent="." index="52" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -134.652, 22.1452, -54.5677 )
 doorNum = "door1"
+
+[node name="CloudsSpawner" parent="." index="53" instance=ExtResource( 24 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.2858, 0, 0 )
+
+[node name="CloudsSpawner2" parent="." index="54" instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -136.618, 11.7926, 121.761 )
