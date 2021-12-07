@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://art/Interact.gdshader" type="Shader" id=2]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends RigidBody
+var pick = false
+export(float) var jumpheight
+var gravPick = false
+var interact = false
+var pickUP = false
+var hovered = false
+var transformVector3 = Vector3()
+onready var shader = $MeshInstance.get_surface_material(0).next_pass
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func _process(delta):
+	if GlobalWorld.player.y_velocity > -.01:
+		pick = true
+	elif GlobalWorld.player.y_velocity == -.01:
+		pick = false
+	if gravPick == true:
+		gravity_scale = 0
+		collision_layer = 2
+		yield(get_tree().create_timer(.1),\"timeout\")
+		interact = true
+#		print(collision_layer)
+	elif gravPick == false:
+		gravity_scale = 1
+		collision_layer = 1
+		interact = false
+	if GlobalWorld.player.carrying == false:
+		gravPick = false
+	if shader:
+		if hovered == true and GlobalWorld.hovered == true:
+			shader.set_shader_param(\"strength\", 0.2)
+		else:
+			shader.set_shader_param(\"strength\", 0.0)
+	if GlobalWorld.hovered == false:
+		hovered = false
+func _on_JumpArea_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		GlobalWorld.player.jumpAd = true
+		transformVector3 = transform.basis.y * 20
+		body.y_velocity = transformVector3.y
+		body.direction.x = transformVector3.x
+		body.direction.z = transformVector3.z
+		GlobalWorld.player.jumpAding = true
+#		body.velocity.x = transformVector3.x
+#		body.velocity.z = transformVector3.z
+
+
+
+#func _on_Area_area_entered(area):
+#	pick = true
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+
+
+#func _on_Area_body_entered(body):
+#	pick = true
+#	yield(get_tree().create_timer(1),\"timeout\")
+#	pick = false
+
+
+
+func _on_JumpArea_body_exited(body):
+	GlobalWorld.player.jumpAd = false
+"
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 2 )
+shader_param/strength = null
+
+[sub_resource type="SpatialMaterial" id=4]
+next_pass = SubResource( 6 )
+albedo_color = Color( 0.172549, 1, 0, 1 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.626092, 1, 0.666499 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.718304, 0.223263, 0.731472 )
+
+[node name="JumpPad" type="RigidBody" groups=["Objects", "TPable"]]
+mode = 1
+contacts_reported = 1
+contact_monitor = true
+script = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 4 )
+
+[node name="JumpArea" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="JumpArea"]
+transform = Transform( 1.2, 0, 0, 0, 0.5, 0, 0, 0, 1.2, 0, 0.351669, 0 )
+shape = SubResource( 3 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 5 )
+
+[connection signal="body_entered" from="JumpArea" to="." method="_on_JumpArea_body_entered"]
+[connection signal="body_exited" from="JumpArea" to="." method="_on_JumpArea_body_exited"]
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

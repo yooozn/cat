@@ -1,0 +1,40 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://art/JumpPadTexture.png" type="Texture" id=1]
+[ext_resource path="res://art/jumpPad.glb" type="PackedScene" id=2]
+[ext_resource path="res://art/Interact.gdshader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 3 )
+shader_param/strength = null
+
+[sub_resource type="SpatialMaterial" id=1]
+next_pass = SubResource( 4 )
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 3 )
+shader_param/strength = null
+
+[sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 5 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = ExtResource( 3 )
+shader_param/strength = null
+
+[sub_resource type="SpatialMaterial" id=3]
+next_pass = SubResource( 6 )
+albedo_color = Color( 1, 0, 0.329412, 1 )
+
+[node name="jumpPad" instance=ExtResource( 2 )]
+
+[node name="Cube" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="Cube001" parent="." index="1"]
+material/0 = SubResource( 2 )
+
+[node name="Cube002" parent="." index="2"]
+material/0 = SubResource( 3 )

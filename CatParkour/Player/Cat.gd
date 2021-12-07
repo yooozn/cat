@@ -8,6 +8,10 @@ var gravity = pStats.gravity
 var max_terminal_velocity = 54
 var jump_power = pStats.jump_power
 
+var oRotation
+
+var jumpAding = false
+
 #More Stats
 var health = pStats.health
 var maxhealth = pStats.health
@@ -35,6 +39,7 @@ var carrying = false
 #Movement variables
 var velocity : Vector3
 var y_velocity : float
+var direction = Vector3()
 
 #Audio Dash sound(was plaaying multiple times before)
 var dSoundPlay = false
@@ -269,7 +274,7 @@ func _physics_process(delta):
 		if y_velocity <= -1 and !$RayCast.is_colliding():
 			in_air = true
 		if dubJumpUnlock == true:
-			if Input.is_action_just_pressed("jump") and dubJump >= 1 and y_velocity <= -5:
+			if Input.is_action_just_pressed("jump") and dubJump >= 1 and !$RayCast2.is_colliding():
 				var jumpSound1 = jumpSound.instance()
 				get_parent().add_child(jumpSound1)
 				jumpSound1.translation = translation
@@ -285,8 +290,8 @@ func _physics_process(delta):
 					dubJump -= 1
 #
 func _handle_movement(delta):
-	var direction = Vector3()
-	
+	if jumpAding == false:
+		direction = Vector3()
 	#Shooting action
 	if shootUnlock == true:
 		if Input.is_action_just_pressed("shoot") and shootable == true and carrying == false:
@@ -379,17 +384,18 @@ func _handle_movement(delta):
 			deathZoom = false
 			get_tree().reload_current_scene()
 	
-	if Input.is_action_pressed("move_forward"):
-		direction -= transform.basis.z
-	
-	if Input.is_action_pressed("move_backward"):
-		direction += transform.basis.z
+	if jumpAding == false:
+		if Input.is_action_pressed("move_forward"):
+			direction -= transform.basis.z
 		
-	if Input.is_action_pressed("move_left"):
-		direction -= transform.basis.x
-	
-	if Input.is_action_pressed("move_right"):
-		direction += transform.basis.x
+		if Input.is_action_pressed("move_backward"):
+			direction += transform.basis.z
+			
+		if Input.is_action_pressed("move_left"):
+			direction -= transform.basis.x
+		
+		if Input.is_action_pressed("move_right"):
+			direction += transform.basis.x
 	
 	if dashUnlock == true:
 		if Input.is_action_just_pressed("dash") and dashable == true:
@@ -466,6 +472,7 @@ func _handle_movement(delta):
 				if pickObj.is_in_group("Objects"):
 					pickObject = pickObj
 					pickObjectLocation = pickObj.global_transform.origin
+					oRotation = pickObject.rotation
 					if pickObj.pick == false and pickObj.interact == false:
 						Animations.interact = true
 						pickObj.hovered = true
@@ -478,6 +485,7 @@ func _handle_movement(delta):
 						pickTrue = true
 				else:
 					pickTrue = false
+					GlobalWorld.hovered = false
 #						elif Input.is_action_just_pressed("interact") and carrying == true:
 #							carrying = false
 	else:
@@ -492,6 +500,18 @@ func _handle_movement(delta):
 		pickObject.global_transform.origin = $camerapivot/SpringArm/Camera/PickLoc/Sprite3D.global_transform.origin
 		pickTrue = false
 		pickObject.hovered = false
+		if Input.is_action_just_pressed("rotate_round"):
+			pickObject.rotation.y += deg2rad(30)
+			if pickObject.rotation.y == oRotation.y + deg2rad(360):
+				pickObject.rotation.y = deg2rad(0)
+				pickObject.rotation.x = oRotation.x
+			print(pickObject.rotation_degrees)
+		elif Input.is_action_just_pressed("rotate_up"):
+			pickObject.rotation.z += deg2rad(30)
+			if pickObject.rotation.z == oRotation.x + deg2rad(360):
+				pickObject.rotation.z = deg2rad(0)
+				pickObject.rotation.x = oRotation.x
+			print(pickObject.rotation_degrees)
 	else:
 		pickObject = null
 #	print(carrying)
@@ -519,8 +539,8 @@ func _handle_movement(delta):
 #			pick.transform.origin = lerp(pick.transform.origin, pickLoc.transform.origin, .005)
 	
 	
-	
-	direction = direction.normalized()
+	if jumpAding == false:
+		direction = direction.normalized()
 	
 	var accel = acceleration if is_on_floor() else air_acceleration
 	if dash!= null:
@@ -529,6 +549,7 @@ func _handle_movement(delta):
 	
 	if is_on_floor() and jumpAd == false:
 		y_velocity = -.01
+		jumpAding = false
 	else:
 		y_velocity = clamp(y_velocity - gravity, -max_terminal_velocity, max_terminal_velocity)
 	if Input.is_action_just_pressed("jump") and $RayCast2.is_colliding():
@@ -539,4 +560,6 @@ func _handle_movement(delta):
 		jumpSound1.play()
 	velocity.y = y_velocity
 	velocity = move_and_slide(velocity, Vector3.UP)
+#	print(y_velocity)
+#	print(velocity)
 	

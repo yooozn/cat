@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://JumpPad.gd" type="Script" id=1]
 [ext_resource path="res://art/Interact.gdshader" type="Shader" id=2]
+[ext_resource path="res://art/jumpPadArt.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 0.455473, 0.2613, 0.571907 )
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -13,10 +15,14 @@ shader_param/strength = null
 
 [sub_resource type="SpatialMaterial" id=4]
 next_pass = SubResource( 6 )
+albedo_color = Color( 0.643137, 1, 0.568627, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+next_pass = SubResource( 6 )
 albedo_color = Color( 0.172549, 1, 0, 1 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.626092, 1, 0.666499 )
+extents = Vector3( 0.436085, 0.394485, 0.666499 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.718304, 0.223263, 0.731472 )
@@ -28,24 +34,33 @@ contact_monitor = true
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 8 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 0.7, 0, 0, 0, 0.2, 0, 0, 0, 0.7, 0, 0, 0 )
+visible = false
 mesh = SubResource( 2 )
 material/0 = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 0.039871, 0, 0, 0, 0.7, 0, 0.250879, 0 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = SubResource( 7 )
 
 [node name="JumpArea" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="JumpArea"]
-transform = Transform( 1.2, 0, 0, 0, 0.5, 0, 0, 0, 1.2, 0, 0.351669, 0 )
+transform = Transform( 1.2, 0, 0, 0, 0.5, 0, 0, 0, 1.2, 0, 0.272065, 0 )
 shape = SubResource( 3 )
 
 [node name="Area" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 shape = SubResource( 5 )
+
+[node name="jumpPad" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.594733, 0, 0, 0, 0.594733, 0, 0, 0, 0.594733, 0, 0, 0 )
 
 [connection signal="body_entered" from="JumpArea" to="." method="_on_JumpArea_body_entered"]
 [connection signal="body_exited" from="JumpArea" to="." method="_on_JumpArea_body_exited"]
