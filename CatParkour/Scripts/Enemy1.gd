@@ -24,6 +24,7 @@ func _process(delta):
 		look_at(target.transform.origin,Vector3.UP)
 		rotation.x = 0
 		move_and_slide(velocity,Vector3.UP)
+	$Spatial/Viewport/TextureProgress.value = health
 	
 	
 func _on_head_body_entered(body):

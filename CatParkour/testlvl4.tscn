@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://testlvl4art.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Destructible.tscn" type="PackedScene" id=7]
+
+[node name="testlvl4" type="Spatial"]
+
+[node name="testlvl4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0 )
+
+[node name="Cat" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.65035, 1.40182, 0 )
+
+[node name="WallKey" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1.24891, 0, 0, 0, 0.383657, 0, 0, 0, 2.38653, 4.11313, 5.44838, 0 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1.73852e-08, 0.397726, 0, -0.397726, -1.73852e-08, 0, 0, 0, 0.397726, 3.34433, 5.00344, 0 )
+doorNum = "WallKey"
+
+[node name="RigidBody" parent="." instance=ExtResource( 6 )]
+transform = Transform( 3.39286, 0, 0, 0, 1.09458, 0, 0, 0, 3.39286, 20.189, 0, 0 )
+
+[node name="KeyObj" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22436, 1.24693, 0 )
+
+[node name="Spatial" parent="." instance=ExtResource( 7 )]
+transform = Transform( 2.08372, 0, 0, 0, 0.423277, 0, 0, 0, 2.58219, 5.23406, 7.2963, -0.45971 )
