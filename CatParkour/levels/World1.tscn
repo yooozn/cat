@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=4]
+[ext_resource path="res://levels/Dirt.tres" type="Material" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -22,8 +23,83 @@ material/0 = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( 19.1214, 0, 0, 0, 0.204494, 0, 0, 0, 16.5159, 0, 1.06526, -33.2672 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 18.1717, 0, 0, 0, 0.572846, 0, 0, 0, 16.1241, 0, -0.546524, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 18.1717, 0, 0, 0, 0.572846, 0, 0, 0, 16.1241, 0, 0.324506, -32.6757 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance3/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, -15.3952, 0.702146, -9.60071 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance6" type="MeshInstance" parent="."]
+transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, -15.2515, -0.0386057, -9.60071 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance" parent="."]
+transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, 15.0709, 0.702146, -9.60071 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance7/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance8" type="MeshInstance" parent="."]
+transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, 15.2145, -0.0386057, -9.60071 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance8/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="PortalLVL1" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2121, -13.2318 )
+scene = "res://levels/testmap2.tscn"
+level_text = "Back to Hub"
+
+[node name="PortalLVL9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46701, -25.5775 )
 scene = "res://levels/testmap2.tscn"
 level_text = "Back to Hub"
 
@@ -41,6 +117,30 @@ extra = "w1_3"
 
 [node name="PortalLVL3" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.2121, 10.1208 )
+scene = "res://levels/level1new.tscn"
+level_text = "Level 2"
+extra = "w1_2"
+
+[node name="PortalLVL5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.3774, 1.90403, -9.99412 )
+scene = "res://levels/level1new.tscn"
+level_text = "Level 2"
+extra = "w1_2"
+
+[node name="PortalLVL6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.5914, 1.90403, -9.99412 )
+scene = "res://levels/level1new.tscn"
+level_text = "Level 2"
+extra = "w1_2"
+
+[node name="PortalLVL7" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 2.33634, -22.4776 )
+scene = "res://levels/level1new.tscn"
+level_text = "Level 2"
+extra = "w1_2"
+
+[node name="PortalLVL8" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.940157, 0, 0.340741, 0, 1, 0, -0.340741, 0, -0.940157, 14.051, 2.33634, -22.4776 )
 scene = "res://levels/level1new.tscn"
 level_text = "Level 2"
 extra = "w1_2"

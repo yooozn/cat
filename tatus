@@ -1,0 +1,92 @@
+[33mcommit ad4319c9eacbfce2b7b75391063aaa606e1d2464[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Mon Dec 6 18:22:51 2021 -0800
+
+    Added clouds to start screen, and zoom when respawning
+
+[33mcommit fc3986c0e61695b53a1d8e9f0b7235e239fe8f4d[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Mon Dec 6 13:12:35 2021 -0800
+
+    Added new startscreen with 3d blender and 2d PS
+
+[33mcommit c54755a9584f939ce7a4a1d7ec18cffe194953b2[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Fri Dec 3 23:07:57 2021 -0800
+
+    added shader for interact
+
+[33mcommit b3e72138709ce3ec8ffc2327225d7d62dcb5efaf[m
+Merge: ed3850f d384e1d
+Author: yooozn <94992980+yooozn@users.noreply.github.com>
+Date:   Fri Dec 3 14:40:01 2021 -0800
+
+    Merge pull request #3 from yooozn/master
+    
+    Master
+
+[33mcommit d384e1ddbf1a0b26d5b2e893dc76de8825301d82[m
+Author: yooozn <yooozn@gmail.com>
+Date:   Fri Dec 3 14:38:54 2021 -0800
+
+    Tweaked levels to make more refined
+
+[33mcommit a5f0e7ad54f7e9c73e92f5dd008d497e4582128c[m
+Author: yooozn <yooozn@gmail.com>
+Date:   Fri Dec 3 14:09:51 2021 -0800
+
+    added key tp to og pos on letgo
+
+[33mcommit ed3850f639b9be153504e5c9242f7ef76e4443d9[m
+Merge: afbadf7 ca7c0de
+Author: yooozn <94992980+yooozn@users.noreply.github.com>
+Date:   Fri Dec 3 13:02:07 2021 -0800
+
+    Merge pull request #2 from yooozn/master
+    
+    Master
+
+[33mcommit ca7c0de44d46f3fcb58cff27c579896fb6c74e82[m
+Author: yooozn <yooozn@gmail.com>
+Date:   Fri Dec 3 12:50:54 2021 -0800
+
+    added new material and removed key
+
+[33mcommit ee43459fa2a940fa78e677c59e675d4f7104a75c[m
+Author: yooozn <yooozn@gmail.com>
+Date:   Fri Dec 3 12:20:07 2021 -0800
+
+    Added key model and key rotation
+
+[33mcommit afbadf70ddf4dac4b6a055107a267046a88f6536[m
+Merge: 663007f 01dc58e
+Author: yooozn <94992980+yooozn@users.noreply.github.com>
+Date:   Fri Dec 3 10:20:58 2021 -0800
+
+    Merge pull request #1 from yooozn/master
+    
+    Checkpoint colours and minor tweaks
+
+[33mcommit 01dc58e70212d9f55a9945c7c067a810d4a34c24[m
+Author: yooozn <yooozn@gmail.com>
+Date:   Fri Dec 3 10:06:02 2021 -0800
+
+    Checkpoint colours and minor tweaks
+
+[33mcommit 663007fac91b547f0b887517a3b09e6f4cc3f505[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Thu Dec 2 21:48:57 2021 -0800
+
+    speedrun label bbcode fixed
+
+[33mcommit 3b16ff3b1332fefebf331748b1347afa1b922ceb[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Thu Dec 2 21:44:33 2021 -0800
+
+    speedrun mode label
+
+[33mcommit de2081cc96f615ddcd04cc6aec63cf23d0bb9266[m
+Author: yooozn <brock.young@gedu.sd73.bc.ca>
+Date:   Thu Dec 2 19:42:55 2021 -0800
+
+    initial commit
