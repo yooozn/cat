@@ -14,7 +14,7 @@ var TURN_SPEED = 2
 var startPos
 var playerCarrying = false
 var hovered = false
-onready var shader = $MeshInstance.get_surface_material(0).next_pass
+onready var shader = $KeyObject/Cube.get_surface_material(0).next_pass
 func _ready():
 	startPos = global_transform
 

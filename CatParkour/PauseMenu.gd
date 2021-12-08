@@ -96,6 +96,16 @@ func _on_Save_pressed():
 		"level3Time" : Times.level3,
 		"level4Time" : Times.level4,
 		"tutorialTime" : Times.tutorial,
+		"world1_1Time" : Times.world1_1Time,
+		"world1_2Time" : Times.world1_2Time,
+		"world1_3Time" : Times.world1_3Time,
+		"world1_4Time" : Times.world1_4Time,
+		"world1_5Time" : Times.world1_5Time,
+		"world1_6Time" : Times.world1_6Time,
+		"world2_1Time" : Times.world2_1Time,
+		"world2_2Time" : Times.world2_2Time,
+		"world2_3Time" : Times.world2_3Time,
+		"world2_4Time" : Times.world2_4Time,
 	}
 	var file = File.new()
 	var error = file.open(save_path, File.WRITE)

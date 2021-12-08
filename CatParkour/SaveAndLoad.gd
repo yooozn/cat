@@ -60,6 +60,16 @@ func _on_NewGame_pressed():
 	Times.level2 = 0
 	Times.level3 = 0
 	Times.level4 = 0
+	Times.world1_1Time = 0
+	Times.world1_2Time = 0
+	Times.world1_3Time = 0
+	Times.world1_4Time = 0
+	Times.world1_5Time = 0
+	Times.world1_6Time = 0
+	Times.world2_1Time = 0
+	Times.world2_2Time = 0
+	Times.world2_3Time = 0
+	Times.world2_4Time = 0
 	if file.file_exists(save_path):
 		var error = file.open(save_path, File.WRITE)
 		var data = {
@@ -73,6 +83,16 @@ func _on_NewGame_pressed():
 		"level3Time" : Times.level3,
 		"level4Time" : Times.level4,
 		"tutorialTime" : Times.tutorial,
+		"world1_1Time" : Times.world1_1Time,
+		"world1_2Time" : Times.world1_2Time,
+		"world1_3Time" : Times.world1_3Time,
+		"world1_4Time" : Times.world1_4Time,
+		"world1_5Time" : Times.world1_5Time,
+		"world1_6Time" : Times.world1_6Time,
+		"world2_1Time" : Times.world2_1Time,
+		"world2_2Time" : Times.world2_2Time,
+		"world2_3Time" : Times.world2_3Time,
+		"world2_4Time" : Times.world2_4Time,
 		}
 		if error == OK:
 			file.store_var(data)
@@ -104,6 +124,16 @@ func _on_Continue_pressed():
 			Times.level2 = player_data["level2Time"]
 			Times.level3 = player_data["level3Time"]
 			Times.level4 = player_data["level3Time"]
+			Times.world1_1Time = player_data["world1_1Time"]
+			Times.world1_2Time = player_data["world1_2Time"]
+			Times.world1_3Time = player_data["world1_3Time"]
+			Times.world1_4Time = player_data["world1_4Time"]
+			Times.world1_5Time = player_data["world1_5Time"]
+			Times.world1_6Time = player_data["world1_6Time"]
+			Times.world2_1Time = player_data["world2_1Time"]
+			Times.world2_2Time = player_data["world2_2Time"]
+			Times.world2_3Time = player_data["world2_3Time"]
+			Times.world2_4Time = player_data["world2_4Time"]
 			Times.tutorial = player_data["tutorialTime"]
 			Zoom = true
 			Animations.transition = true

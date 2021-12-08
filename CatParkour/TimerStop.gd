@@ -1,6 +1,7 @@
 extends Area
 
-
+var firstEnter = false
+onready var Part = preload("res://levels/TimerStopParticles.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -17,5 +18,10 @@ func _ready():
 
 
 func _on_TimerStop_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and firstEnter == false:
 		Times.stop = true
+		firstEnter = true
+		var e = Part.instance()
+		get_parent().add_child(e)
+		e.translation = translation
+		

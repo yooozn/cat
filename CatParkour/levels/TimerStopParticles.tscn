@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://levels/TimerStopParticles.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.440994, 0.84472 )
+colors = PoolColorArray( 0.40625, 1, 0, 1, 0, 0.953125, 1, 1, 1, 0, 0.679688, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.98913, 0.3375 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+direction = Vector3( 0, 1, 0 )
+spread = 67.94
+gravity = Vector3( 0, -2, 0 )
+initial_velocity = 4.0
+initial_velocity_random = 0.35
+angular_velocity = 0.66
+angular_velocity_random = 0.59
+linear_accel = -2.0
+scale = 0.75
+scale_random = 1.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 3 )
+hue_variation = 1.0
+hue_variation_random = 1.0
+
+[sub_resource type="PrismMesh" id=7]
+size = Vector3( 0.2, 0.2, 0.2 )
+
+[node name="Particles" type="Particles"]
+material_override = SubResource( 1 )
+emitting = false
+amount = 129
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource( 6 )
+draw_pass_1 = SubResource( 7 )
+script = ExtResource( 1 )

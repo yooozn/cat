@@ -22,6 +22,7 @@ func _process(delta):
 		if time >= 1:
 			get_tree().change_scene(scene)
 	$Fullscreen/CheckBox.pressed = GlobalWorld.fullscreen
+	$SpeedRunText/Speedrun.pressed = GlobalWorld.Speedrun
 	if $Fullscreen/CheckBox.is_hovered() and hover == false:
 		hover = true
 		var bHover = buttonHover.instance()

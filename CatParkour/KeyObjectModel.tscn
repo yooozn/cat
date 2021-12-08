@@ -1,16 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/KeyObject.glb" type="PackedScene" id=1]
+[ext_resource path="res://art/Interact.gdshader" type="Shader" id=2]
 
-[sub_resource type="SpatialMaterial" id=22]
-flags_unshaded = true
-params_cull_mode = 1
-params_grow = true
-params_grow_amount = 0.05
-albedo_color = Color( 0, 0, 0, 1 )
+[sub_resource type="ShaderMaterial" id=24]
+shader = ExtResource( 2 )
+shader_param/strength = null
 
 [sub_resource type="SpatialMaterial" id=23]
-next_pass = SubResource( 22 )
+next_pass = SubResource( 24 )
 params_diffuse_mode = 4
 params_specular_mode = 3
 albedo_color = Color( 1, 0.745098, 0, 1 )
