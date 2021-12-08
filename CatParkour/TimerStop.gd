@@ -21,6 +21,7 @@ func _on_TimerStop_body_entered(body):
 	if body.is_in_group("Player") and firstEnter == false:
 		Times.stop = true
 		firstEnter = true
+		$AudioStreamPlayer3D.play()
 		var e = Part.instance()
 		get_parent().add_child(e)
 		e.translation = translation

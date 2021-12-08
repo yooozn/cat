@@ -558,6 +558,9 @@ func _handle_movement(delta):
 		get_parent().add_child(jumpSound1)
 		jumpSound1.translation = translation
 		jumpSound1.play()
+#	if GlobalWorld.in_water == true:
+#		if Input.is_action_pressed("jump"):
+#			y_velocity = jump_power
 	velocity.y = y_velocity
 	velocity = move_and_slide(velocity, Vector3.UP)
 #	print(y_velocity)

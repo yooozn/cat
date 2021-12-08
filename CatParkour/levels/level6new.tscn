@@ -1,16 +1,21 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://levels/Dirt.tres" type="Material" id=1]
-[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=3]
-[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=5]
-[ext_resource path="res://levels/level1new.glb" type="PackedScene" id=6]
-[ext_resource path="res://levels/level1newNewer.gd" type="Script" id=7]
-[ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
-[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=9]
-[ext_resource path="res://levels/ocean2.tscn" type="PackedScene" id=10]
-[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/level1new.glb" type="PackedScene" id=1]
+[ext_resource path="res://levels/level1new.gd" type="Script" id=2]
+[ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=3]
+[ext_resource path="res://levels/Dirt.tres" type="Material" id=4]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=7]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=12]
+[ext_resource path="res://levels/ocean2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=14]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, 0.0956, -3.2952, 1.901, 0.0956, -3.2952, 1.901, 0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, -0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, -1.901, -0.0956, -3.2952, -1.901, -0.0956, 3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, 3.2952, 1.901, 0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, 0.0956, 3.2952, -1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952 )
@@ -30,11 +35,16 @@ data = PoolVector3Array( 2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072,
 [sub_resource type="ConcavePolygonShape" id=6]
 data = PoolVector3Array( -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, -0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, 2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, -0.2572, -2.1951, -1.9714, -0.2572, -2.1951, -1.9714, -0.2572, 2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, 0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, 0.2572, 2.1951, -1.9714, 0.2572, 2.1951 )
 
-[node name="level1new" instance=ExtResource( 6 )]
-script = ExtResource( 7 )
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="level1new" index="0" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 
 [node name="Cube" parent="." index="0"]
-material/0 = ExtResource( 5 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
 
@@ -42,7 +52,7 @@ material/0 = ExtResource( 5 )
 shape = SubResource( 1 )
 
 [node name="Cube001" parent="." index="3"]
-material/0 = ExtResource( 1 )
+material/0 = ExtResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube001" index="0"]
 
@@ -50,8 +60,8 @@ material/0 = ExtResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Cube002" parent="." index="4"]
-transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.29508, -6.03125 )
-material/0 = ExtResource( 5 )
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 4.68822, -6.03125 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube002" index="0"]
 
@@ -59,8 +69,8 @@ material/0 = ExtResource( 5 )
 shape = SubResource( 3 )
 
 [node name="Cube003" parent="." index="5"]
-transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0.00203492, -6.03125 )
-material/0 = ExtResource( 1 )
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 4.39518, -6.03125 )
+material/0 = ExtResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube003" index="0"]
 
@@ -68,8 +78,8 @@ material/0 = ExtResource( 1 )
 shape = SubResource( 4 )
 
 [node name="Cube004" parent="." index="6"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.486215, -13.6653 )
-material/0 = ExtResource( 5 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 9.02596, -15.4997 )
+material/0 = ExtResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube004" index="0"]
 
@@ -77,31 +87,68 @@ material/0 = ExtResource( 5 )
 shape = SubResource( 5 )
 
 [node name="Cube005" parent="." index="7"]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.150294, -13.6653 )
-material/0 = ExtResource( 1 )
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 8.69003, -15.4997 )
+material/0 = ExtResource( 4 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube005" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Cube005/StaticBody" index="0"]
 shape = SubResource( 6 )
 
-[node name="TestEMvorpm,emt 2" parent="." index="8" instance=ExtResource( 4 )]
+[node name="TestEMvorpm,emt 2" parent="." index="8" instance=ExtResource( 5 )]
 
-[node name="Cat" parent="." index="9" instance=ExtResource( 3 )]
+[node name="Cat" parent="." index="9" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.746919, 1.06924 )
 
-[node name="PortalLVL1" parent="." index="10" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603275, 1.50504, -15.0896 )
+[node name="KeyObj" parent="." index="10" instance=ExtResource( 7 )]
+transform = Transform( 0.0562572, 0, -0.998416, 0, 1, 0, 0.998416, 0, 0.0562572, -0.362535, 5.25112, -6.7458 )
+
+[node name="PortalLVL1" parent="." index="11" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603275, 10.0448, -16.924 )
 scene = "res://levels/World1.tscn"
 level_text = "Back to World Hub"
 
-[node name="Timer" parent="." index="11" instance=ExtResource( 8 )]
+[node name="WallKey" parent="." index="12" instance=ExtResource( 9 )]
+transform = Transform( 1.08149, 0, 0, 0, 1.50289, 0, 0, 0, 0.49291, 0, 10.6157, -16.889 )
 
-[node name="TimerStop" parent="." index="12" instance=ExtResource( 9 )]
-transform = Transform( 2.40991, 0, 0, 0, 1, 0, 0, 0, 1.36704, 0, 0.469375, -12.2739 )
+[node name="Doorlock" parent="." index="13" instance=ExtResource( 10 )]
+transform = Transform( -1.79397e-008, 0, -0.410412, 0, 0.410412, 0, 0.410412, 0, -1.79397e-008, 0, 9.83811, -16.4177 )
+doorNum = "WallKey"
 
-[node name="ocean2" parent="." index="13" instance=ExtResource( 10 )]
-transform = Transform( 2.59973, 0, 0, 0, 0.88135, 0, 0, 0, 2.59973, 0, -5.58009, 0 )
+[node name="Timer" parent="." index="14" instance=ExtResource( 11 )]
 
-[node name="Death" parent="." index="14" instance=ExtResource( 11 )]
-transform = Transform( 53.9248, 0, 0, 0, -1.71987, 0, 0, 0, 44.2627, 0, -2.45961, 0 )
+[node name="TimerStop" parent="." index="15" instance=ExtResource( 12 )]
+transform = Transform( 0.660371, 0, 0, 0, 4.57209, 0, 0, 0, 0.214332, 0, 9.79966, -16.9383 )
+
+[node name="ocean2" parent="." index="16" instance=ExtResource( 13 )]
+transform = Transform( 4.01713, 0, 0, 0, 0.565312, 0, 0, 0, 4.01713, 0, -3.71953, 0 )
+
+[node name="Death" parent="." index="17" instance=ExtResource( 14 )]
+transform = Transform( 41.4764, 0, 0, 0, 1.34409, 0, 0, 0, 115.781, 0, -2.09931, 0 )
+
+[node name="JumpPad" parent="." index="18" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38741, 0, -0.0538807 )
+jumpheight = 35.0
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="19"]
+transform = Transform( 1.80579, 0, 0, 0, 0.110625, 0, 0, 0, 3.6715, 0, 4.25291, 7.78127 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+shape = SubResource( 8 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="." index="20"]
+transform = Transform( 1.58289, 0, 0, 0, 0.22068, 0, 0, 0, 3.0412, 0, 3.96178, 7.78127 )
+mesh = SubResource( 7 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody" index="0"]
+shape = SubResource( 8 )
+
+[node name="RigidBody" parent="." index="21" instance=ExtResource( 16 )]
+transform = Transform( 7.03179, 0, 0, 0, 1, 0, 0, 0, 6.45166, 0, 4.96493, 8.57892 )

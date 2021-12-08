@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/catparkourstartscreen.glb-650c4f335df2e9083c6bcc840ec7587e.scn"
+path="res://.import/ocean2.glb-4e3d8d3f0cbc54b57d9464d06b254734.scn"
 
 [deps]
 
-source_file="res://catparkourstartscreen.glb"
-dest_files=[ "res://.import/catparkourstartscreen.glb-650c4f335df2e9083c6bcc840ec7587e.scn" ]
+source_file="res://art/ocean2.glb"
+dest_files=[ "res://.import/ocean2.glb-4e3d8d3f0cbc54b57d9464d06b254734.scn" ]
 
 [params]
 
@@ -16,14 +16,17 @@ nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
+nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
-meshes/compress=true
+meshes/octahedral_compression=true
+meshes/compress=4286
 meshes/ensure_tangents=true
-meshes/storage=1
+meshes/storage=0
 meshes/light_baking=0
 meshes/lightmap_texel_size=0.1
+skins/use_named_skins=true
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15

@@ -6,3 +6,4 @@ var fullscreen = false
 var pauseSettings = false
 var hovered = false
 var Speedrun = false
+var in_water = false
