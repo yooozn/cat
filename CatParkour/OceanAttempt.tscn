@@ -1,13 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://art/OceanAttempt.glb" type="PackedScene" id=1]
+[ext_resource path="res://levels/Water1.tres" type="Material" id=2]
+[ext_resource path="res://OceanAttempt.gd" type="Script" id=3]
 
-[sub_resource type="SpatialMaterial" id=1]
-flags_transparent = true
-albedo_color = Color( 0.388235, 0.917647, 1, 0.482353 )
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 13.2105, 2.0306, 1.53131 )
 
 [node name="OceanAttempt" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Plane" parent="." index="2"]
 transform = Transform( 50.336, 0, 0, 0, 3.49031, 0, 0, 0, 50.336, 0, 0, 0 )
-material/0 = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="." index="3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
+transform = Transform( 3.42062, 0, 0, 0, 12.8223, 0, 0, 0, 27.5201, 0, -23.446, 0 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0.627451, 0.843137, 0.67451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

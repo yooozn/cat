@@ -271,7 +271,7 @@ func _physics_process(delta):
 			if dubJumpUnlock == true:
 				dubJump = maxJumps
 	elif !is_on_floor():
-		if y_velocity <= -1 and !$RayCast.is_colliding():
+		if y_velocity <= -1 and !$RayCast.is_colliding() and !$RayCast4.is_colliding():
 			in_air = true
 		if dubJumpUnlock == true:
 			if Input.is_action_just_pressed("jump") and dubJump >= 1 and !$RayCast2.is_colliding():
@@ -310,10 +310,11 @@ func _handle_movement(delta):
 #				shootable = true
 #				shoot_time = 0
 	
-	if $RayCast.is_colliding() and !Input.is_action_pressed("move_forward") and !Input.is_action_pressed("move_backward") \
+	if $RayCast.is_colliding() or $RayCast4.is_colliding():
+		if !Input.is_action_pressed("move_forward") and !Input.is_action_pressed("move_backward") \
 	and !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
-		velocity.x = 0
-		velocity.z = 0
+			velocity.x = 0
+			velocity.z = 0
 	#Camera lerp between first and third person
 	
 	if Input.is_action_just_pressed("cameraswap") and firstpersonview == false and thirdpersonview == true \
@@ -552,7 +553,7 @@ func _handle_movement(delta):
 		jumpAding = false
 	else:
 		y_velocity = clamp(y_velocity - gravity, -max_terminal_velocity, max_terminal_velocity)
-	if Input.is_action_just_pressed("jump") and $RayCast2.is_colliding():
+	if Input.is_action_just_pressed("jump") and $RayCast2.is_colliding() or Input.is_action_just_pressed("jump") and $RayCast3.is_colliding():
 		y_velocity = jump_power
 		var jumpSound1 = jumpSound.instance()
 		get_parent().add_child(jumpSound1)
