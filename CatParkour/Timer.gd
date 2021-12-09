@@ -85,6 +85,30 @@ func _process(delta):
 			Times.w2_4 = false
 			if Time <= Times.world2_4Time or Times.world2_4Time == 0:
 				Times.world2_4Time = Time
+		elif Times.w2_5 == true:
+			Times.w2_5 = false
+			if Time <= Times.world2_5Time or Times.world2_5Time == 0:
+				Times.world2_5Time = Time
+		elif Times.w2_6 == true:
+			Times.w2_6 = false
+			if Time <= Times.world2_6Time or Times.world2_6Time == 0:
+				Times.world2_6Time = Time
+		elif Times.w2_7 == true:
+			Times.w2_7 = false
+			if Time <= Times.world2_7Time or Times.world2_7Time == 0:
+				Times.world2_7Time = Time
+		elif Times.w2_8 == true:
+			Times.w2_8 = false
+			if Time <= Times.world2_8Time or Times.world2_8Time == 0:
+				Times.world2_8Time = Time
+		elif Times.w2_9 == true:
+			Times.w2_9 = false
+			if Time <= Times.world2_9Time or Times.world2_9Time == 0:
+				Times.world2_9Time = Time
+		elif Times.w2_10 == true:
+			Times.w2_10 = false
+			if Time <= Times.world2_10Time or Times.world2_10Time == 0:
+				Times.world2_10Time = Time
 		elif Times.tut == true:
 			Times.tut = true
 			if Time <= Times.tutorial or Times.tutorial == 0:

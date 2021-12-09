@@ -110,6 +110,12 @@ func _on_Save_pressed():
 		"world2_2Time" : Times.world2_2Time,
 		"world2_3Time" : Times.world2_3Time,
 		"world2_4Time" : Times.world2_4Time,
+		"world2_5Time" : Times.world2_5Time,
+		"world2_6Time" : Times.world2_6Time,
+		"world2_7Time" : Times.world2_7Time,
+		"world2_8Time" : Times.world2_8Time,
+		"world2_9Time" : Times.world2_9Time,
+		"world2_10Time" : Times.world2_10Time,
 	}
 	var file = File.new()
 	var error = file.open(save_path, File.WRITE)

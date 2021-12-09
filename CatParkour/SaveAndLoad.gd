@@ -74,6 +74,12 @@ func _on_NewGame_pressed():
 	Times.world2_2Time = 0
 	Times.world2_3Time = 0
 	Times.world2_4Time = 0
+	Times.world2_5Time = 0
+	Times.world2_6Time = 0
+	Times.world2_7Time = 0
+	Times.world2_8Time = 0
+	Times.world2_9Time = 0
+	Times.world2_10Time = 0
 	if file.file_exists(save_path):
 		var error = file.open(save_path, File.WRITE)
 		var data = {
@@ -101,6 +107,12 @@ func _on_NewGame_pressed():
 		"world2_2Time" : Times.world2_2Time,
 		"world2_3Time" : Times.world2_3Time,
 		"world2_4Time" : Times.world2_4Time,
+		"world2_5Time" : Times.world2_5Time,
+		"world2_6Time" : Times.world2_6Time,
+		"world2_7Time" : Times.world2_7Time,
+		"world2_8Time" : Times.world2_8Time,
+		"world2_9Time" : Times.world2_9Time,
+		"world2_10Time" : Times.world2_10Time,
 		}
 		if error == OK:
 			file.store_var(data)
@@ -145,6 +157,12 @@ func _on_Continue_pressed():
 			Times.world2_2Time = player_data["world2_2Time"]
 			Times.world2_3Time = player_data["world2_3Time"]
 			Times.world2_4Time = player_data["world2_4Time"]
+			Times.world2_5Time = player_data["world2_5Time"]
+			Times.world2_6Time = player_data["world2_6Time"]
+			Times.world2_7Time = player_data["world2_7Time"]
+			Times.world2_8Time = player_data["world2_8Time"]
+			Times.world2_9Time = player_data["world2_9Time"]
+			Times.world2_10Time = player_data["world2_10Time"]
 			Times.tutorial = player_data["tutorialTime"]
 			Zoom = true
 			Animations.transition = true

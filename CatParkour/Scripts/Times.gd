@@ -20,6 +20,12 @@ var world2_1Time = 0
 var world2_2Time = 0
 var world2_3Time = 0
 var world2_4Time = 0
+var world2_5Time = 0
+var world2_6Time = 0
+var world2_7Time = 0
+var world2_8Time = 0
+var world2_9Time = 0
+var world2_10Time = 0
 var tutorial = 0
 var stop = false
 var lvl1 = false
@@ -40,6 +46,12 @@ var w2_1 = false
 var w2_2 = false
 var w2_3 = false
 var w2_4 = false
+var w2_5 = false
+var w2_6 = false
+var w2_7 = false
+var w2_8 = false
+var w2_9 = false
+var w2_10 = false
 var tut = false
 
 
