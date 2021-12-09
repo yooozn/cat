@@ -47,7 +47,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 3.24172, 0, 0, 0, 1, 1.52731, 0.646543, 0 )
+transform = Transform( 0.59125, 0, 0, 0, 1.91667, 0, 0, 0, 0.470926, 1.26339, 0.646543, 0 )
 shape = SubResource( 1 )
 
 [node name="Sign" parent="." instance=ExtResource( 3 )]

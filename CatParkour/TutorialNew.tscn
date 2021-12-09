@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TextPlay.tscn" type="PackedScene" id=4]
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Checkpoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=12]
+
+[node name="TutorialNew" type="Spatial"]
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.23795, 0, 0, 0, 0.145981, 0, 0, 0, 4.2775, 0, -0.283322, -3.09557 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.84833, 0, 0, 0, 0.145981, 0, 0, 0, 3.74566, 0, -0.283322, -14.2126 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.84833, 0, 0, 0, 0.145981, 0, 0, 0, 3.74566, 0, -0.283322, -28.0442 )
+
+[node name="Spatial6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.84833, 0, 0, 0, 0.145981, 0, 0, 0, 5.42537, 0, 2.55208, -48.9471 )
+
+[node name="Spatial8" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.84833, 0, 0, 0, 0.145981, 0, 0, 0, 2.80539, 0, 2.55208, -60.8481 )
+
+[node name="Spatial9" parent="." instance=ExtResource( 2 )]
+transform = Transform( 4.70166, 0, 0, 0, 0.145981, 0, 0, 0, 4.89681, 0, 2.51937, -75.8633 )
+
+[node name="Spatial4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.05377, 0, 0, 0, 0.145981, 0, 0, 0, 1.12876, -1.02913, 0.61956, -35.4304 )
+
+[node name="Spatial5" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.05377, 0, 0, 0, 0.145981, 0, 0, 0, 1.12876, 1.5134, 1.44487, -39.3947 )
+
+[node name="Spatial7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.05377, 0, 0, 0, 0.145981, 0, 0, 0, 1.12876, -3.49277, 2.54271, -46.8239 )
+
+[node name="Cat" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217934, 0 )
+
+[node name="TextPlay" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.530354, 0, -0.539335, 0, 0.756411, 0, 0.539335, 0, 0.530354, -2.27731, -0.350296, -1.90032 )
+text = "Welcome! The goal of this game is to parkour your way across each level, beating previous times, and unlocking new abilities."
+
+[node name="TextPlay3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.530354, 0, -0.539335, 0, 0.756411, 0, 0.539335, 0, 0.530354, -2.27731, -0.350296, -12.3713 )
+text = "This is a checkpoint! If you fall, you will respawn at your last checkpoint. They glow once you have activated it."
+
+[node name="TextPlay6" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.530354, 0, -0.539335, 0, 0.756411, 0, 0.539335, 0, 0.530354, -1.92923, 2.57112, -62.1033 )
+text = "You can also move other objects, such as these blocks! Use [E] to pick it up, and [E] or [L-Click] to place it down."
+
+[node name="TextPlay2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.391378, 0, -0.647287, 0, 0.756411, 0, 0.647287, 0, -0.391378, 1.98436, -0.350296, -7.37543 )
+text = "Use spacebar to jump! Try not to fall in the water! Cats hate water..."
+
+[node name="TextPlay4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.391378, 0, -0.647287, 0, 0.756411, 0, 0.647287, 0, -0.391378, 1.98436, -0.350296, -17.0112 )
+text = "You may need some speed for this next jump... Use [Shift] to sprint."
+
+[node name="TextPlay5" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.391378, 0, -0.647287, 0, 0.756411, 0, 0.647287, 0, -0.391378, 1.80157, 2.52191, -47.2863 )
+text = "Some areas are blocked by locked doors. You'll need to insert a key to unlock it. Use [E] to pick up the key, once close enough."
+
+[node name="TextPlay7" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.391378, 0, -0.647287, 0, 0.756411, 0, 0.647287, 0, -0.391378, 2.92108, 2.52191, -73.0245 )
+text = "Great job! You completed the tutorial. Take this portal to the player hub, and head to World 1."
+
+[node name="OceanAttempt" parent="." instance=ExtResource( 5 )]
+transform = Transform( 4.13766, 0, 0, 0, 0.814854, 0, 0, 0, 4.13766, 0, -2.96813, 0 )
+
+[node name="Checkpoint" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.168973, -13.1012 )
+
+[node name="Checkpoint2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.168973, -26.6012 )
+
+[node name="Checkpoint3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.16201, -45.2191 )
+
+[node name="Checkpoint4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.16201, -60.2286 )
+
+[node name="Death" parent="." instance=ExtResource( 7 )]
+transform = Transform( 21.9805, 0, 0, 0, 1, 0, 0, 0, 128.444, 0, -3.11114, 0 )
+
+[node name="WallKey" parent="." instance=ExtResource( 8 )]
+transform = Transform( 3.50594, 0, 0, 0, 3.00725, 0, 0, 0, 0.534409, 0, 4.36705, -51.4054 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 9 )]
+transform = Transform( -2.97939e-08, 0, -0.681606, 0, 0.681606, 0, 0.681606, 0, -2.97939e-08, 0, 3.47709, -50.9644 )
+doorNum = "WallKey"
+
+[node name="KeyObj" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49114, 2.91594, -46.4601 )
+
+[node name="RigidBody" parent="." instance=ExtResource( 11 )]
+transform = Transform( 7.35094, 0, 0, 0, 1, 0, 0, 0, 5.57794, -3.98813, 2.67295, -62.9857 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.484261, 3.66133, -79.4575 )
+scene = "res://levels/testmap2.tscn"
+level_text = "To Player Hub"

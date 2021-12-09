@@ -227,4 +227,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9136, -61.049, 167.353 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 116.415, 31.4418, 89.6023 )
 
 [node name="OceanAttempt" parent="." index="36" instance=ExtResource( 16 )]
-transform = Transform( 13.3457, 0, 0, 0, 11.1143, 1.50962, 0, -1.26533, 13.26, 0, -24.3261, 0 )
+transform = Transform( 13.3457, 0, 0, 0, 11.1771, 0.533729, 0, -0.447355, 13.335, 0, 5.04117, 0 )

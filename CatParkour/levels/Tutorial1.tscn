@@ -484,5 +484,5 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.2858
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -136.618, 11.7926, 121.761 )
 
 [node name="JumpPad3" parent="." index="55" instance=ExtResource( 25 )]
-transform = Transform( 1, 0, 0, 0, 0.810134, 0.586245, 0, -0.586245, 0.810134, 0, 2.0109, 3.05852 )
+transform = Transform( 1, 0, 0, 0, 0.810134, 0.586245, 0, -0.586245, 0.810134, 0, 2.0109, 7.57981 )
 jumpheight = 100.0
