@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=9]
 [ext_resource path="res://JumpPad.tscn" type="PackedScene" id=10]
+[ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
@@ -22,7 +23,7 @@ script/source = "extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Times.w2_4 = true
+	Times.w2_5 = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -37,7 +38,7 @@ script = SubResource( 1 )
 transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 0, 0, 0 )
 
 [node name="Spatial2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 18.0958, -61.7975 )
+transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 8.11831, 28.9284 )
 
 [node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -46,7 +47,7 @@ transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64064, 0 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.5701, -62.0243 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59263, 28.7016 )
 scene = "res://levels/World2.tscn"
 level_text = "Back to World Hub"
 
@@ -60,18 +61,19 @@ transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -6.17275, 0 )
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 19.3284, -62.0474 )
+transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 9.43234, 28.6613 )
 
 [node name="DoubleJumpRefresh" parent="." instance=ExtResource( 9 )]
 transform = Transform( 2.2649, 0, 0, 0, 0.53643, 0, 0, 0, 1.54991, 0, 9.55775, -17.2109 )
-
-[node name="DoubleJumpRefresh2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 2.2649, 0, 0, 0, 0.53643, 0, 0, 0, 1.54991, 0, 17.1871, -44.8907 )
 
 [node name="JumpPad" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.96063 )
 jumpheight = 35.0
 
-[node name="JumpPad2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.21072, -36.0683 )
-jumpheight = 35.0
+[node name="Teleporter" parent="." instance=ExtResource( 11 )]
+transform = Transform( 2.38264, 0, 0, 0, 2.38264, 0, 0, 0, 2.38264, 0, 9.50423, -31.9846 )
+portalto = "Teleporter2"
+
+[node name="Teleporter2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.1125, 35.548 )
+portalto = "Teleporter2"
