@@ -278,4 +278,4 @@ DistanceTxt = "Level 7"
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.661226, 0.642099, -5.30925 )
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 42.4764, 0, 0, 0, 0.870038, 0, 0, 0, 43.0709, 0, -7.21607, 0 )
+transform = Transform( 91.9849, 0, 0, 0, 0.870038, 0, 0, 0, 117.115, 0, -7.21607, 0 )
