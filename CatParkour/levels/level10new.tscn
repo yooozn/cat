@@ -1,0 +1,171 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://levels/Dirt.tres" type="Material" id=1]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=5]
+[ext_resource path="res://levels/level1new.glb" type="PackedScene" id=6]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=12]
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=14]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=17]
+[ext_resource path="res://TextPlay.tscn" type="PackedScene" id=18]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w1_10 = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, 0.0956, -3.2952, 1.901, 0.0956, -3.2952, 1.901, 0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, -0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, -1.901, -0.0956, -3.2952, -1.901, -0.0956, 3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, 3.2952, 1.901, 0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, 0.0956, 3.2952, -1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1.8087, -0.264, 3.1822, -1.8087, 0.264, -3.1822, -1.8087, 0.264, 3.1822, -1.8087, -0.264, 3.1822, -1.8087, -0.264, -3.1822, -1.8087, 0.264, -3.1822, -1.8087, -0.264, -3.1822, 1.8087, 0.264, -3.1822, -1.8087, 0.264, -3.1822, -1.8087, -0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, 0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, 0.264, 3.1822, 1.8087, 0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, -0.264, 3.1822, 1.8087, 0.264, 3.1822, 1.8087, -0.264, 3.1822, -1.8087, 0.264, 3.1822, 1.8087, 0.264, 3.1822, 1.8087, -0.264, 3.1822, -1.8087, -0.264, 3.1822, -1.8087, 0.264, 3.1822, -1.8087, -0.264, -3.1822, 1.8087, -0.264, 3.1822, 1.8087, -0.264, -3.1822, -1.8087, -0.264, -3.1822, -1.8087, -0.264, 3.1822, 1.8087, -0.264, 3.1822, 1.8087, 0.264, -3.1822, -1.8087, 0.264, 3.1822, -1.8087, 0.264, -3.1822, 1.8087, 0.264, -3.1822, 1.8087, 0.264, 3.1822, -1.8087, 0.264, 3.1822 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 1.1879, 0.0813, -1.3032, -1.1879, 0.0813, 1.3032, -1.1879, 0.0813, -1.3032, 1.1879, 0.0813, -1.3032, 1.1879, 0.0813, 1.3032, -1.1879, 0.0813, 1.3032, 1.1879, -0.0813, 1.3032, -1.1879, 0.0813, 1.3032, 1.1879, 0.0813, 1.3032, 1.1879, -0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, 0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, 0.0813, -1.3032, -1.1879, 0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, -0.0813, -1.3032, -1.1879, 0.0813, -1.3032, -1.1879, -0.0813, -1.3032, 1.1879, -0.0813, 1.3032, 1.1879, -0.0813, -1.3032, -1.1879, -0.0813, -1.3032, -1.1879, -0.0813, 1.3032, 1.1879, -0.0813, 1.3032, 1.1879, -0.0813, -1.3032, 1.1879, 0.0813, 1.3032, 1.1879, 0.0813, -1.3032, 1.1879, -0.0813, -1.3032, 1.1879, -0.0813, 1.3032, 1.1879, 0.0813, 1.3032, -1.1879, -0.0813, -1.3032, 1.1879, 0.0813, -1.3032, -1.1879, 0.0813, -1.3032, -1.1879, -0.0813, -1.3032, 1.1879, -0.0813, -1.3032, 1.1879, 0.0813, -1.3032 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1.1302, -0.2244, 1.2585, -1.1302, 0.2244, -1.2585, -1.1302, 0.2244, 1.2585, -1.1302, -0.2244, 1.2585, -1.1302, -0.2244, -1.2585, -1.1302, 0.2244, -1.2585, -1.1302, -0.2244, -1.2585, 1.1302, 0.2244, -1.2585, -1.1302, 0.2244, -1.2585, -1.1302, -0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, 0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, 0.2244, 1.2585, 1.1302, 0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, -0.2244, 1.2585, 1.1302, 0.2244, 1.2585, 1.1302, -0.2244, 1.2585, -1.1302, 0.2244, 1.2585, 1.1302, 0.2244, 1.2585, 1.1302, -0.2244, 1.2585, -1.1302, -0.2244, 1.2585, -1.1302, 0.2244, 1.2585, -1.1302, -0.2244, -1.2585, 1.1302, -0.2244, 1.2585, 1.1302, -0.2244, -1.2585, -1.1302, -0.2244, -1.2585, -1.1302, -0.2244, 1.2585, 1.1302, -0.2244, 1.2585, 1.1302, 0.2244, -1.2585, -1.1302, 0.2244, 1.2585, -1.1302, 0.2244, -1.2585, 1.1302, 0.2244, -1.2585, 1.1302, 0.2244, 1.2585, -1.1302, 0.2244, 1.2585 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072, 0.0932, -2.2731, 2.072, 0.0932, -2.2731, 2.072, 0.0932, 2.2731, -2.072, 0.0932, 2.2731, 2.072, -0.0932, 2.2731, -2.072, 0.0932, 2.2731, 2.072, 0.0932, 2.2731, 2.072, -0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, 0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, -0.0932, -2.2731, -2.072, 0.0932, -2.2731, -2.072, -0.0932, -2.2731, 2.072, -0.0932, 2.2731, 2.072, -0.0932, -2.2731, -2.072, -0.0932, -2.2731, -2.072, -0.0932, 2.2731, 2.072, -0.0932, 2.2731, 2.072, -0.0932, -2.2731, 2.072, 0.0932, 2.2731, 2.072, 0.0932, -2.2731, 2.072, -0.0932, -2.2731, 2.072, -0.0932, 2.2731, 2.072, 0.0932, 2.2731, -2.072, -0.0932, -2.2731, 2.072, 0.0932, -2.2731, -2.072, 0.0932, -2.2731, -2.072, -0.0932, -2.2731, 2.072, -0.0932, -2.2731, 2.072, 0.0932, -2.2731 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, -0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, 2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, -0.2572, -2.1951, -1.9714, -0.2572, -2.1951, -1.9714, -0.2572, 2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, 0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, 0.2572, 2.1951, -1.9714, 0.2572, 2.1951 )
+
+[node name="level1new" instance=ExtResource( 6 )]
+script = SubResource( 7 )
+
+[node name="Cube" parent="." index="0"]
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Cube001" parent="." index="3"]
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube001" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube001/StaticBody" index="0"]
+shape = SubResource( 2 )
+
+[node name="Cube002" parent="." index="4"]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 7.30528, -6.03125 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube002" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube002/StaticBody" index="0"]
+shape = SubResource( 3 )
+
+[node name="Cube003" parent="." index="5"]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 7.01223, -6.03125 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube003" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube003/StaticBody" index="0"]
+shape = SubResource( 4 )
+
+[node name="Cube004" parent="." index="6"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.486215, -27.9785 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube004" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube004/StaticBody" index="0"]
+shape = SubResource( 5 )
+
+[node name="Cube005" parent="." index="7"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0.150294, -27.9785 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube005" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube005/StaticBody" index="0"]
+shape = SubResource( 6 )
+
+[node name="TestEMvorpm,emt 2" parent="." index="8" instance=ExtResource( 4 )]
+
+[node name="Cat" parent="." index="9" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.746919, 1.06924 )
+
+[node name="KeyObj" parent="." index="10" instance=ExtResource( 7 )]
+transform = Transform( 0.0562572, 0, -0.998416, 0, 1, 0, 0.998416, 0, 0.0562572, -0.362535, 10.8889, -11.312 )
+
+[node name="PortalLVL1" parent="." index="11" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603275, 1.50504, -29.4028 )
+scene = "res://levels/World1.tscn"
+level_text = "Back to World Hub"
+
+[node name="WallKey" parent="." index="12" instance=ExtResource( 8 )]
+transform = Transform( 1.08149, 0, 0, 0, 1.50289, 0, 0, 0, 0.49291, 0, 2.07591, -29.3678 )
+
+[node name="Doorlock" parent="." index="13" instance=ExtResource( 9 )]
+transform = Transform( -1.79397e-08, 0, -0.410412, 0, 0.410412, 0, 0.410412, 0, -1.79397e-08, 0, 1.29837, -28.8965 )
+doorNum = "WallKey"
+
+[node name="Timer" parent="." index="14" instance=ExtResource( 11 )]
+
+[node name="TimerStop" parent="." index="15" instance=ExtResource( 12 )]
+transform = Transform( 0.645497, 0, 0, 0, 4.51647, 0, 0, 0, 0.087639, 0, 1.66778, -29.1709 )
+
+[node name="OceanAttempt" parent="." index="16" instance=ExtResource( 13 )]
+transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
+
+[node name="Death" parent="." index="17" instance=ExtResource( 14 )]
+transform = Transform( 65.7049, 0, 0, 0, 0.360871, 0, 0, 0, 15.0622, 0, -1.4642, 0 )
+
+[node name="Spatial" parent="." index="18" instance=ExtResource( 15 )]
+transform = Transform( 1.37537, 0, 0, 0, 0.145981, 0, 0, 0, 1.37422, 0, 4.14724, 6.65392 )
+
+[node name="Spatial2" parent="." index="19" instance=ExtResource( 15 )]
+transform = Transform( 1.37537, 0, 0, 0, 0.145981, 0, 0, 0, 1.37422, 0, 10.442, 11.5993 )
+
+[node name="Spatial3" parent="." index="20" instance=ExtResource( 15 )]
+transform = Transform( 1.37537, 0, 0, 0, 0.145981, 0, 0, 0, 1.37422, 0, 10.5119, -11.308 )
+
+[node name="RigidBody" parent="." index="21" instance=ExtResource( 16 )]
+transform = Transform( 4.6081, 0, 0, 0, 1, 0, 0, 0, 4.79182, -3.14799, 0.117396, 0.0929456 )
+
+[node name="JumpPad" parent="." index="22" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06786, 0, 0 )
+jumpheight = 35.0
+
+[node name="Teleporter" parent="." index="23" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.327, 12.1278 )
+portalto = "Teleporter2"
+
+[node name="Teleporter2" parent="." index="24" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28017, -25.494 )
+portalto = "Teleporter"
+
+[node name="TextPlay" parent="." index="25" instance=ExtResource( 18 )]
+transform = Transform( 0.434791, 0, -0.590642, 0, 0.733417, 0, 0.590642, 0, 0.434791, -1.25968, 10.7703, -12.0157 )
+text = "You may have to move the teleporter to move the key..."

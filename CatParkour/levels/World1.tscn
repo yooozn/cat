@@ -168,6 +168,60 @@ scene = "res://levels/level8new.tscn"
 level_text = "Level 8"
 extra = "w1_8"
 
+[node name="MeshInstance15" type="MeshInstance" parent="."]
+transform = Transform( 3.84782, 0, 2.79527, 0, 0.204494, 0, -3.73831, 0, 2.87715, -10.8164, 3.6174, -33.3763 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance15"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance15/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance16" type="MeshInstance" parent="."]
+transform = Transform( 3.42278, 0, 2.77272, 0, 0.873491, 0, -3.21353, 0, 2.29879, -10.9798, 2.62747, -33.0198 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance16"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance16/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="PortalLVL10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.73942, 0, 0.673245, 0, 1, 0, -0.673245, 0, 0.73942, -11.0384, 5.03271, -32.2199 )
+scene = "res://levels/level9new.tscn"
+level_text = "Level 9"
+extra = "w1_9"
+
+[node name="MeshInstance17" type="MeshInstance" parent="."]
+transform = Transform( 4.67496, 0, -1.96776, 0, 0.204494, 0, 2.63162, 0, 3.49563, 11.875, 4.74534, -34.3669 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance17"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance17/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance18" type="MeshInstance" parent="."]
+transform = Transform( 4.05129, 0, -1.41947, 0, 1.23042, 0, 2.37261, 0, 3.31022, 11.4868, 3.28442, -34.4226 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance18"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance18/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="PortalLVL11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.855084, 0, -0.51849, 0, 1, 0, 0.51849, 0, 0.855084, 10.703, 6.16065, -34.2523 )
+scene = "res://levels/level9new.tscn"
+level_text = "Level 10"
+extra = "w1_10"
+
 [node name="PortalLVL2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.74318, 0, 0.669092, 0, 1, 0, -0.669092, 0, 0.74318, 13.486, 1.2121, 6.83882 )
 scene = "res://levels/level1newNewer.tscn"
