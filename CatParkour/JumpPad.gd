@@ -45,8 +45,13 @@ func _process(delta):
 		hovered = false
 func _on_JumpArea_body_entered(body):
 	if body.is_in_group("Player"):
-		GlobalWorld.player.y_velocity = jumpheight
-		GlobalWorld.player.jumpAd = true
+		if body.carrying == false:
+			GlobalWorld.player.y_velocity = jumpheight
+			GlobalWorld.player.jumpAd = true
+		else:
+			if not body.pickObject.is_in_group("Jump"):
+				GlobalWorld.player.y_velocity = jumpheight
+				GlobalWorld.player.jumpAd = true
 
 
 

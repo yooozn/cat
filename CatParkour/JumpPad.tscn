@@ -27,7 +27,7 @@ extents = Vector3( 0.436085, 0.394485, 0.666499 )
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.718304, 0.223263, 0.731472 )
 
-[node name="JumpPad" type="RigidBody" groups=["Objects", "TPable"]]
+[node name="JumpPad" type="RigidBody" groups=["Jump", "Objects", "TPable"]]
 mode = 1
 contacts_reported = 1
 contact_monitor = true
