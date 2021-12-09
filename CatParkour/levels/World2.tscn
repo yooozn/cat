@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=5]
+
+[node name="World2" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 4 )]
+transform = Transform( 8.20347, 0, 0, 0, 0.487582, 0, 0, 0, 6.9023, 0, -0.358016, -0.940194 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 4.91373, 0, 0, 0, 0.487582, 0, 0, 0, 4.66552, -16.5233, 1.16195, -20.9631 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28461, 3.1637 )
+
+[node name="PortalLVL2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -18.0025, 2.30487, -21.0144 )
+scene = "res://levels/World2-1.tscn"
+level_text = "Level 1"
+DistanceTxt = "Level 1"
+
+[node name="Spatial8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 4.91373, 0, 0, 0, 0.487582, 0, 0, 0, 4.66552, -16.5233, 2.53048, 14.3987 )
+
+[node name="PortalLVL8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -18.0025, 3.6734, 14.3474 )
+level_text = "Level 1"
+DistanceTxt = "Level 1"
+
+[node name="Spatial5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 4.91373, 0, 0, 0, 0.487582, 0, 0, 0, 4.66552, -20.1813, 3.3295, -3.38447 )
+
+[node name="PortalLVL5" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -21.6605, 4.47242, -3.4358 )
+level_text = "Level 1"
+DistanceTxt = "Level 1"
+
+[node name="Spatial6" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.14786e-07, 0, -4.66552, 0, 0.487582, 0, 4.91373, 0, -2.03936e-07, 17.7476, 3.3295, -2.67052 )
+
+[node name="PortalLVL6" parent="." instance=ExtResource( 3 )]
+transform = Transform( -5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 17.799, 4.47242, -4.14975 )
+level_text = "Level 1"
+DistanceTxt = "Level 1"
+
+[node name="Spatial3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.14786e-07, 0, -4.66552, 0, 0.487582, 0, 4.91373, 0, -2.03936e-07, 16.283, 2.87196, -20.2492 )
+
+[node name="PortalLVL3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 16.3343, 4.01488, -21.7284 )
+level_text = "Level 2"
+DistanceTxt = "Level 2"
+
+[node name="Spatial7" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.91373, 0, 4.07873e-07, 0, 0.487582, 0, -4.29572e-07, 0, -4.66552, 15.569, 4.21849, 13.8374 )
+
+[node name="PortalLVL7" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 17.0482, 5.3614, 13.8888 )
+level_text = "Level 2"
+DistanceTxt = "Level 2"
+
+[node name="Spatial4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.14786e-07, 0, -4.66552, 0, 0.487582, 0, 4.91373, 0, -2.03936e-07, -0.029665, 4.23232, -22.7664 )
+
+[node name="PortalLVL4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.633265, 5.37524, -22.3442 )
+level_text = "Level 3"
+DistanceTxt = "Level 3"
+
+[node name="Spatial9" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.14786e-07, 0, 4.66552, 0, 0.487582, 0, -4.91373, 0, -2.03936e-07, -0.633264, 5.52283, 20.3297 )
+
+[node name="PortalLVL9" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -2.78181e-08, 0, 1, 0, 2.78181e-08, 0, -1, -0.029665, 6.66575, 19.9074 )
+level_text = "Level 3"
+DistanceTxt = "Level 3"
+
+[node name="Cat" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38096, -2.32829 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
+
+[node name="Death" parent="." instance=ExtResource( 2 )]
+transform = Transform( 186.385, 0, 0, 0, 1, 0, 0, 0, 56.7729, 0, -4.04428, 0 )

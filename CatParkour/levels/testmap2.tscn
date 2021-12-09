@@ -178,7 +178,7 @@ level_text = "Testing Grounds"
 
 [node name="PortalLVL4" parent="." index="23" instance=ExtResource( 5 )]
 transform = Transform( -0.0465311, 0, -0.998917, 0, 1, 0, 0.998917, 0, -0.0465311, 19.9463, 19.2089, -0.699868 )
-scene = "res://levels/Level2Test.tscn"
+scene = "res://levels/World2.tscn"
 scene1 = ExtResource( 8 )
 level_text = "World 2"
 extra = "2"

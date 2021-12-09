@@ -126,7 +126,7 @@ shape = SubResource( 6 )
 [node name="TestEMvorpm,emt 2" parent="." index="8" instance=ExtResource( 4 )]
 
 [node name="Cat" parent="." index="9" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757401, 20.575 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.40593, 20.575 )
 
 [node name="KeyObj" parent="." index="10" instance=ExtResource( 7 )]
 transform = Transform( 0.0562572, 0, -0.998416, 0, 1, 0, 0.998416, 0, 0.0562572, -0.362535, 7.72885, 14.6959 )
