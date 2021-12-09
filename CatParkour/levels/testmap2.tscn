@@ -167,6 +167,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968793, 13.3911, -11.3581 )
 scene = "res://levels/World1.tscn"
 scene1 = ExtResource( 7 )
 level_text = "World 1"
+DistanceTxt = "World 1"
 
 [node name="PortalLVL2" parent="." index="22" instance=ExtResource( 5 )]
 transform = Transform( 0.0465312, 0, 0.998917, 0, 1, 0, -0.998917, 0, 0.0465312, -16.6303, 13.4499, 2.2114 )
@@ -175,14 +176,15 @@ scene1 = ExtResource( 8 )
 level_text = "Testing Grounds"
 
 [node name="PortalLVL4" parent="." index="23" instance=ExtResource( 5 )]
-transform = Transform( 0.0465312, 0, 0.998917, 0, 1, 0, -0.998917, 0, 0.0465312, 19.9463, 19.2089, 0.289679 )
+transform = Transform( -0.0465311, 0, -0.998917, 0, 1, 0, 0.998917, 0, -0.0465311, 19.9463, 19.2089, -0.699868 )
 scene = "res://levels/Level2Test.tscn"
 scene1 = ExtResource( 8 )
-level_text = "Level 2"
+level_text = "World 2"
 extra = "2"
+DistanceTxt = "World 2"
 
 [node name="PortalLVL5" parent="." index="24" instance=ExtResource( 5 )]
-transform = Transform( 0.833876, 0, 0.551952, 0, 1, 0, -0.551952, 0, 0.833876, 8.29631, 9.01498, 30.0994 )
+transform = Transform( -0.833876, 0, -0.551952, 0, 1, 0, 0.551952, 0, -0.833876, 8.42648, 9.01498, 29.005 )
 scene = "res://levels/TutorialNew.tscn"
 scene1 = ExtResource( 8 )
 level_text = "Tutorial"

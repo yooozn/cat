@@ -167,6 +167,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35458, -27.7222 )
 scene = "res://levels/level8new.tscn"
 level_text = "Level 8"
 extra = "w1_8"
+DistanceTxt = "Level 8"
 
 [node name="MeshInstance15" type="MeshInstance" parent="."]
 transform = Transform( 3.84782, 0, 2.79527, 0, 0.204494, 0, -3.73831, 0, 2.87715, -10.8164, 3.6174, -33.3763 )
@@ -194,6 +195,7 @@ transform = Transform( 0.73942, 0, 0.673245, 0, 1, 0, -0.673245, 0, 0.73942, -11
 scene = "res://levels/level9new.tscn"
 level_text = "Level 9"
 extra = "w1_9"
+DistanceTxt = "Level 9"
 
 [node name="MeshInstance17" type="MeshInstance" parent="."]
 transform = Transform( 4.67496, 0, -1.96776, 0, 0.204494, 0, 2.63162, 0, 3.49563, 11.875, 4.74534, -34.3669 )
@@ -221,48 +223,56 @@ transform = Transform( 0.855084, 0, -0.51849, 0, 1, 0, 0.51849, 0, 0.855084, 10.
 scene = "res://levels/level10new.tscn"
 level_text = "Level 10"
 extra = "w1_10"
+DistanceTxt = "Level 10"
 
 [node name="PortalLVL2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.74318, 0, 0.669092, 0, 1, 0, -0.669092, 0, 0.74318, 13.486, 1.2121, 6.83882 )
+transform = Transform( -0.74318, 0, -0.669092, 0, 1, 0, 0.669092, 0, -0.74318, 13.486, 1.2121, 6.83882 )
 scene = "res://levels/level1newNewer.tscn"
 level_text = "Level 1"
 extra = "w1_1"
+DistanceTxt = "Level 1"
 
 [node name="PortalLVL4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.669092, 0, -0.74318, 0, 1, 0, 0.74318, 0, 0.669092, -13.9066, 1.81706, 5.43166 )
+transform = Transform( -0.669092, 0, 0.74318, 0, 1, 0, -0.74318, 0, -0.669092, -13.9066, 1.81706, 5.43166 )
 scene = "res://levels/level2new.tscn"
 level_text = "Level 3"
 extra = "w1_3"
+DistanceTxt = "Level 3"
 
 [node name="PortalLVL3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.67834, 12.8088 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0919185, 1.67834, 12.8088 )
 scene = "res://levels/level1new.tscn"
 level_text = "Level 2"
 extra = "w1_2"
+DistanceTxt = "Level 2"
 
 [node name="PortalLVL5" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.3774, 2.12523, -9.99412 )
 scene = "res://levels/level4new.tscn"
 level_text = "Level 4"
 extra = "w1_4"
+DistanceTxt = "Level 4"
 
 [node name="PortalLVL6" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.5914, 2.38874, -9.99412 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.5914, 2.38874, -9.99412 )
 scene = "res://levels/level6new.tscn"
 level_text = "Level 5"
 extra = "w1_5"
+DistanceTxt = "Level 5"
 
 [node name="PortalLVL7" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 3.05411, -22.4776 )
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -12.6837, 3.05411, -22.4776 )
 scene = "res://levels/level5new.tscn"
 level_text = "Level 6"
 extra = "w1_6"
+DistanceTxt = "Level 6"
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.945387, 0, 0.325948, 0, 1, 0, -0.325948, 0, -0.945387, 14.6884, 4.25711, -23.2808 )
+transform = Transform( 0.945387, 0, -0.325948, 0, 1, 0, 0.325948, 0, 0.945387, 13.2742, 4.25711, -23.2808 )
 scene = "res://levels/level7new.tscn"
 level_text = "Level 7"
 extra = "w1_7"
+DistanceTxt = "Level 7"
 
 [node name="Cat" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.661226, 0.642099, -5.30925 )

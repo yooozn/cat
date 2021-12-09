@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://PortalLVL1.gd" type="Script" id=1]
 [ext_resource path="res://levels/PortalModel.tscn" type="PackedScene" id=2]
@@ -15,6 +15,9 @@ extents = Vector3( 5.97594, 1.65427, 6.15184 )
 [sub_resource type="DynamicFont" id=3]
 size = 43
 font_data = ExtResource( 5 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("Spatial/Viewport")
 
 [node name="PortalLVL1" type="Area"]
 script = ExtResource( 1 )
@@ -79,6 +82,29 @@ custom_fonts/font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11772, 3.62818, 0 )
+
+[node name="Viewport" type="Viewport" parent="Spatial"]
+size = Vector2( 300, 58 )
+transparent_bg = true
+
+[node name="Label" type="Label" parent="Spatial/Viewport"]
+margin_right = 126.0
+margin_bottom = 58.0
+rect_min_size = Vector2( 300, 58 )
+custom_fonts/font = ExtResource( 3 )
+text = "
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite3D" type="Sprite3D" parent="Spatial"]
+flip_v = true
+billboard = 1
+texture = SubResource( 4 )
 
 [connection signal="body_entered" from="." to="." method="_on_PortalLVL1_body_entered"]
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

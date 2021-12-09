@@ -4,7 +4,13 @@ export(String) var scene
 export(PackedScene) var scene1
 export(String) var level_text
 export(String) var extra
+export(String) var DistanceTxt
 onready var particles = preload("res://PortalParticles.tscn")
+
+func _ready():
+	$Spatial/Viewport/Label.text = DistanceTxt
+#	$Spatial/Viewport.size.x = $Spatial/Viewport/Label.rect_size.x
+#	$Spatial/Viewport.size.y = $Spatial/Viewport/Label.rect_size.y
 
 
 func _on_PortalLVL1_body_entered(body):
