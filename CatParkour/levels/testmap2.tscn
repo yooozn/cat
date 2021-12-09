@@ -167,6 +167,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968793, 13.3911, -11.3581 )
 scene = "res://levels/World1.tscn"
 scene1 = ExtResource( 7 )
 level_text = "World 1"
+extra = "w1"
 DistanceTxt = "World 1"
 
 [node name="PortalLVL2" parent="." index="22" instance=ExtResource( 5 )]

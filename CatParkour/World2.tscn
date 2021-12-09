@@ -8,10 +8,18 @@
 [node name="World2" type="Spatial"]
 
 [node name="Spatial" parent="." instance=ExtResource( 3 )]
-transform = Transform( 8.20347, 0, 0, 0, 0.273903, 0, 0, 0, 6.9023, 0, 0, -0.940194 )
+transform = Transform( 8.20347, 0, 0, 0, 0.487582, 0, 0, 0, 6.9023, 0, -0.358016, -0.940194 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 4.91373, 0, 0, 0, 0.487582, 0, 0, 0, 4.66552, -16.5233, 1.16195, -20.9631 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28461, 3.1637 )
+
+[node name="PortalLVL2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -18.0025, 2.30487, -21.0144 )
+level_text = "Level 1"
+DistanceTxt = "Level 1"
 
 [node name="Cat" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552933, -2.32829 )

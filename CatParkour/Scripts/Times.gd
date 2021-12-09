@@ -5,6 +5,7 @@ var level1 = 0
 var level2 = 0
 var level3 = 0
 var level4 = 0
+var world1Time = 0
 var world1_1Time = 0
 var world1_2Time = 0
 var world1_3Time = 0
@@ -42,7 +43,9 @@ var w2_4 = false
 var tut = false
 
 
-
+func _process(delta):
+	world1Time = world1_10Time + world1_1Time + world1_2Time + world1_3Time + world1_4Time + world1_5Time + world1_6Time \
+	+ world1_7Time + world1_8Time + world1_9Time
 # Key Conditionals
 var key1 = false
 var keyPos
