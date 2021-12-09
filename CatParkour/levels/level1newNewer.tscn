@@ -98,7 +98,7 @@ level_text = "Back to World Hub"
 [node name="Timer" parent="." index="11" instance=ExtResource( 8 )]
 
 [node name="TimerStop" parent="." index="12" instance=ExtResource( 9 )]
-transform = Transform( 2.40991, 0, 0, 0, 1, 0, 0, 0, 1.36704, 0, 0.469375, -12.2739 )
+transform = Transform( 0.851971, 0, 0, 0, 9.44882, 0, 0, 0, 0.181615, 0, 0.469375, -15.1281 )
 
 [node name="OceanAttempt" parent="." index="13" instance=ExtResource( 10 )]
 transform = Transform( 3.40418, 0, 0, 0, 1.21516, 0, 0, 0, 3.40418, 0, -3.45992, 0 )

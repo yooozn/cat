@@ -119,7 +119,7 @@ transform = Transform( 10.1195, 0, 0, 0, 0.850194, 0, 0, 0, 10.1195, -4.80145, 0
 [node name="Timer" parent="." index="15" instance=ExtResource( 12 )]
 
 [node name="TimerStop" parent="." index="16" instance=ExtResource( 13 )]
-transform = Transform( 2.83589, 0, 0, 0, 1, 0, 0, 0, 1.04564, 0, 0.8273, -11.472 )
+transform = Transform( 0.588621, 0, 0, 0, 7.4437, 0, 0, 0, 0.216933, 0, 1.01562, -15.1526 )
 
 [node name="OceanAttempt" parent="." index="17" instance=ExtResource( 14 )]
 transform = Transform( 5.65067, 0, 0, 0, 0.974388, 0, 0, 0, 5.65067, 0, -3.10876, 0 )

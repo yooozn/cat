@@ -9,11 +9,29 @@
 [ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=9]
-[ext_resource path="res://levels/level1new.gd" type="Script" id=10]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=11]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=12]
 [ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=13]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=14]
+
+[sub_resource type="GDScript" id=7]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w1_2 = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, 0.0956, -3.2952, 1.901, 0.0956, -3.2952, 1.901, 0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, -0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, -1.901, -0.0956, -3.2952, -1.901, -0.0956, 3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, 3.2952, 1.901, 0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, 0.0956, 3.2952, -1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952 )
@@ -34,7 +52,7 @@ data = PoolVector3Array( 2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072,
 data = PoolVector3Array( -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, -0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, 2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, -0.2572, -2.1951, -1.9714, -0.2572, -2.1951, -1.9714, -0.2572, 2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, 0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, 0.2572, 2.1951, -1.9714, 0.2572, 2.1951 )
 
 [node name="level1new" instance=ExtResource( 6 )]
-script = ExtResource( 10 )
+script = SubResource( 7 )
 
 [node name="Cube" parent="." index="0"]
 material/0 = ExtResource( 5 )
@@ -111,7 +129,7 @@ doorNum = "WallKey"
 [node name="Timer" parent="." index="14" instance=ExtResource( 11 )]
 
 [node name="TimerStop" parent="." index="15" instance=ExtResource( 12 )]
-transform = Transform( 2.5495, 0, 0, 0, 1.05801, 0, 0, 0, 0.914852, 0, 0.706571, -11.7722 )
+transform = Transform( 0.645497, 0, 0, 0, 4.51647, 0, 0, 0, 0.087639, 0, 1.66778, -14.8324 )
 
 [node name="OceanAttempt" parent="." index="16" instance=ExtResource( 13 )]
 transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
