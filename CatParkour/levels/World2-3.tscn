@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
@@ -8,16 +8,36 @@
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
-[ext_resource path="res://levels/World2-1.gd" type="Script" id=9]
+[ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=10]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w2_3 = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="World2-1" type="Spatial"]
-script = ExtResource( 9 )
+script = SubResource( 1 )
 
 [node name="Spatial" parent="." instance=ExtResource( 5 )]
 transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 0, 0, 0 )
 
 [node name="Spatial2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 3.4201, -19.749 )
+transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 8.11831, -37.5779 )
 
 [node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -26,18 +46,25 @@ transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64064, 0 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89442, -19.9758 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.59263, -37.8047 )
 scene = "res://levels/World2.tscn"
 level_text = "Back to World Hub"
 
 [node name="TextPlay" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -2.4366, 0, -3.30868 )
-text = "Test out your double jump! Press space while airborne."
+text = "Sprinting in the air provides extra speed!"
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -6.17275, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 4.85157, -20.1324 )
+transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 4.85157, -32.7342 )
+
+[node name="DoubleJumpRefresh" parent="." instance=ExtResource( 9 )]
+transform = Transform( 2.2649, 0, 0, 0, 0.53643, 0, 0, 0, 1.54991, 0, 9.55775, -17.2109 )
+
+[node name="JumpPad" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.96063 )
+jumpheight = 35.0
