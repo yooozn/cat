@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Animations.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TextGeneric.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Audio/respawn.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hit"
@@ -259,7 +260,6 @@ script = ExtResource( 1 )
 layer = 2
 
 [node name="Hit" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_right = 1279.0
 margin_bottom = 720.0
 color = Color( 0.988235, 0.52549, 0.52549, 0.290196 )
@@ -268,7 +268,6 @@ __meta__ = {
 }
 
 [node name="Heal" type="ColorRect" parent="CanvasLayer"]
-visible = false
 margin_right = 1279.0
 margin_bottom = 720.0
 color = Color( 0, 1, 0.203922, 0.0901961 )
@@ -286,7 +285,6 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -546.0
@@ -295,11 +293,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/CenterContainer"]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 482.0
+margin_left = 479.0
 margin_top = 58.0
-margin_right = 797.0
+margin_right = 801.0
 margin_bottom = 116.0
 custom_fonts/font = ExtResource( 2 )
 text = "Interact [e]"
@@ -323,3 +320,6 @@ root_node = NodePath("../PlayerHeal")
 anims/Interact = SubResource( 7 )
 anims/RESET = SubResource( 8 )
 anims/Transition = SubResource( 9 )
+
+[node name="respawn" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

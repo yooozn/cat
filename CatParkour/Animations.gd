@@ -7,6 +7,7 @@ var transition = false
 var hovered = false
 var interact = false
 var deathZoom = false
+var respawn = false
 func _ready():
 	$CanvasLayer/Hit.visible = false
 	$CanvasLayer/Heal.visible = false
@@ -33,3 +34,6 @@ func _process(delta):
 		$InteractText.stop()
 		$CanvasLayer/CenterContainer/Label.visible = false
 		$CanvasLayer/CenterContainer.visible = false
+	if respawn == true:
+		$respawn.play()
+		respawn = false

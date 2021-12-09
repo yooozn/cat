@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://levels/Dirt.tres" type="Material" id=1]
 [ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://levels/level1new.gd" type="Script" id=10]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=11]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=12]
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, 0.0956, -3.2952, 1.901, 0.0956, -3.2952, 1.901, 0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, -0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, -1.901, -0.0956, -3.2952, -1.901, -0.0956, 3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, 3.2952, 1.901, 0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, 0.0956, 3.2952, -1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952 )
@@ -110,3 +112,9 @@ doorNum = "WallKey"
 
 [node name="TimerStop" parent="." index="15" instance=ExtResource( 12 )]
 transform = Transform( 2.5495, 0, 0, 0, 1.05801, 0, 0, 0, 0.914852, 0, 0.706571, -11.7722 )
+
+[node name="OceanAttempt" parent="." index="16" instance=ExtResource( 13 )]
+transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
+
+[node name="Death" parent="." index="17" instance=ExtResource( 14 )]
+transform = Transform( 65.7049, 0, 0, 0, 0.360871, 0, 0, 0, 15.0622, 0, -1.4642, 0 )

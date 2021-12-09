@@ -10,6 +10,7 @@ func _on_Death_body_entered(body):
 			GlobalWorld.player.CheckZoom = true
 			GlobalWorld.player.deathZoom = false
 			GlobalWorld.player.translation = GlobalWorld.player.CheckPos
+			Animations.respawn = true
 			if GlobalWorld.player.carrying == true:
 				GlobalWorld.player.carrying = false
 				GlobalWorld.player.pickObject.global_transform.origin = \
@@ -18,6 +19,7 @@ func _on_Death_body_entered(body):
 	else:
 		if body.is_in_group("Player"):
 			GlobalWorld.player.deathZoom = true
+			Animations.respawn = true
 			yield(get_tree().create_timer(.5),"timeout")
 			get_tree().reload_current_scene()
 	

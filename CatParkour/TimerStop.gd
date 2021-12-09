@@ -24,4 +24,5 @@ func _on_TimerStop_body_entered(body):
 		var e = Part.instance()
 		get_parent().add_child(e)
 		e.translation = translation
+		$win.play()
 		
