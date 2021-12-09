@@ -218,7 +218,7 @@ shape = SubResource( 2 )
 
 [node name="PortalLVL11" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.855084, 0, -0.51849, 0, 1, 0, 0.51849, 0, 0.855084, 10.703, 6.16065, -34.2523 )
-scene = "res://levels/level9new.tscn"
+scene = "res://levels/level10new.tscn"
 level_text = "Level 10"
 extra = "w1_10"
 
