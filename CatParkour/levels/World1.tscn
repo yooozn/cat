@@ -99,7 +99,7 @@ scene = "res://levels/testmap2.tscn"
 level_text = "Back to Hub"
 
 [node name="PortalLVL9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46701, -25.5775 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46701, -27.7222 )
 scene = "res://levels/testmap2.tscn"
 level_text = "Back to Hub"
 
@@ -116,7 +116,7 @@ level_text = "Level 3"
 extra = "w1_3"
 
 [node name="PortalLVL3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.2121, 10.1208 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.2121, 12.8088 )
 scene = "res://levels/level1new.tscn"
 level_text = "Level 2"
 extra = "w1_2"
@@ -135,9 +135,9 @@ extra = "w1_5"
 
 [node name="PortalLVL7" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 2.33634, -22.4776 )
-scene = "res://levels/level1new.tscn"
-level_text = "Level 2"
-extra = "w1_2"
+scene = "res://levels/level6new.tscn"
+level_text = "Level 6"
+extra = "w1_6"
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.940157, 0, 0.340741, 0, 1, 0, -0.340741, 0, -0.940157, 14.051, 2.33634, -22.4776 )
