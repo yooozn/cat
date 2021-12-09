@@ -161,9 +161,10 @@ func _process(delta):
 		get_tree().quit()
 	if Input.is_key_pressed(KEY_Y):
 		OS.window_fullscreen = true
-	if Input.is_key_pressed(KEY_N):
+	if Input.is_action_just_pressed("KEY_N") and deathZoom == false:
 		if GlobalWorld.Speedrun == false:
 			deathZoom = true
+			Animations.respawn = true
 			yield(get_tree().create_timer(.5),"timeout")
 			get_tree().reload_current_scene()
 		else:
@@ -364,6 +365,7 @@ func _handle_movement(delta):
 			deathZoom = true
 			yield(get_tree().create_timer(.5),"timeout")
 			deathZoom = false
+			Animations.respawn = true
 			if pStats.third_person == true:
 				$camerapivot/SpringArm.spring_length = 2
 				$camerapivot/SpringArm/Camera.fov = 70

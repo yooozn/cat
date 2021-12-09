@@ -34,7 +34,7 @@ func _process(delta):
 		gravPick = false
 	if shader:
 		if hovered == true and GlobalWorld.hovered == true:
-			shader.set_shader_param(\"strength\", 0.2)
+			shader.set_shader_param(\"strength\", 0.5)
 			print(\"hovered\")
 		else:
 			shader.set_shader_param(\"strength\", 0.0)
