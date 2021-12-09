@@ -53,6 +53,22 @@ func _process(delta):
 			Times.w1_6 = false
 			if Time <= Times.world1_6Time or Times.world1_6Time == 0:
 				Times.world1_6Time = Time
+		elif Times.w1_7 == true:
+			Times.w1_7 = false
+			if Time <= Times.world1_7Time or Times.world1_7Time == 0:
+				Times.world1_7Time = Time
+		elif Times.w1_8 == true:
+			Times.w1_8 = false
+			if Time <= Times.world1_8Time or Times.world1_8Time == 0:
+				Times.world1_8Time = Time
+		elif Times.w1_9 == true:
+			Times.w1_9 = false
+			if Time <= Times.world1_9Time or Times.world1_9Time == 0:
+				Times.world1_9Time = Time
+		elif Times.w1_10 == true:
+			Times.w1_10 = false
+			if Time <= Times.world1_10Time or Times.world1_10Time == 0:
+				Times.world1_10Time = Time
 		elif Times.w2_1 == true:
 			Times.w2_1 = false
 			if Time <= Times.world2_1Time or Times.world2_1Time == 0:

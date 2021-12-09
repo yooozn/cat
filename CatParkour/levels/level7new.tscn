@@ -1,0 +1,177 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://levels/Dirt.tres" type="Material" id=1]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=5]
+[ext_resource path="res://levels/level1new.glb" type="PackedScene" id=6]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=11]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=12]
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=13]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=14]
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w1_7 = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, 0.0956, -3.2952, 1.901, 0.0956, -3.2952, 1.901, 0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, 1.901, 0.0956, 3.2952, 1.901, -0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, 0.0956, -3.2952, -1.901, 0.0956, 3.2952, -1.901, -0.0956, 3.2952, -1.901, -0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, -1.901, -0.0956, -3.2952, -1.901, -0.0956, 3.2952, 1.901, -0.0956, 3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, 3.2952, 1.901, 0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, -0.0956, 3.2952, 1.901, 0.0956, 3.2952, -1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952, -1.901, 0.0956, -3.2952, -1.901, -0.0956, -3.2952, 1.901, -0.0956, -3.2952, 1.901, 0.0956, -3.2952 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1.8087, -0.264, 3.1822, -1.8087, 0.264, -3.1822, -1.8087, 0.264, 3.1822, -1.8087, -0.264, 3.1822, -1.8087, -0.264, -3.1822, -1.8087, 0.264, -3.1822, -1.8087, -0.264, -3.1822, 1.8087, 0.264, -3.1822, -1.8087, 0.264, -3.1822, -1.8087, -0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, 0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, 0.264, 3.1822, 1.8087, 0.264, -3.1822, 1.8087, -0.264, -3.1822, 1.8087, -0.264, 3.1822, 1.8087, 0.264, 3.1822, 1.8087, -0.264, 3.1822, -1.8087, 0.264, 3.1822, 1.8087, 0.264, 3.1822, 1.8087, -0.264, 3.1822, -1.8087, -0.264, 3.1822, -1.8087, 0.264, 3.1822, -1.8087, -0.264, -3.1822, 1.8087, -0.264, 3.1822, 1.8087, -0.264, -3.1822, -1.8087, -0.264, -3.1822, -1.8087, -0.264, 3.1822, 1.8087, -0.264, 3.1822, 1.8087, 0.264, -3.1822, -1.8087, 0.264, 3.1822, -1.8087, 0.264, -3.1822, 1.8087, 0.264, -3.1822, 1.8087, 0.264, 3.1822, -1.8087, 0.264, 3.1822 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( 1.1879, 0.0813, -1.3032, -1.1879, 0.0813, 1.3032, -1.1879, 0.0813, -1.3032, 1.1879, 0.0813, -1.3032, 1.1879, 0.0813, 1.3032, -1.1879, 0.0813, 1.3032, 1.1879, -0.0813, 1.3032, -1.1879, 0.0813, 1.3032, 1.1879, 0.0813, 1.3032, 1.1879, -0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, 0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, 0.0813, -1.3032, -1.1879, 0.0813, 1.3032, -1.1879, -0.0813, 1.3032, -1.1879, -0.0813, -1.3032, -1.1879, 0.0813, -1.3032, -1.1879, -0.0813, -1.3032, 1.1879, -0.0813, 1.3032, 1.1879, -0.0813, -1.3032, -1.1879, -0.0813, -1.3032, -1.1879, -0.0813, 1.3032, 1.1879, -0.0813, 1.3032, 1.1879, -0.0813, -1.3032, 1.1879, 0.0813, 1.3032, 1.1879, 0.0813, -1.3032, 1.1879, -0.0813, -1.3032, 1.1879, -0.0813, 1.3032, 1.1879, 0.0813, 1.3032, -1.1879, -0.0813, -1.3032, 1.1879, 0.0813, -1.3032, -1.1879, 0.0813, -1.3032, -1.1879, -0.0813, -1.3032, 1.1879, -0.0813, -1.3032, 1.1879, 0.0813, -1.3032 )
+
+[sub_resource type="ConcavePolygonShape" id=4]
+data = PoolVector3Array( -1.1302, -0.2244, 1.2585, -1.1302, 0.2244, -1.2585, -1.1302, 0.2244, 1.2585, -1.1302, -0.2244, 1.2585, -1.1302, -0.2244, -1.2585, -1.1302, 0.2244, -1.2585, -1.1302, -0.2244, -1.2585, 1.1302, 0.2244, -1.2585, -1.1302, 0.2244, -1.2585, -1.1302, -0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, 0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, 0.2244, 1.2585, 1.1302, 0.2244, -1.2585, 1.1302, -0.2244, -1.2585, 1.1302, -0.2244, 1.2585, 1.1302, 0.2244, 1.2585, 1.1302, -0.2244, 1.2585, -1.1302, 0.2244, 1.2585, 1.1302, 0.2244, 1.2585, 1.1302, -0.2244, 1.2585, -1.1302, -0.2244, 1.2585, -1.1302, 0.2244, 1.2585, -1.1302, -0.2244, -1.2585, 1.1302, -0.2244, 1.2585, 1.1302, -0.2244, -1.2585, -1.1302, -0.2244, -1.2585, -1.1302, -0.2244, 1.2585, 1.1302, -0.2244, 1.2585, 1.1302, 0.2244, -1.2585, -1.1302, 0.2244, 1.2585, -1.1302, 0.2244, -1.2585, 1.1302, 0.2244, -1.2585, 1.1302, 0.2244, 1.2585, -1.1302, 0.2244, 1.2585 )
+
+[sub_resource type="ConcavePolygonShape" id=5]
+data = PoolVector3Array( 2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072, 0.0932, -2.2731, 2.072, 0.0932, -2.2731, 2.072, 0.0932, 2.2731, -2.072, 0.0932, 2.2731, 2.072, -0.0932, 2.2731, -2.072, 0.0932, 2.2731, 2.072, 0.0932, 2.2731, 2.072, -0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, 0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, 0.0932, -2.2731, -2.072, 0.0932, 2.2731, -2.072, -0.0932, 2.2731, -2.072, -0.0932, -2.2731, -2.072, 0.0932, -2.2731, -2.072, -0.0932, -2.2731, 2.072, -0.0932, 2.2731, 2.072, -0.0932, -2.2731, -2.072, -0.0932, -2.2731, -2.072, -0.0932, 2.2731, 2.072, -0.0932, 2.2731, 2.072, -0.0932, -2.2731, 2.072, 0.0932, 2.2731, 2.072, 0.0932, -2.2731, 2.072, -0.0932, -2.2731, 2.072, -0.0932, 2.2731, 2.072, 0.0932, 2.2731, -2.072, -0.0932, -2.2731, 2.072, 0.0932, -2.2731, -2.072, 0.0932, -2.2731, -2.072, -0.0932, -2.2731, 2.072, -0.0932, -2.2731, 2.072, 0.0932, -2.2731 )
+
+[sub_resource type="ConcavePolygonShape" id=6]
+data = PoolVector3Array( -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, -0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, -2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, 0.2572, 2.1951, 1.9714, 0.2572, -2.1951, 1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, 1.9714, 0.2572, 2.1951, 1.9714, -0.2572, 2.1951, -1.9714, -0.2572, 2.1951, -1.9714, 0.2572, 2.1951, -1.9714, -0.2572, -2.1951, 1.9714, -0.2572, 2.1951, 1.9714, -0.2572, -2.1951, -1.9714, -0.2572, -2.1951, -1.9714, -0.2572, 2.1951, 1.9714, -0.2572, 2.1951, 1.9714, 0.2572, -2.1951, -1.9714, 0.2572, 2.1951, -1.9714, 0.2572, -2.1951, 1.9714, 0.2572, -2.1951, 1.9714, 0.2572, 2.1951, -1.9714, 0.2572, 2.1951 )
+
+[sub_resource type="CubeMesh" id=8]
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="level1new" instance=ExtResource( 6 )]
+script = SubResource( 11 )
+
+[node name="Cube" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.05701 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/StaticBody" index="0"]
+shape = SubResource( 1 )
+
+[node name="Cube001" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.344793, 1.95518 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube001" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube001/StaticBody" index="0"]
+shape = SubResource( 2 )
+
+[node name="Cube002" parent="." index="4"]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, -0.0472503, -4.18371 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube002" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube002/StaticBody" index="0"]
+shape = SubResource( 3 )
+
+[node name="Cube003" parent="." index="5"]
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, -0.340301, -4.18371 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube003" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube003/StaticBody" index="0"]
+shape = SubResource( 4 )
+
+[node name="Cube004" parent="." index="6"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.174623, -33.7071 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube004" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube004/StaticBody" index="0"]
+shape = SubResource( 5 )
+
+[node name="Cube005" parent="." index="7"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, -0.510543, -33.7071 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="Cube005" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube005/StaticBody" index="0"]
+shape = SubResource( 6 )
+
+[node name="TestEMvorpm,emt 2" parent="." index="8" instance=ExtResource( 4 )]
+
+[node name="Cat" parent="." index="9" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.746919, 3.12625 )
+
+[node name="KeyObj" parent="." index="10" instance=ExtResource( 7 )]
+transform = Transform( 0.0562572, 0, -0.998416, 0, 1, 0, 0.998416, 0, 0.0562572, -0.362535, 0.18855, -4.27347 )
+
+[node name="PortalLVL1" parent="." index="11" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.603275, 0.844207, -35.1314 )
+scene = "res://levels/World1.tscn"
+level_text = "Back to World Hub"
+
+[node name="WallKey" parent="." index="12" instance=ExtResource( 8 )]
+transform = Transform( 1.08149, 0, 0, 0, 1.50289, 0, 0, 0, 0.49291, 0, 1.41504, -35.0964 )
+
+[node name="Doorlock" parent="." index="13" instance=ExtResource( 9 )]
+transform = Transform( -1.79397e-08, 0, -0.410412, 0, 0.410412, 0, 0.410412, 0, -1.79397e-08, 0, 0.637537, -34.6251 )
+doorNum = "WallKey"
+
+[node name="Timer" parent="." index="14" instance=ExtResource( 11 )]
+
+[node name="TimerStop" parent="." index="15" instance=ExtResource( 12 )]
+transform = Transform( 0.534587, 0, 0, 0, 5.71929, 0, 0, 0, 0.202975, 0, 1.01221, -35.1943 )
+
+[node name="OceanAttempt" parent="." index="16" instance=ExtResource( 13 )]
+transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
+
+[node name="Death" parent="." index="17" instance=ExtResource( 14 )]
+transform = Transform( 65.7049, 0, 0, 0, 0.360871, 0, 0, 0, 15.0622, 0, -1.4642, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="18"]
+transform = Transform( 1.77827, 0, 0, 0, 0.105827, 0, 0, 0, 1.78988, 0, 0.0797558, 8.08321 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="." index="19"]
+transform = Transform( 1.54203, 0, 0, 0, 0.251766, 0, 0, 0, 1.61089, 0, -0.0877743, 8.08321 )
+mesh = SubResource( 8 )
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody" index="0"]
+shape = SubResource( 10 )
+
+[node name="Teleporter" parent="." index="20" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29785, 8.08887 )
+portalto = "Teleporter2"
+
+[node name="Teleporter2" parent="." index="21" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29785, -30.6657 )
+portalto = "Teleporter"

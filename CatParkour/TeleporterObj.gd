@@ -69,8 +69,17 @@ func _process(delta):
 
 func _on_PortalArea_body_entered(body):
 	if portalDestination and !body.is_in_group("TP") and portalCD == false and body.is_in_group("TPable"):
-		body.global_transform.origin = portalDestination.PortalLocation
-		portalDestination.portalCD = true
+		if body.is_in_group("Player"):
+			if body.carrying == false:
+				body.global_transform.origin = portalDestination.PortalLocation
+				portalDestination.portalCD = true
+			else:
+				if not body.pickObject.is_in_group("TP"):
+					body.global_transform.origin = portalDestination.PortalLocation
+					portalDestination.portalCD = true
+		else:
+			body.global_transform.origin = portalDestination.PortalLocation
+			portalDestination.portalCD = true
 
 
 func _on_Area2_body_entered(body):

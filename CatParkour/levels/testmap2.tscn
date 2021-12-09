@@ -183,7 +183,7 @@ extra = "2"
 
 [node name="PortalLVL5" parent="." index="24" instance=ExtResource( 5 )]
 transform = Transform( 0.833876, 0, 0.551952, 0, 1, 0, -0.551952, 0, 0.833876, 8.29631, 9.01498, 30.0994 )
-scene = "res://levels/Tutorial1.tscn"
+scene = "res://levels/TutorialNew.tscn"
 scene1 = ExtResource( 8 )
 level_text = "Tutorial"
 extra = "t"

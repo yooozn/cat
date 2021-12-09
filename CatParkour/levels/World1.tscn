@@ -129,21 +129,21 @@ extra = "w1_4"
 
 [node name="PortalLVL6" parent="." instance=ExtResource( 1 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.5914, 1.90403, -9.99412 )
-scene = "res://levels/level5new.tscn"
+scene = "res://levels/level6new.tscn"
 level_text = "Level 5"
 extra = "w1_5"
 
 [node name="PortalLVL7" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 2.33634, -22.4776 )
-scene = "res://levels/level6new.tscn"
+scene = "res://levels/level5new.tscn"
 level_text = "Level 6"
 extra = "w1_6"
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.940157, 0, 0.340741, 0, 1, 0, -0.340741, 0, -0.940157, 14.051, 2.33634, -22.4776 )
-scene = "res://levels/level1new.tscn"
-level_text = "Level 2"
-extra = "w1_2"
+scene = "res://levels/level7new.tscn"
+level_text = "Level 7"
+extra = "w1_7"
 
 [node name="Cat" parent="." instance=ExtResource( 2 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.661226, 0.642099, -5.30925 )

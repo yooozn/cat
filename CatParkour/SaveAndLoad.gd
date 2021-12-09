@@ -66,6 +66,10 @@ func _on_NewGame_pressed():
 	Times.world1_4Time = 0
 	Times.world1_5Time = 0
 	Times.world1_6Time = 0
+	Times.world1_7Time = 0
+	Times.world1_8Time = 0
+	Times.world1_9Time = 0
+	Times.world1_10Time = 0
 	Times.world2_1Time = 0
 	Times.world2_2Time = 0
 	Times.world2_3Time = 0
@@ -89,6 +93,10 @@ func _on_NewGame_pressed():
 		"world1_4Time" : Times.world1_4Time,
 		"world1_5Time" : Times.world1_5Time,
 		"world1_6Time" : Times.world1_6Time,
+		"world1_7Time" : Times.world1_7Time,
+		"world1_8Time" : Times.world1_8Time,
+		"world1_9Time" : Times.world1_9Time,
+		"world1_10Time" : Times.world1_10Time,
 		"world2_1Time" : Times.world2_1Time,
 		"world2_2Time" : Times.world2_2Time,
 		"world2_3Time" : Times.world2_3Time,
@@ -100,7 +108,7 @@ func _on_NewGame_pressed():
 	Zoom = true
 	Animations.transition = true
 	yield(get_tree().create_timer(.5),"timeout")
-	get_tree().change_scene("res://levels/Tutorial1.tscn")
+	get_tree().change_scene("res://levels/TutorialNew.tscn")
 	
 
 
@@ -130,6 +138,9 @@ func _on_Continue_pressed():
 			Times.world1_4Time = player_data["world1_4Time"]
 			Times.world1_5Time = player_data["world1_5Time"]
 			Times.world1_6Time = player_data["world1_6Time"]
+			Times.world1_6Time = player_data["world1_7Time"]
+			Times.world1_6Time = player_data["world1_8Time"]
+			Times.world1_6Time = player_data["world1_9Time"]
 			Times.world2_1Time = player_data["world2_1Time"]
 			Times.world2_2Time = player_data["world2_2Time"]
 			Times.world2_3Time = player_data["world2_3Time"]

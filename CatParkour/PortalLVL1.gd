@@ -46,6 +46,14 @@ func _on_Area_body_entered(body):
 			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_5Time) + "s"
 		elif extra == "w1_6":
 			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_6Time) + "s"
+		elif extra == "w1_7":
+			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_7Time) + "s"
+		elif extra == "w1_8":
+			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_8Time) + "s"
+		elif extra == "w1_9":
+			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_9Time) + "s"
+		elif extra == "w1_10":
+			$CenterContainer2/Label2.text = "Record: " + str(Times.world1_10Time) + "s"
 		elif extra == "w2_1":
 			$CenterContainer2/Label2.text = "Record: " + str(Times.world2_1Time) + "s"
 		elif extra == "w2_2":

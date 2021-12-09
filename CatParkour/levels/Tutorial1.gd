@@ -1,4 +1,4 @@
 extends Spatial
 
-func _ready():
-	Times.tut = true
+#func _ready():
+#	Times.tut = true
