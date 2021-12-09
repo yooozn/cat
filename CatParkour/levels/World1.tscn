@@ -100,8 +100,9 @@ level_text = "Back to Hub"
 
 [node name="PortalLVL9" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46701, -27.7222 )
-scene = "res://levels/testmap2.tscn"
-level_text = "Back to Hub"
+scene = "res://levels/level8new.tscn"
+level_text = "Level 8"
+extra = "w1_8"
 
 [node name="PortalLVL2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.74318, 0, 0.669092, 0, 1, 0, -0.669092, 0, 0.74318, 13.486, 1.2121, 6.83882 )
