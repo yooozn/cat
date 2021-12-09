@@ -14,15 +14,21 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
-	if GlobalWorld.player.y_velocity > -.01:
-		pick = true
-	elif GlobalWorld.player.y_velocity == -.01:
-		pick = false
+#	if GlobalWorld.player.y_velocity > -.01:
+#		pick = true
+#	elif GlobalWorld.player.y_velocity == -.01:
+#		pick = false
 	if gravPick == true:
 		gravity_scale = 0
 		collision_layer = 2
 		yield(get_tree().create_timer(.1),"timeout")
 		interact = true
+		if GlobalWorld.player.y_velocity > -.01 or GlobalWorld.player.y_velocity < -.01:
+			interact = false
+			GlobalWorld.player.crossPICKbool = true
+		elif GlobalWorld.player.y_velocity == -.01:
+			interact = true
+			GlobalWorld.player.crossPICKbool = false
 #		print(collision_layer)
 	elif gravPick == false:
 		gravity_scale = 1

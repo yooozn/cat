@@ -24,7 +24,7 @@ material/0 = ExtResource( 4 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
-transform = Transform( 19.1214, 0, 0, 0, 0.204494, 0, 0, 0, 16.5159, 0, 1.06526, -33.2672 )
+transform = Transform( 19.1214, 0, 0, 0, 0.204494, 0, 0, 0, 16.5159, 0, 1.78303, -33.2672 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
 
@@ -44,7 +44,7 @@ material/0 = ExtResource( 5 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 18.1717, 0, 0, 0, 0.572846, 0, 0, 0, 16.1241, 0, 0.324506, -32.6757 )
+transform = Transform( 18.1717, 0, 0, 0, 1.05421, 0, 0, 0, 16.1241, 0, 0.780474, -32.6757 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 5 )
 
@@ -54,7 +54,7 @@ material/0 = ExtResource( 5 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="."]
-transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, -15.3952, 0.702146, -9.60071 )
+transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, -15.3952, 1.18686, -9.60071 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
 
@@ -64,17 +64,80 @@ material/0 = ExtResource( 4 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance6" type="MeshInstance" parent="."]
-transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, -15.2515, -0.0386057, -9.60071 )
+transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, -15.2515, 0.446106, -9.60071 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance6"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance6/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance11" type="MeshInstance" parent="."]
+transform = Transform( 5.14678, 0, -1.13185, 0, 0.204494, 0, 1.51371, 0, 3.84843, 14.0137, 2.38986, -23.8056 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance11"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance11/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance12" type="MeshInstance" parent="."]
+transform = Transform( 4.89115, 0, -1.105, 0, 0.572846, 0, 1.43852, 0, 3.75714, 13.9732, 1.64911, -23.6678 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance12"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance12/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance13" type="MeshInstance" parent="."]
+transform = Transform( 5.36195, 0, 0.129851, 0, 0.204494, 0, -0.173659, 0, 4.00932, 0.942682, 2.93928, -28.4278 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance13"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance13/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance14" type="MeshInstance" parent="."]
+transform = Transform( 5.09563, 0, 0.126771, 0, 0.572846, 0, -0.165033, 0, 3.91422, 0.947331, 2.19852, -28.2842 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance14"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance14/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="MeshInstance9" type="MeshInstance" parent="."]
+transform = Transform( -3.3017, 0, 3.16173, 0, 0.204494, 0, -4.22841, 0, -2.46879, -14.0972, 0.331718, 5.97553 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance9"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance9/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance10" type="MeshInstance" parent="."]
+transform = Transform( -3.13771, 0, 3.08674, 0, 0.572846, 0, -4.01839, 0, -2.41023, -13.9839, -0.409033, 5.88709 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance10"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance10/StaticBody"]
 shape = SubResource( 2 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="."]
-transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, 15.0709, 0.702146, -9.60071 )
+transform = Transform( -2.45752e-07, 0, 4.01142, 0, 0.204494, 0, -5.36476, 0, -1.67317e-07, 15.0709, 0.923344, -9.60071 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 4 )
 
@@ -84,13 +147,14 @@ material/0 = ExtResource( 4 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance8" type="MeshInstance" parent="."]
-transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, 15.2145, -0.0386057, -9.60071 )
+transform = Transform( -2.33546e-07, 0, 3.91627, 0, 0.572846, 0, -5.0983, 0, -1.63348e-07, 15.2145, 0.182592, -9.60071 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 5 )
 
 [node name="StaticBody" type="StaticBody" parent="MeshInstance8"]
 
 [node name="CollisionShape" type="CollisionShape" parent="MeshInstance8/StaticBody"]
+transform = Transform( 1, 0, 3.55271e-15, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 1 )]
@@ -99,7 +163,7 @@ scene = "res://levels/testmap2.tscn"
 level_text = "Back to Hub"
 
 [node name="PortalLVL9" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46701, -27.7222 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.35458, -27.7222 )
 scene = "res://levels/level8new.tscn"
 level_text = "Level 8"
 extra = "w1_8"
@@ -111,37 +175,37 @@ level_text = "Level 1"
 extra = "w1_1"
 
 [node name="PortalLVL4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.669092, 0, -0.74318, 0, 1, 0, 0.74318, 0, 0.669092, -13.9066, 1.2121, 5.43166 )
+transform = Transform( 0.669092, 0, -0.74318, 0, 1, 0, 0.74318, 0, 0.669092, -13.9066, 1.81706, 5.43166 )
 scene = "res://levels/level2new.tscn"
 level_text = "Level 3"
 extra = "w1_3"
 
 [node name="PortalLVL3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.2121, 12.8088 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0919185, 1.67834, 12.8088 )
 scene = "res://levels/level1new.tscn"
 level_text = "Level 2"
 extra = "w1_2"
 
 [node name="PortalLVL5" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.3774, 1.90403, -9.99412 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16.3774, 2.12523, -9.99412 )
 scene = "res://levels/level4new.tscn"
 level_text = "Level 4"
 extra = "w1_4"
 
 [node name="PortalLVL6" parent="." instance=ExtResource( 1 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.5914, 1.90403, -9.99412 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16.5914, 2.38874, -9.99412 )
 scene = "res://levels/level6new.tscn"
 level_text = "Level 5"
 extra = "w1_5"
 
 [node name="PortalLVL7" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 2.33634, -22.4776 )
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -12.6837, 3.05411, -22.4776 )
 scene = "res://levels/level5new.tscn"
 level_text = "Level 6"
 extra = "w1_6"
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 1 )]
-transform = Transform( -0.940157, 0, 0.340741, 0, 1, 0, -0.340741, 0, -0.940157, 14.051, 2.33634, -22.4776 )
+transform = Transform( -0.945387, 0, 0.325948, 0, 1, 0, -0.325948, 0, -0.945387, 14.6884, 4.25711, -23.2808 )
 scene = "res://levels/level7new.tscn"
 level_text = "Level 7"
 extra = "w1_7"
