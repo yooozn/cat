@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Player/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Player/Cat.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Audio/pop2.wav" type="AudioStream" id=11]
 [ext_resource path="res://icon.png" type="Texture" id=12]
 [ext_resource path="res://art/CrosshairX.png" type="Texture" id=13]
+[ext_resource path="res://art/catAnimation4NLsDone.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CapsuleShape" id=19]
 
@@ -163,6 +164,10 @@ shape = SubResource( 19 )
 
 [node name="origonalcat" parent="." instance=ExtResource( 5 )]
 transform = Transform( -0.29989, 0, 0.008141, 0, 0.3, 0, -0.008141, 0, -0.29989, -0.015862, -0.264857, 0.210856 )
+visible = false
+
+[node name="catAnimation4NLsDone" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.35, 0, -5.28485e-08, 0, 0.35, 0, 5.28485e-08, 0, -0.35, 0, -0.262824, -0.197613 )
 
 [node name="camerapivot" type="Spatial" parent="."]
 

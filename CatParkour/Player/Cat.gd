@@ -10,6 +10,8 @@ var jump_power = pStats.jump_power
 
 var oRotation
 
+var velocity_clamped
+
 var jumpAding = false
 
 #More Stats
@@ -68,6 +70,8 @@ onready var jumpSound = preload("res://JumpSound.tscn")
 onready var dashSound = preload("res://Dash.tscn")
 onready var fallSound = preload("res://FallImpact.tscn")
 onready var pickUPsprite = $camerapivot/SpringArm/Camera/PickLoc/Sprite3D
+
+onready var catAnims = $catAnimation4NLsDone
 
 #Dash variables
 var dash_speed = 2
@@ -152,7 +156,8 @@ func _ready():
 	else:
 		$camerapivot/SpringArm.spring_length = 0
 		$camerapivot/SpringArm/Camera.fov = 46
-
+	catAnims.get_node("AnimationPlayer").get_animation("Walk1").set_loop(true)
+	catAnims.get_node("AnimationPlayer").get_animation("Idle").set_loop(true)
 func _process(delta):
 	dubJumpUnlock = pStats.dubJumpUnlock
 	dashUnlock = pStats.dashUnlock
@@ -269,6 +274,7 @@ func _physics_process(delta):
 			fSound.translation = translation
 			fSound.play()
 			in_air = false
+			catAnims.get_node("AnimationTree").set("parameters/air_ground/current", 0)
 			if dubJumpUnlock == true:
 				dubJump = maxJumps
 	elif !is_on_floor():
@@ -289,6 +295,8 @@ func _physics_process(delta):
 				elif dubJump > 1:
 					y_velocity = jump_power
 					dubJump -= 1
+		catAnims.get_node("AnimationTree").set("parameters/JumpFall/blend_amount", y_velocity)
+		print(catAnims.get_node("AnimationTree").get("parameters/JumpFall/blend_amount"))
 #
 func _handle_movement(delta):
 	if jumpAding == false:
@@ -314,8 +322,20 @@ func _handle_movement(delta):
 	if $RayCast.is_colliding() or $RayCast4.is_colliding():
 		if !Input.is_action_pressed("move_forward") and !Input.is_action_pressed("move_backward") \
 	and !Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
-			velocity.x = 0
-			velocity.z = 0
+			while velocity.x != 0:
+				if velocity.x > 0:
+					velocity.x -= .1
+				elif velocity.x < 0:
+					velocity.x += .1
+				if velocity.x > -.3 and velocity.x < .3:
+					velocity.x = 0 
+			while velocity.z != 0:
+				if velocity.z > 0:
+					velocity.z -= .1
+				elif velocity.z < 0:
+					velocity.z += .1
+				if velocity.z > -.3 and velocity.z < .3:
+					velocity.z = 0
 	#Camera lerp between first and third person
 	
 	if Input.is_action_just_pressed("cameraswap") and firstpersonview == false and thirdpersonview == true \
@@ -561,7 +581,10 @@ func _handle_movement(delta):
 		get_parent().add_child(jumpSound1)
 		jumpSound1.translation = translation
 		jumpSound1.play()
+		catAnims.get_node("AnimationTree").set("parameters/air_ground/current", 1)
 	velocity.y = y_velocity
+	velocity_clamped = clamp((abs(velocity.x) + abs(velocity.z)) / 15 , 0.0, 1.0)
+	catAnims.get_node("AnimationTree").set("parameters/IdleWalk/blend_amount", velocity_clamped)
 	velocity = move_and_slide(velocity, Vector3.UP)
 #	print(y_velocity)
 #	print(velocity)
