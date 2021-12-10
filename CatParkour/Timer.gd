@@ -72,8 +72,8 @@ func _process(delta):
 		elif Times.w2_1 == true:
 			Times.w2_1 = false
 			if Time <= Times.world2_1Time or Times.world2_1Time == 0:
-				Times.world1_1Time = Time
-		elif Times.w2_1 == true:
+				Times.world2_1Time = Time
+		elif Times.w2_2 == true:
 			Times.w2_2 = false
 			if Time <= Times.world2_2Time or Times.world2_2Time == 0:
 				Times.world2_2Time = Time
