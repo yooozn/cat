@@ -262,7 +262,10 @@ func _physics_process(delta):
 	if portalZoom == false:
 		_handle_movement(delta)
 	
-	
+	if y_velocity > 5 or y_velocity < -5:
+		catAnims.get_node("AnimationTree").set("parameters/air_ground/current", 1)
+	elif y_velocity == -.01:
+		catAnims.get_node("AnimationTree").set("parameters/air_ground/current",0)
 	
 	if is_on_floor():
 		if in_air == true:
