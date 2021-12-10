@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Object1.tscn" type="PackedScene" id=9]
-[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=10]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=14]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
@@ -22,7 +25,7 @@ script/source = "extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Times.w2_6 = true
+	Times.w2_9 = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,11 +39,8 @@ script = SubResource( 1 )
 [node name="Spatial" parent="." instance=ExtResource( 5 )]
 transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 0, 0, 0 )
 
-[node name="Spatial3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1.69719, 0, 0, 0, 0.145981, 0, 0, 0, 1.71166, 0, 13.9443, -8.06193 )
-
 [node name="Spatial2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 39.2546, -19.749 )
+transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 3.4201, -51.3322 )
 
 [node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -49,13 +49,13 @@ transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64064, 0 )
 
 [node name="PortalLVL1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40.7289, -19.9758 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89442, -51.559 )
 scene = "res://levels/World2.tscn"
 level_text = "Back to World Hub"
 
 [node name="TextPlay" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -2.4366, 0, -3.30868 )
-text = "Order matters..."
+text = "Test out your double jump! Press space while airborne."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
 transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
@@ -63,11 +63,20 @@ transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 41.1135, -20.1324 )
+transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 4.85157, -20.1324 )
 
-[node name="RigidBody" parent="." instance=ExtResource( 9 )]
-transform = Transform( 5.54521, 0, 0, 0, 1, 0, 0, 0, 5.37513, -5.27067, -0.138093, 0 )
+[node name="KeyObj" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.747359, -2.6099 )
 
-[node name="JumpPad" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57489, 0, 0 )
-jumpheight = 40.0
+[node name="DoubleJumpRefresh" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.12306, 0, 0, 0, 0.367594, 0, 0, 0, 1.42113, 0, 4.16036, -33.4168 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 12 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 6.0976, -32.0737 )
+doorNum = "WallKey"
+
+[node name="WallKey" parent="." instance=ExtResource( 13 )]
+transform = Transform( 3.89565, 0, 0, 0, 4.52218, 0, 0, 0, 1, 0, 7.57049, -32.9337 )
+
+[node name="DoubleJumpUnlock" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622945, 0 )
