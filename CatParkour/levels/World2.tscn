@@ -30,7 +30,7 @@ transform = Transform( 4.91373, 0, 0, 0, 0.487582, 0, 0, 0, 4.66552, -16.5233, 2
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -18.0025, 3.6734, 14.3474 )
-scene = "res://levels/World2-7.tscn"
+scene = "res://levels/World2-7newTest.tscn"
 level_text = "Level 7"
 extra = "w2_7"
 DistanceTxt = "Level 7"
@@ -90,8 +90,10 @@ transform = Transform( -2.14786e-07, 0, 4.66552, 0, 0.487582, 0, -4.91373, 0, -2
 
 [node name="PortalLVL9" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -2.78181e-08, 0, 1, 0, 2.78181e-08, 0, -1, -0.029665, 6.66575, 19.9074 )
-level_text = "Level 3"
-DistanceTxt = "Level 3"
+scene = "res://levels/World2-8.tscn"
+level_text = "Level 8"
+extra = "w2_8"
+DistanceTxt = "Level 8"
 
 [node name="Cat" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38096, -2.32829 )
