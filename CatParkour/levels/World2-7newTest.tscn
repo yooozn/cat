@@ -54,7 +54,7 @@ transform = Transform( 3.6221, 0, 0, 0, 0.145981, 0, 0, 0, 3.11732, 0, 0, 33.069
 transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, -42.1173, 36.2516, -23.2743 )
 
 [node name="Spatial5" parent="." instance=ExtResource( 5 )]
-transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 33.2995, 17.1234, -11.3421 )
+transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 33.2995, 19.3927, -11.3421 )
 
 [node name="Spatial2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 80.7922, -49.0226 )
@@ -90,7 +90,7 @@ jumpheight = 40.0
 transform = Transform( 9.15036, 0, 0, 0, 0.31715, 0, 0, 0, 1.45979, -18.5106, 49.7452, -23.2743 )
 
 [node name="DoubleJumpRefresh2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 9.15036, 0, 0, 0, 0.31715, 0, 0, 0, 1.45979, 16.5334, 30.617, -11.3421 )
+transform = Transform( 9.15036, 0, 0, 0, 0.31715, 0, 0, 0, 1.45979, 16.5334, 32.8277, -11.3421 )
 
 [node name="DoubleJumpRefresh3" parent="." instance=ExtResource( 9 )]
 transform = Transform( -3.99975e-07, 0, -1.45979, 0, 0.31715, 0, 9.15036, 0, -6.38093e-08, 0.135992, 13.4936, 18.1404 )
@@ -100,7 +100,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.1467, 36.2516, -23.2743 )
 jumpheight = 40.0
 
 [node name="JumpPad3" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2376, 17.1234, -11.3421 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2376, 19.3927, -11.3421 )
 jumpheight = 40.0
 
 [node name="JumpPad4" parent="." instance=ExtResource( 11 )]
