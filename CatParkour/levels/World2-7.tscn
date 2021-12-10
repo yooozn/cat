@@ -1,0 +1,116 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TextPlay.tscn" type="PackedScene" id=2]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=3]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=11]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w2_7 = true
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="World2-1" type="Spatial"]
+script = SubResource( 1 )
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( 8.50087, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 0, 0, 0 )
+
+[node name="Spatial6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.43218, 0, 0, 0, 0.145981, 0, 0, 0, 2.51787, 0, 19.5899, -12.5173 )
+
+[node name="Spatial7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.43218, 0, 0, 0, 0.145981, 0, 0, 0, 2.51787, 0, 35.1455, -24.0494 )
+
+[node name="Spatial8" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2.43218, 0, 0, 0, 0.145981, 0, 0, 0, 2.51787, 0, 49.9219, -35.0785 )
+
+[node name="Spatial4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3.6221, 0, 0, 0, 0.145981, 0, 0, 0, 3.11732, 0, 0, 33.0696 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, -48.4137, 0, 0 )
+
+[node name="Spatial5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 40.4147, 0, 0 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 5.04956, 0, 0, 0, 0.331019, 0, 0, 0, 3.39881, 0.609, 75.5247, -49.0226 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 9.71397, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Cat" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.64064, 0 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 76.9991, -49.2494 )
+scene = "res://levels/World2.tscn"
+level_text = "Back to World Hub"
+
+[node name="TextPlay" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.0157594, 0, -0.999876, 0, 1, 0, 0.999876, 0, 0.0157594, 0.116444, 0, -3.30868 )
+text = "Yeah... The portal is straight ahead... and up.... Also this is the hardest level yet..."
+
+[node name="Death" parent="." instance=ExtResource( 3 )]
+transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+
+[node name="Timer" parent="." instance=ExtResource( 7 )]
+
+[node name="TimerStop" parent="." instance=ExtResource( 8 )]
+transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 4.85157, -20.1324 )
+
+[node name="JumpPad" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.276618, 0, -2.426 )
+jumpheight = 40.0
+
+[node name="DoubleJumpRefresh" parent="." instance=ExtResource( 9 )]
+transform = Transform( 9.15036, 0, 0, 0, 0.31715, 0, 0, 0, 1.45979, -24.807, 13.4936, 0 )
+
+[node name="DoubleJumpRefresh2" parent="." instance=ExtResource( 9 )]
+transform = Transform( 9.15036, 0, 0, 0, 0.31715, 0, 0, 0, 1.45979, 23.6486, 13.4936, 0 )
+
+[node name="DoubleJumpRefresh3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -3.99975e-07, 0, -1.45979, 0, 0.31715, 0, 9.15036, 0, -6.38093e-08, 0.135992, 13.4936, 18.1404 )
+
+[node name="JumpPad2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4431, 0, 0 )
+jumpheight = 40.0
+
+[node name="JumpPad3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40.3528, 0, 0 )
+jumpheight = 40.0
+
+[node name="JumpPad4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.424164, 0, 32.8241 )
+jumpheight = 40.0
+
+[node name="RigidBody" parent="." instance=ExtResource( 10 )]
+transform = Transform( 5.60028, 0, 0, 0, 1, 0, 0, 0, 5.02256, 0, 0.586668, 2.37206 )
+
+[node name="RigidBody2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 5.60028, 0, 0, 0, 1, 0, 0, 0, 5.02256, 0, 50.8235, -35.3164 )
+
+[node name="RigidBody3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 5.60028, 0, 0, 0, 1, 0, 0, 0, 5.02256, 0, 35.7729, -26.8275 )

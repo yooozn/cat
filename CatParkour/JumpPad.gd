@@ -55,7 +55,10 @@ func _on_JumpArea_body_entered(body):
 			GlobalWorld.player.y_velocity = jumpheight
 			GlobalWorld.player.jumpAd = true
 		else:
-			if not body.pickObject.is_in_group("Jump"):
+#			if not body.pickObject.is_in_group("Jump"):
+#				GlobalWorld.player.y_velocity = jumpheight
+#				GlobalWorld.player.jumpAd = true
+			if not gravPick == true:
 				GlobalWorld.player.y_velocity = jumpheight
 				GlobalWorld.player.jumpAd = true
 
