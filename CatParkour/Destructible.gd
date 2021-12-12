@@ -4,7 +4,7 @@ extends MeshInstance
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var health = 3
+export(int) var health = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
