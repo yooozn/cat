@@ -10,7 +10,7 @@
 extents = Vector3( 1.08687, 2.0689, 0.219128 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 5.97594, 1.65427, 6.15184 )
+extents = Vector3( 3.23972, 1.65427, 6.15184 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 43

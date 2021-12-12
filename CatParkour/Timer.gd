@@ -109,6 +109,46 @@ func _process(delta):
 			Times.w2_10 = false
 			if Time <= Times.world2_10Time or Times.world2_10Time == 0:
 				Times.world2_10Time = Time
+		elif Times.w3_1 == true:
+			Times.w3_1 = false
+			if Time <= Times.world3_1Time or Times.world3_1Time == 0:
+				Times.world3_1Time = Time
+		elif Times.w3_2 == true:
+			Times.w3_2 = false
+			if Time <= Times.world3_2Time or Times.world3_2Time == 0:
+				Times.world3_2Time = Time
+		elif Times.w3_3 == true:
+			Times.w3_3 = false
+			if Time <= Times.world3_3Time or Times.world3_3Time == 0:
+				Times.world3_3Time = Time
+		elif Times.w3_4 == true:
+			Times.w3_4 = false
+			if Time <= Times.world3_4Time or Times.world3_4Time == 0:
+				Times.world3_4Time = Time
+		elif Times.w3_5 == true:
+			Times.w3_5 = false
+			if Time <= Times.world3_5Time or Times.world3_5Time == 0:
+				Times.world3_5Time = Time
+		elif Times.w3_6 == true:
+			Times.w3_6 = false
+			if Time <= Times.world3_6Time or Times.world3_6Time == 0:
+				Times.world3_6Time = Time
+		elif Times.w3_7 == true:
+			Times.w3_7 = false
+			if Time <= Times.world3_7Time or Times.world3_7Time == 0:
+				Times.world3_7Time = Time
+		elif Times.w3_8 == true:
+			Times.w3_8 = false
+			if Time <= Times.world3_8Time or Times.world3_8Time == 0:
+				Times.world3_8Time = Time
+		elif Times.w3_9 == true:
+			Times.w3_9 = false
+			if Time <= Times.world3_9Time or Times.world3_9Time == 0:
+				Times.world3_9Time = Time
+		elif Times.w3_10 == true:
+			Times.w3_10 = false
+			if Time <= Times.world3_10Time or Times.world3_10Time == 0:
+				Times.world3_10Time = Time
 		elif Times.tut == true:
 			Times.tut = true
 			if Time <= Times.tutorial or Times.tutorial == 0:
