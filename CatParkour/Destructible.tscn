@@ -1,12 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Destructible.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
 
+[sub_resource type="Shader" id=8]
+code = "shader_type spatial;
+uniform float strength;
+
+void fragment() {
+	ALBEDO = vec3(0.8, 0.8, 1.0);
+	ALPHA = strength;
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
+shader_param/strength = null
+
 [sub_resource type="SpatialMaterial" id=2]
+next_pass = SubResource( 9 )
 params_diffuse_mode = 4
 params_specular_mode = 3
+albedo_color = Color( 0.545098, 0.545098, 0.545098, 1 )
+metallic_specular = 0.0
 
 [sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
@@ -17,7 +33,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 bg_color = Color( 0, 1, 0.0784314, 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0.00392157, 0.67451, 0, 1 )
+bg_color = Color( 0, 0.278431, 0, 1 )
 
 [sub_resource type="ViewportTexture" id=5]
 viewport_path = NodePath("Spatial/Viewport")
@@ -57,6 +73,7 @@ __meta__ = {
 
 [node name="Sprite3D" type="Sprite3D" parent="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46585, 0 )
+layers = 512
 flip_v = true
 billboard = 1
 texture = SubResource( 5 )

@@ -55,7 +55,7 @@ nodes/Walk/position = Vector2( 0, 320 )
 nodes/air_ground/node = SubResource( 11 )
 nodes/air_ground/position = Vector2( 620, 120 )
 nodes/output/position = Vector2( 840, 100 )
-node_connections = [ "output", 0, "air_ground", "TimeScale", 0, "Walk", "air_ground", 0, "IdleWalk", "air_ground", 1, "JumpFall", "IdleWalk", 0, "Idle", "IdleWalk", 1, "TimeScale", "JumpFall", 0, "Fall", "JumpFall", 1, "Jump" ]
+node_connections = [ "output", 0, "air_ground", "IdleWalk", 0, "Idle", "IdleWalk", 1, "TimeScale", "JumpFall", 0, "Fall", "JumpFall", 1, "Jump", "TimeScale", 0, "Walk", "air_ground", 0, "IdleWalk", "air_ground", 1, "JumpFall" ]
 
 [node name="catAnimation4NLsDone" instance=ExtResource( 1 )]
 

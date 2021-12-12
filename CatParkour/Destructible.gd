@@ -5,10 +5,10 @@ extends MeshInstance
 # var a = 2
 # var b = "text"
 export(int) var health = 3
-
+onready var shader = get_surface_material(0).next_pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Spatial/Viewport/ProgressBar.max_value = health
 
 
 func _process(delta):
@@ -26,3 +26,6 @@ func _process(delta):
 func _on_Area_body_entered(body):
 	if body.is_in_group("PlayerBullet"):
 		health -= 1
+		shader.set_shader_param("strength", .7)
+		yield(get_tree().create_timer(.1),"timeout")
+		shader.set_shader_param("strength", 0.0)
