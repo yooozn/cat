@@ -117,7 +117,7 @@ shader_param/strength = null
 
 [sub_resource type="SpatialMaterial" id=6]
 next_pass = SubResource( 8 )
-albedo_color = Color( 0.968627, 0, 1, 1 )
+albedo_color = Color( 0.505882, 0, 0.521569, 1 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.2138, 0.239731, 0.244263 )

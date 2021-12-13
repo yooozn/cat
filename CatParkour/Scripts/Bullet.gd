@@ -15,7 +15,7 @@ func _physics_process(delta):
 		apply_impulse(transform.basis.z, -transform.basis.z / 50)
 		shoot = false
 	time += delta
-	if time >= 5:
+	if time >= 8:
 		queue_free()
 
 func _on_Bullet_body_entered(body):

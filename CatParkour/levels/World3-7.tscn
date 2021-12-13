@@ -1,0 +1,243 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://JumpPad.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=9]
+[ext_resource path="res://art/Target.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Glass.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=15]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=16]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=17]
+
+[sub_resource type="GDScript" id=4]
+script/source = "extends Spatial
+
+var count = 2
+
+func _ready():
+	Times.w3_7 = true
+
+func _process(delta):
+	if GlobalWorld.target == true:
+		GlobalWorld.target = false
+		count += 1
+	if count % 2 == 0:
+		$AnimationPlayer.play(\"2\")
+	else:
+		$AnimationPlayer.play(\"1\")
+"
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -30.4264, 13.4492 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance2:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 46.6205 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeshInstance4:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -35.0801, -0.0183506 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeshInstance3:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 5.81987, -0.0183506 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeshInstance5:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 17.3031, -0.0183506 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance2:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -29.3545, 46.6205 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.197026, 18.1437 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("MeshInstance4:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 11.3417, -0.0183506 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeshInstance3:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -27.7216, -0.0183506 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("MeshInstance5:translation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -30.7985, -0.0183506 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.197026, 18.1437 ) ]
+}
+
+[node name="World3-1" type="Spatial"]
+script = SubResource( 4 )
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.60383, 0, 0, 0, 0.145981, 0, 0, 0, 2.88666, 0, 0, 0 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 4 )]
+
+[node name="Cat" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43033, 0 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119686, 18.9611, -8.28549 )
+scene = "res://levels/World3.tscn"
+level_text = "Back to Hub"
+
+[node name="OceanAttempt" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4.67359, 0, 0, 0, 1, 0, 0, 0, 4.38849, 0, -0.572327, 0 )
+
+[node name="Timer" parent="." instance=ExtResource( 8 )]
+
+[node name="TimerStop" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 1.41402, -9.83156 )
+
+[node name="Death" parent="." instance=ExtResource( 9 )]
+transform = Transform( 137.049, 0, 0, 0, 1, 0, 0, 0, 174.577, 0, -2.87808, 0 )
+
+[node name="MeshInstance" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 9.9186, 0, -0.197026, 18.1437 )
+
+[node name="MeshInstance2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 0, 46.6205 )
+
+[node name="MeshInstance3" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 5.81987, -0.0183506 )
+
+[node name="MeshInstance4" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -35.0801, -0.0183506 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance5" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 17.3031, -0.0183506 )
+
+[node name="Target" parent="." instance=ExtResource( 12 )]
+transform = Transform( 2.41912, 0, 0, 0, 2.41912, 0, 0, 0, 2.41912, -38.2417, 3.05647, 23.1586 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/1 = SubResource( 1 )
+anims/2 = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="WallKey" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1.22005, 0, 0, 0, 1.60939, 0, 0, 0, 0.390604, 0.670918, 19.4826, -8.23156 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 17 )]
+transform = Transform( -1.62682e-08, 0, -0.372172, 0, 0.372172, 0, 0.372172, 0, -1.62682e-08, 0.592404, 19.0452, -7.86753 )
+
+[node name="KeyObj" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.611902, 47.0119 )
+
+[node name="JumpPad" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.54, 0 )
+jumpheight = 50.0
