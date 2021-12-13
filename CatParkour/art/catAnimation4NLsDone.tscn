@@ -51,7 +51,7 @@ input_1/name = "air"
 input_1/auto_advance = false
 
 [sub_resource type="AnimationNodeBlendTree" id=7]
-graph_offset = Vector2( -207, 122.5 )
+graph_offset = Vector2( -437.001, 38.3198 )
 nodes/Fall/node = SubResource( 9 )
 nodes/Fall/position = Vector2( 260, 500 )
 nodes/Idle/node = SubResource( 5 )
@@ -195,7 +195,6 @@ anims/RESET = SubResource( 13 )
 [node name="AnimationTree" type="AnimationTree" parent="." index="14"]
 tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer2")
-active = true
 parameters/IdleWalk/blend_amount = 0.0
 parameters/JumpFall/blend_amount = 1.0
 parameters/TimeScale/scale = 1.5

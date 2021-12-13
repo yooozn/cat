@@ -89,6 +89,7 @@ func _on_Save_pressed():
 		"dashUnlock" : pStats.dashUnlock,
 		"dubJumpUnlock" : pStats.dubJumpUnlock,
 		"shootUnlock" : pStats.shootUnlock,
+		"hat" : pStats.hat,
 		"Sens" : pStats.sens,
 		"fullscreen" : GlobalWorld.fullscreen,
 		"level1Time" : Times.level1,

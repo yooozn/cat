@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TextPlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=4]
+
+[node name="archives" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 4 )]
+transform = Transform( 11.8272, 0, 0, 0, 0.145981, 0, 0, 0, 12.6811, 0, 0, -2.58022 )
+
+[node name="Cat" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51506, 4.79265 )
+
+[node name="TextPlay" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.020419, 0, -0.999792, 0, 1, 0, 0.999792, 0, 0.020419, 0, 0.0407107, 3.06776 )
+text = "These levels were prototypes made to test the mechanics during developement. Due to various reasons, they didnt make the main game, but are fun to speedrun nonetheless."
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.663221, 0, 0.748424, 0, 1, 0, -0.748424, 0, 0.663221, -8.13443, 0.950639, -9.7739 )
+scene = "res://TestLevel2.tscn"
+level_text = "Test Level 1"
+extra = "1"
+DistanceTxt = "Test Level 1"
+
+[node name="PortalLVL2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.998183, 0, 0.0602472, 0, 1, 0, -0.0602472, 0, 0.998183, -1.1129, 0.950639, -12.916 )
+scene = "res://levels/Level2Test.tscn"
+level_text = "Test Level 2"
+extra = "2"
+DistanceTxt = "Test Level 2"
+
+[node name="PortalLVL4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.998183, 0, 0.0602472, 0, 1, 0, -0.0602472, 0, 0.998183, -1.1129, 0.950639, 10.2297 )
+scene = "res://levels/testmap2.tscn"
+level_text = "Back to Hub"
+DistanceTxt = "Back to Hub"
+
+[node name="PortalLVL3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.80661, 0, -0.591084, 0, 1, 0, 0.591084, 0, 0.80661, 6.10309, 0.950639, -11.4436 )
+scene = "res://levels/testlevel3.tscn"
+level_text = "Test Level 3"
+extra = "3"
+DistanceTxt = "Test Level 3"

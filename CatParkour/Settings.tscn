@@ -280,7 +280,7 @@ rect_clip_content = false
 custom_fonts/normal_font = SubResource( 18 )
 bbcode_enabled = true
 bbcode_text = "Sensitivity : 0"
-text = "Music : 50"
+text = "Sensitivity : 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }

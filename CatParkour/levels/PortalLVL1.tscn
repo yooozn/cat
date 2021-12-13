@@ -87,13 +87,13 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11772, 3.62818, 0 )
 
 [node name="Viewport" type="Viewport" parent="Spatial"]
-size = Vector2( 300, 58 )
+size = Vector2( 400, 58 )
 transparent_bg = true
 
 [node name="Label" type="Label" parent="Spatial/Viewport"]
-margin_right = 126.0
-margin_bottom = 58.0
-rect_min_size = Vector2( 300, 58 )
+margin_right = 400.0
+margin_bottom = 119.0
+rect_min_size = Vector2( 350, 58 )
 custom_fonts/font = ExtResource( 3 )
 text = "
 "

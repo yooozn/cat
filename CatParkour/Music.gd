@@ -4,11 +4,14 @@ var musicNum = 0
 var musicVol = 1
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 
 func _process(delta):
+	$Title.volume_db = musicVol
+	$Tutorial.volume_db = musicVol
+	$Hub.volume_db = musicVol
+	$Level.volume_db = musicVol
+	$LevelComp.volume_db = musicVol
+	$FinalLevel.volume_db = musicVol
 	if musicNum == 1:
 		$Title.play()
 		$LevelComp.stop()

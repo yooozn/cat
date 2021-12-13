@@ -56,6 +56,7 @@ func _on_NewGame_pressed():
 	pStats.dubJumpUnlock = false
 	pStats.shootUnlock = false
 	pStats.dashUnlock = false
+	pStats.hat = 0
 	Times.level1 = 0
 	Times.level2 = 0
 	Times.level3 = 0
@@ -95,6 +96,7 @@ func _on_NewGame_pressed():
 		"dashUnlock" : pStats.dashUnlock,
 		"dubJumpUnlock" : pStats.dubJumpUnlock,
 		"shootUnlock" : pStats.shootUnlock,
+		"hat" : pStats.hat,
 		"Sens" : pStats.sens,
 		"fullscreen" : GlobalWorld.fullscreen,
 		"level1Time" : Times.level1,
@@ -157,6 +159,7 @@ func _on_Continue_pressed():
 			pStats.dashUnlock = player_data["dashUnlock"]
 			pStats.dubJumpUnlock = player_data["dubJumpUnlock"]
 			pStats.shootUnlock = player_data["shootUnlock"]
+			pStats.hat = player_data["hat"]
 			pStats.sens = player_data["Sens"]
 			GlobalWorld.fullscreen = player_data["fullscreen"]
 			Times.level1 = player_data["level1Time"]
