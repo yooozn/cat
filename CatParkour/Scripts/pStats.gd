@@ -15,5 +15,5 @@ var sens = .3
 
 #abilities
 var dashUnlock = false
-var dubJumpUnlock = true
-var shootUnlock = true
+var dubJumpUnlock = false
+var shootUnlock = false
