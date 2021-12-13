@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://art/CrosshairX.png" type="Texture" id=2]
 [ext_resource path="res://HatSelect.gd" type="Script" id=3]
 [ext_resource path="res://art/catAnimation4NLsDone.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/Cocola.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://art/hats/Accessories_Sphere001.mesh" type="ArrayMesh" id=6]
+[ext_resource path="res://art/hats/Accessories_Torus.mesh" type="ArrayMesh" id=7]
+[ext_resource path="res://art/hats/Accessories_Sphere011.mesh" type="ArrayMesh" id=8]
+[ext_resource path="res://art/questionmark.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 5 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "Camera"
@@ -97,8 +105,70 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
-size = 25
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 1, 0, 0.188235, 1 )
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "label"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 40
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
 [node name="HatSelect" type="Spatial"]
@@ -108,22 +178,6 @@ script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0163503, 0, 4.90287 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Camera = SubResource( 1 )
-anims/RESET = SubResource( 2 )
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-anims/Camera = SubResource( 3 )
-anims/RESET = SubResource( 4 )
-anims/rotate = SubResource( 5 )
-
-[node name="catAnimation4NLsDone" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, -1.18245, -0.51159 )
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -168,7 +222,7 @@ rect_min_size = Vector2( 100, 100 )
 margin_left = 11.0
 margin_top = 8.0
 margin_right = 88.0
-margin_bottom = 38.0
+margin_bottom = 39.0
 custom_fonts/font = SubResource( 6 )
 text = "back"
 flat = true
@@ -176,5 +230,72 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Camera = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/Camera = SubResource( 3 )
+anims/RESET = SubResource( 4 )
+anims/rotate = SubResource( 5 )
+
+[node name="catAnimation4NLsDone" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, -1.18245, -0.51159 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="hat1" type="MeshInstance" parent="."]
+transform = Transform( 0.337314, 0, 0, 0, 0.337314, 0, 0, 0, 0.337314, 0.423656, -1.80964, 3.22782 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="hat2" type="MeshInstance" parent="."]
+transform = Transform( 0.648404, 0, 0, 0, 0.648404, 0, 0, 0, 0.648404, -2.38779, -1.11123, 3.09292 )
+mesh = ExtResource( 7 )
+material/0 = null
+
+[node name="hat3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97844, -2.68134, 0.465703 )
+mesh = ExtResource( 8 )
+material/0 = null
+
+[node name="question1" type="Sprite" parent="."]
+position = Vector2( 585.25, 538.25 )
+scale = Vector2( 2.77501, 2.77501 )
+texture = ExtResource( 9 )
+
+[node name="question2" type="Sprite" parent="."]
+position = Vector2( 793.25, 538.25 )
+scale = Vector2( 2.77501, 2.77501 )
+texture = ExtResource( 9 )
+
+[node name="question3" type="Sprite" parent="."]
+position = Vector2( 689.25, 538.25 )
+scale = Vector2( 2.77501, 2.77501 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 11 )
+anims/idle = SubResource( 8 )
+anims/label = SubResource( 9 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 478.0
+margin_top = 8.0
+margin_right = 828.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 10 )
+text = "not unlocked yet!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CenterContainer/HBoxContainer/None" to="." method="_on_None_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

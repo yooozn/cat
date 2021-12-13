@@ -14,6 +14,9 @@ var first_person = false
 var sens = .3
 
 #abilities
-var dashUnlock = false
-var dubJumpUnlock = false
-var shootUnlock = false
+var dashUnlock = true
+var dubJumpUnlock = true
+var shootUnlock = true
+
+#Hats
+var hat = 0

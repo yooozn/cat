@@ -8,6 +8,7 @@ onready var dashPart = preload(\"res://Particles/DashUnlockParticles.tscn\")
 func _on_DoubleJumpUnlock_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		pStats.dashUnlock = true
+		pStats.hat = 3
 		var dash = dashPart.instance()
 		get_parent().add_child(dash)
 		dash.translation = translation

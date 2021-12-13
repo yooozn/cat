@@ -8,6 +8,7 @@ onready var shootPart = preload(\"res://Particles/ShootUnlockParticles.tscn\")
 func _on_DoubleJumpUnlock_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		pStats.shootUnlock = true
+		pStats.hat = 2
 		var shoot = shootPart.instance()
 		get_parent().add_child(shoot)
 		shoot.translation = translation

@@ -12,19 +12,19 @@ func _ready():
 
 
 func _process(delta):
-	if pStats.dubJumpUnlock == true and pStats.dashUnlock == false and pStats.shootUnlock == false:
+	if pStats.hat == 1:
 		$Hat1.visible = true
 		$Hat2.visible = false
 		$Hat3.visible = false
-	elif pStats.shootUnlock == true and pStats.dashUnlock == false:
+	elif pStats.hat == 2:
 		$Hat2.visible = true
 		$Hat3.visible = false
 		$Hat1.visible = false
-	elif pStats.dashUnlock == true:
+	elif pStats.hat == 3:
 		$Hat3.visible = true
 		$Hat2.visible = false
 		$Hat1.visible = false
-	else:
+	elif pStats.hat == 0:
 		$Hat3.visible = false
 		$Hat2.visible = false
 		$Hat1.visible = false
