@@ -10,7 +10,7 @@
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Glass.tscn" type="PackedScene" id=10]
-[ext_resource path="res://TeleporterObj2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Spatial
@@ -124,16 +124,16 @@ transform = Transform( 1.07528, 0, 0, 0, 2.14373, 0, 0, 0, 1, 0.718524, 1.55405,
 [node name="MeshInstance2" parent="." instance=ExtResource( 10 )]
 transform = Transform( 3.23057, 0, 0, 0, 0.542265, 0, 0, 0, 4.4565, 0, 3.41973, 1.51308 )
 
-[node name="Teleporter" parent="." instance=ExtResource( 11 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.2231, -7.32066 )
-
-[node name="Teleporter2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75065, -2.26486 )
-portalto = "Teleporter"
-
 [node name="Target" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2079, 2.50557, -8.06602 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/idle = SubResource( 2 )
 anims/target = SubResource( 3 )
+
+[node name="Teleporter3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74033, -2.21326 )
+portalto = "2"
+
+[node name="2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24111, -7.2814 )

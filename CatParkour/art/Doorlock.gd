@@ -13,4 +13,3 @@ func _on_Area_body_entered(body):
 		queue_free()
 		GlobalWorld.player.carrying = false
 		body.queue_free()
-		print("keykill")

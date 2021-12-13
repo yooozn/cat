@@ -207,6 +207,8 @@ func _process(delta):
 	if deathZoom == true:
 		camera.fov = lerp(camera.fov, 10, .03)
 		Animations.transition = true
+		shootable = true
+		carrying = false
 	#if player is in key pickup range and presses interact
 	if key_pickup_range == true:
 		if Input.is_action_pressed("interact"):
@@ -299,7 +301,6 @@ func _physics_process(delta):
 					y_velocity = jump_power
 					dubJump -= 1
 		catAnims.get_node("AnimationTree").set("parameters/JumpFall/blend_amount", y_velocity)
-		print(catAnims.get_node("AnimationTree").get("parameters/JumpFall/blend_amount"))
 #
 func _handle_movement(delta):
 	if jumpAding == false:
@@ -531,13 +532,11 @@ func _handle_movement(delta):
 			if pickObject.rotation.y == oRotation.y + deg2rad(360):
 				pickObject.rotation.y = deg2rad(0)
 				pickObject.rotation.x = oRotation.x
-			print(pickObject.rotation_degrees)
 		elif Input.is_action_just_pressed("rotate_up"):
 			pickObject.rotation.z += deg2rad(30)
 			if pickObject.rotation.z == oRotation.x + deg2rad(360):
 				pickObject.rotation.z = deg2rad(0)
 				pickObject.rotation.x = oRotation.x
-			print(pickObject.rotation_degrees)
 		if pickObject.is_in_group("TP"):
 			if Input.is_action_pressed("teleport"):
 				pickObject.tping = true
@@ -556,7 +555,6 @@ func _handle_movement(delta):
 			Animations.interact = false
 			if pickObject.is_in_group("KeyNew"):
 				pickObject.global_transform = pickObject.startPos
-				print("didit")
 			pickObject = null
 	elif !pickObject and pickTrue == false:
 		crossPICKbool = false

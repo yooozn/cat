@@ -229,7 +229,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5438, 0 )
 transform = Transform( 1.10248, -0.305502, 0, 0.154486, 1.7509, 0, 0, 0, 0.511215, -12.2246, 14.6649, 18.48 )
 
 [node name="KeyObj" parent="." index="32" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87203, 15.1316, 10.7099 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.6331, -15.3548, 33.6077 )
+mode = 1
 
 [node name="Doorlock" parent="." index="33" instance=ExtResource( 13 )]
 transform = Transform( -0.00436462, -0.0560293, 0.294689, 0.00495893, 0.294667, 0.0560985, -0.299927, 0.0056873, -0.00336087, -12.2907, 14.5484, 17.8535 )

@@ -55,6 +55,8 @@ func _process(delta):
 	if GlobalWorld.player.carrying == false:
 		gravPick = false
 		tping = true
+		Animations.teleport = false
+		Animations.teleport1 = false
 	if shader:
 		if hovered == true and GlobalWorld.hovered == true:
 			shadernew.set_shader_param("strength", 0.1)

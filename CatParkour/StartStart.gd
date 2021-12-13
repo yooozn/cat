@@ -10,7 +10,6 @@ extends Node2D
 func _ready():
 	$AnimationPlayer.play("start")
 	Music.musicNum = 1
-	print(Music.musicNum)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

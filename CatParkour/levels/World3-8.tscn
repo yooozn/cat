@@ -135,7 +135,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0, 17.6266, 46.5249 ) ]
+"values": [ Vector3( 0, 35.6473, 46.5249 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -207,10 +207,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 45.2028, 0.142349, 0.0230594 ) ]
+"values": [ Vector3( 65.1764, 0.142349, 0.0230594 ), Vector3( 65.1764, 0.142349, 0.0230594 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("MeshInstance6:translation")
@@ -275,6 +275,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector3( 19.2357, -0.197026, -0.513492 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("MeshInstance7:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 24.5997, 46.5249 ) ]
+}
 
 [node name="World3-1" type="Spatial"]
 script = SubResource( 4 )
@@ -310,23 +322,23 @@ transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 9.9186, 0, -0.197026
 transform = Transform( -7.84711e-08, 0, -9.9186, 0, 0.235062, 0, 1.79521, 0, -4.33556e-07, 19.2357, -0.197026, -0.513492 )
 
 [node name="MeshInstance2" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -29.3545, 46.6205 )
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 0, 46.6205 )
 
 [node name="MeshInstance8" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 45.2028, 0, 0.0230594 )
 
 [node name="MeshInstance3" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -27.7216, -0.0183506 )
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 5.81987, -0.0183506 )
 
 [node name="MeshInstance7" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -32.4315, 46.5249 )
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 24.5997, 46.5249 )
 
 [node name="MeshInstance4" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 11.3417, -0.0183506 )
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -35.0801, -0.0183506 )
 material/0 = SubResource( 5 )
 
 [node name="MeshInstance5" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, -30.7985, -0.0183506 )
+transform = Transform( 1.79521, 0, 0, 0, 0.235062, 0, 0, 0, 2.22797, 0, 17.3031, -0.0183506 )
 
 [node name="Target" parent="." instance=ExtResource( 12 )]
 transform = Transform( 2.41912, 0, 0, 0, 2.41912, 0, 0, 0, 2.41912, -38.2417, 3.05647, 23.1586 )
@@ -343,17 +355,19 @@ transform = Transform( 1.22005, 0, 0, 0, 1.60939, 0, 0, 0, 0.390604, 0.670918, 1
 transform = Transform( -1.62682e-08, 0, -0.372172, 0, 0.372172, 0, 0.372172, 0, -1.62682e-08, 0.592404, 1.20494, -44.1642 )
 
 [node name="KeyObj" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3134, 47.0119 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 37.2323, 47.0119 )
 
 [node name="JumpPad" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 17.54, 0 )
 jumpheight = 50.0
 
-[node name="Teleporter" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2354, 0.902658, 0.514561 )
+[node name="1" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0839, 0.902658, 0.514561 )
+portalto = "2"
 
-[node name="Teleporter2" parent="." instance=ExtResource( 10 )]
+[node name="2" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.41823, 0.902658, -42.9214 )
+portalto = "1"
 
 [node name="RigidBody" parent="." instance=ExtResource( 11 )]
 transform = Transform( 7.99627, 0, 0, 0, 1, 0, 0, 0, 7.13261, -4.79633, -0.298295, -0.787339 )
