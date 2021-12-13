@@ -9,6 +9,7 @@ extends Spatial
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Times.w2_1 = true
+	Music.musicNum = 4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

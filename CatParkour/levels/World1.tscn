@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=3]
 [ext_resource path="res://levels/GrassTexture1.tres" type="Material" id=4]
 [ext_resource path="res://levels/Dirt.tres" type="Material" id=5]
+[ext_resource path="res://levels/World1.gd" type="Script" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -12,6 +13,7 @@
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 19.1214, 0, 0, 0, 0.204494, 0, 0, 0, 16.5159, 0, 0, 0 )

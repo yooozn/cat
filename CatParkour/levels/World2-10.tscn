@@ -8,7 +8,6 @@
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=8]
-[ext_resource path="res://levels/World2-1.gd" type="Script" id=9]
 [ext_resource path="res://Interactables/DoubleJumpRefresh.tscn" type="PackedScene" id=10]
 [ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=11]
 [ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=12]
@@ -18,8 +17,28 @@
 [ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=16]
 [ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=17]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Times.w2_10 = true
+	Music.musicNum = 6
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
 [node name="World2-1" type="Spatial"]
-script = ExtResource( 9 )
+script = SubResource( 1 )
 
 [node name="Spatial" parent="." instance=ExtResource( 5 )]
 transform = Transform( 3.04832, 0, 0, 0, 0.145981, 0, 0, 0, 3.09386, 0, 0, 0 )
@@ -97,4 +116,3 @@ transform = Transform( 1.22751, 0, 0, 0, 1.67058, 0, 0, 0, 1, 0.621894, 42.1809,
 
 [node name="Doorlock" parent="." instance=ExtResource( 17 )]
 transform = Transform( -1.74863e-08, 0, -0.400039, 0, 0.400039, 0, 0.400039, 0, -1.74863e-08, 0.624284, 41.5422, -74.6868 )
-doorNum = "WallKey"

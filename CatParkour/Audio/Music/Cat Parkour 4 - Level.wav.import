@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cat Parkour 4 - Level.wav-f6e674aceba55ba77d69199b4cdfd222.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Cat Parkour 4 - Level.wav"
+dest_files=[ "res://.import/Cat Parkour 4 - Level.wav-f6e674aceba55ba77d69199b4cdfd222.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

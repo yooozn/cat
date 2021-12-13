@@ -102,7 +102,6 @@ transform = Transform( 3.50594, 0, 0, 0, 3.00725, 0, 0, 0, 0.534409, 0, 4.36705,
 
 [node name="Doorlock" parent="." instance=ExtResource( 9 )]
 transform = Transform( -2.97939e-08, 0, -0.681606, 0, 0.681606, 0, 0.681606, 0, -2.97939e-08, 0, 3.47709, -50.9644 )
-doorNum = "WallKey"
 
 [node name="KeyObj" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49114, 2.91594, -46.4601 )

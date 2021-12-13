@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Cat Parkour 6 - Final Level.wav-9a28b42b14395fa5db0a631a26f3143e.sample"
+
+[deps]
+
+source_file="res://Audio/Music/Cat Parkour 6 - Final Level.wav"
+dest_files=[ "res://.import/Cat Parkour 6 - Final Level.wav-9a28b42b14395fa5db0a631a26f3143e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

@@ -5,3 +5,4 @@ func _ready():
 	Times.lvl2 = false
 	Times.lvl3 = false
 	Times.lvl4 = false
+	Music.musicNum = 3
