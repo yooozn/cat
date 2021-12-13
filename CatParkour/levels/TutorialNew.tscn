@@ -55,6 +55,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.217934, 0 )
 transform = Transform( 0.530354, 0, -0.539335, 0, 0.756411, 0, 0.539335, 0, 0.530354, -2.27731, -0.350296, -1.90032 )
 text = "Welcome! The goal of this game is to parkour your way across each level, beating previous times, and unlocking new abilities."
 
+[node name="TextPlay8" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.466577, 0, -0.595368, 0, 0.756411, 0, 0.595368, 0, -0.466577, 2.07266, -0.350296, -1.90032 )
+text = "Helpful controls: N - Reset the current level from the beginning.   R - Reset the level from your last checkpoint.   P - Access the pause menu(Checkout the settings too!)   Make sure to read all the signs, they provide helpful info!"
+
 [node name="TextPlay3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.530354, 0, -0.539335, 0, 0.756411, 0, 0.539335, 0, 0.530354, -2.27731, -0.350296, -12.3713 )
 text = "This is a checkpoint! If you fall, you will respawn at your last checkpoint. They glow once you have activated it."
@@ -77,7 +81,7 @@ text = "Some areas are blocked by locked doors. You'll need to insert a key to u
 
 [node name="TextPlay7" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.391378, 0, -0.647287, 0, 0.756411, 0, 0.647287, 0, -0.391378, 2.92108, 2.52191, -73.0245 )
-text = "Great job! You completed the tutorial. Take this portal to the player hub, and head to World 1."
+text = "Great job! You completed the tutorial. Take this portal to the player hub, and head to World 1. Press P to access the pause menu, and save your data after completing each level!"
 
 [node name="OceanAttempt" parent="." instance=ExtResource( 12 )]
 transform = Transform( 4.13766, 0, 0, 0, 0.814854, 0, 0, 0, 4.13766, 0, -2.96813, 0 )

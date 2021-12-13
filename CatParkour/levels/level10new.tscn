@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://levels/Dirt.tres" type="Material" id=1]
 [ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://JumpPad.tscn" type="PackedScene" id=17]
 [ext_resource path="res://TextPlay.tscn" type="PackedScene" id=18]
 [ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=19]
-[ext_resource path="res://ShootUnlock.tscn" type="PackedScene" id=20]
 
 [sub_resource type="GDScript" id=7]
 script/source = "extends Spatial
@@ -176,7 +175,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32312, 1.34939, -37.7055 )
 
 [node name="TextPlay2" parent="." index="27" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.476955, -39.9722 )
-text = "Congrats! You beat the hardest level of World 1. You have now unlocked the Super Jump  and Rocket abilities. Test out Super Jump by pressing space in the air. Rockets can be fired with Left Click. They can destroy obstacles, or enemies."
-
-[node name="ShootUnlock" parent="." index="28" instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17757, 1.19927, -37.8115 )
+text = "Congrats! You beat the hardest level of World 1. You have now unlocked the Super Jump ability. Test out Super Jump by pressing space in the air. Rockets can be fired with Left Click."
