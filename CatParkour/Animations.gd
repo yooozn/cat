@@ -8,11 +8,14 @@ var hovered = false
 var interact = false
 var deathZoom = false
 var respawn = false
+var teleport = false
+var teleport1 = false
 func _ready():
 	$CanvasLayer/Hit.visible = false
 	$CanvasLayer/Heal.visible = false
 	$CanvasLayer/CenterContainer/Label.visible = false
 	$CanvasLayer/CenterContainer.visible = false
+	$Label.visible = false
 
 func _process(delta):
 	if hit == true and hitImmune == false:
@@ -37,3 +40,9 @@ func _process(delta):
 	if respawn == true:
 		$respawn.play()
 		respawn = false
+	if teleport1 == true:
+		$teleport.play("teleport1")
+	elif teleport == true:
+		$teleport.play("teleport")
+	elif teleport == false:
+		$teleport.play("idle")

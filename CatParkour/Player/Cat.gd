@@ -538,6 +538,12 @@ func _handle_movement(delta):
 				pickObject.rotation.z = deg2rad(0)
 				pickObject.rotation.x = oRotation.x
 			print(pickObject.rotation_degrees)
+		if pickObject.is_in_group("TP"):
+			if Input.is_action_pressed("teleport"):
+				pickObject.tping = true
+				Animations.teleport1 = true
+			else:
+				pickObject.tping = false
 	else:
 		pickObject = null
 #	print(carrying)

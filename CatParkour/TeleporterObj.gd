@@ -9,6 +9,7 @@ var gravPick = false
 var pickUP = false
 var hovered = false
 var portalDestination
+var tping = true
 onready var PortalLocation = $Position3D.global_transform.origin
 onready var shader = $MeshInstance.get_surface_material(0)
 var shader2
@@ -53,6 +54,7 @@ func _process(delta):
 		interact = false
 	if GlobalWorld.player.carrying == false:
 		gravPick = false
+		tping = true
 	if shader:
 		if hovered == true and GlobalWorld.hovered == true:
 			shadernew.set_shader_param("strength", 0.1)
@@ -60,6 +62,13 @@ func _process(delta):
 			shadernew.set_shader_param("strength", 0.0)
 	if GlobalWorld.hovered == false:
 		hovered = false
+	if GlobalWorld.player.carrying == true and gravPick == true and tping == true:
+		Animations.teleport1 = true
+	elif GlobalWorld.player.carrying == true and gravPick == true:
+		Animations.teleport = true
+		Animations.teleport1 = false
+	else:
+		Animations.teleport = false
 #func _on_Area_body_entered(body):
 #	pick = true
 #	print(pick)
@@ -75,11 +84,13 @@ func _on_PortalArea_body_entered(body):
 				portalDestination.portalCD = true
 			else:
 				if not body.pickObject.is_in_group("TP"):
-					body.global_transform.origin = portalDestination.PortalLocation
-					portalDestination.portalCD = true
+					if tping == true:
+						body.global_transform.origin = portalDestination.PortalLocation
+						portalDestination.portalCD = true
 		else:
-			body.global_transform.origin = portalDestination.PortalLocation
-			portalDestination.portalCD = true
+			if tping == true:
+				body.global_transform.origin = portalDestination.PortalLocation
+				portalDestination.portalCD = true
 
 
 func _on_Area2_body_entered(body):

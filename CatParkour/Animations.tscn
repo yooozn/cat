@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Animations.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TextGeneric.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Audio/respawn.wav" type="AudioStream" id=3]
+[ext_resource path="res://fonts/Cocola.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hit"
@@ -252,6 +253,91 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="Animation" id=11]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "teleport1"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 1, 0.0156863, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 27
+font_data = ExtResource( 4 )
+
 [node name="Animations" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -260,6 +346,7 @@ script = ExtResource( 1 )
 layer = 2
 
 [node name="Hit" type="ColorRect" parent="CanvasLayer"]
+visible = false
 margin_right = 1279.0
 margin_bottom = 720.0
 color = Color( 0.988235, 0.52549, 0.52549, 0.290196 )
@@ -324,3 +411,20 @@ anims/Transition = SubResource( 9 )
 
 [node name="respawn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="teleport" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 11 )
+anims/teleport = SubResource( 12 )
+anims/teleport1 = SubResource( 13 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = 625.0
+margin_top = 684.0
+margin_right = 1265.0
+margin_bottom = 711.0
+custom_fonts/font = SubResource( 10 )
+text = "Hold down f to enable teleporting (for objects)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
