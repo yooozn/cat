@@ -75,6 +75,12 @@ level_text = "Level 10"
 extra = "w3_10"
 DistanceTxt = "Level 10"
 
+[node name="PortalLVL11" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9773, 0.983628, 4.35186 )
+scene = "res://levels/testmap2.tscn"
+level_text = "Back to Hub"
+DistanceTxt = "Back to Hub"
+
 [node name="PortalLVL5" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.2126, 1.78961, -3.50274 )
 scene = "res://levels/World3-5.tscn"

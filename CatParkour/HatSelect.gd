@@ -75,8 +75,11 @@ func _on_TextureButton4_pressed():
 func _on_cap_pressed():
 	if pStats.cap == true:
 		pStats.hat = 4
-
+	else:
+		$AnimationPlayer3.play("label")
 
 func _on_TextureButton5_pressed():
 	if pStats.duck == true:
 		pStats.hat = 5
+	else:
+		$AnimationPlayer3.play("label")

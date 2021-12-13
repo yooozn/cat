@@ -212,10 +212,9 @@ extra = "t"
 
 [node name="PortalLVL3" parent="." index="27" instance=ExtResource( 5 )]
 transform = Transform( -0.984479, -0.175133, -0.0114086, -0.175461, 0.980712, 0.0861256, -0.00389484, 0.0867906, -0.996219, -11.529, 14.4603, 18.2661 )
-scene = "res://levels/testlevel3.tscn"
+scene = "res://archives.tscn"
 scene1 = ExtResource( 9 )
-level_text = "Level 3"
-extra = "3"
+level_text = "The Archives"
 DistanceTxt = "The Archives"
 
 [node name="floatingisland1" parent="." index="28" instance=ExtResource( 10 )]
