@@ -23,6 +23,18 @@ func _ready():
 	else:
 		$hat3.visible = false
 		$question2.visible = true
+	if pStats.duck == true:
+		$hat3.visible = true
+		$question5.visible = false
+	else:
+		$hat3.visible = false
+		$question5.visible = true
+	if pStats.cap == true:
+		$hat3.visible = true
+		$question4.visible = false
+	else:
+		$hat3.visible = false
+		$question4.visible = true
 
 
 func _on_Timer_timeout():

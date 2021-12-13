@@ -16,15 +16,35 @@ func _process(delta):
 		$Hat1.visible = true
 		$Hat2.visible = false
 		$Hat3.visible = false
+		$Hat4.visible = false
+		$Hat5.visible = false
 	elif pStats.hat == 2:
 		$Hat2.visible = true
 		$Hat3.visible = false
 		$Hat1.visible = false
+		$Hat4.visible = false
+		$Hat5.visible = false
 	elif pStats.hat == 3:
 		$Hat3.visible = true
 		$Hat2.visible = false
 		$Hat1.visible = false
+		$Hat4.visible = false
+		$Hat5.visible = false
+	elif pStats.hat == 4:
+		$Hat4.visible = true
+		$Hat3.visible = false
+		$Hat2.visible = false
+		$Hat1.visible = false
+		$Hat5.visible = false
+	elif pStats.hat == 5:
+		$Hat4.visible = false
+		$Hat3.visible = false
+		$Hat2.visible = false
+		$Hat1.visible = false
+		$Hat5.visible = true
 	elif pStats.hat == 0:
 		$Hat3.visible = false
 		$Hat2.visible = false
 		$Hat1.visible = false
+		$Hat4.visible = false
+		$Hat5.visible = false

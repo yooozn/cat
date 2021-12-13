@@ -20,3 +20,5 @@ var shootUnlock = true
 
 #Hats
 var hat = 0
+var duck = false
+var cap = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://art/catAnimation4NLsDone.glb" type="PackedScene" id=1]
 [ext_resource path="res://art/hats/Accessories_Torus.mesh" type="ArrayMesh" id=2]
@@ -9,9 +9,17 @@
 [ext_resource path="res://art/hats/Accessories_Sphere001.mesh" type="ArrayMesh" id=7]
 [ext_resource path="res://art/hats/Accessories_Sphere011.mesh" type="ArrayMesh" id=8]
 [ext_resource path="res://art/catAnimation4NLsDone.gd" type="Script" id=9]
+[ext_resource path="res://art/hats2/catgamehats2_Sphere005.mesh" type="ArrayMesh" id=10]
+[ext_resource path="res://art/hats2/catgamehats2_Sphere008.mesh" type="ArrayMesh" id=11]
 
 [sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 1, 0, 0.164706, 1 )
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0, 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=17]
+albedo_color = Color( 0.898039, 1, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.105882, 0.0901961, 0.0901961, 1 )
@@ -133,6 +141,54 @@ tracks/4/keys = {
 "update": 0,
 "values": [ Vector3( -0.812636, -5.75156, -0.741317 ) ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Hat4:translation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0190238, 1.32475, -0.155144 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Hat4:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -1.711, 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Hat5:translation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.0414902, 1.48245, -0.102825 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Hat5:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 5.141, -180, 7.78359e-07 ) ]
+}
 
 [node name="catAnimation4NLsDone" instance=ExtResource( 1 )]
 script = ExtResource( 9 )
@@ -146,6 +202,7 @@ material/0 = null
 
 [node name="Hat3" type="MeshInstance" parent="." index="1"]
 transform = Transform( 0.879805, 0.012641, -0.0886161, -0.0114406, 0.884184, 0.0125424, 0.088779, -0.0113316, 0.879807, 1.1242, 0.147248, -1.04374 )
+visible = false
 mesh = ExtResource( 8 )
 skeleton = NodePath("../Hat2")
 material/0 = null
@@ -156,52 +213,63 @@ visible = false
 mesh = ExtResource( 7 )
 material/0 = SubResource( 15 )
 
+[node name="Hat4" type="MeshInstance" parent="." index="3"]
+transform = Transform( 0.266808, 0, 0, 0, 0.266689, 0.00796639, 0, -0.00796639, 0.266689, -0.0190238, 1.32475, -0.155144 )
+visible = false
+mesh = ExtResource( 10 )
+material/0 = SubResource( 16 )
+
+[node name="Hat5" type="MeshInstance" parent="." index="4"]
+transform = Transform( -0.017, 2.29528e-12, -1.32342e-08, 2.30015e-10, 0.041831, -0.00788542, 2.54623e-09, -0.00376349, -0.087646, -0.0414902, 1.48245, -0.102825 )
+visible = false
+mesh = ExtResource( 11 )
+material/0 = SubResource( 17 )
+
 [node name="cat full" parent="Armature/Skeleton" index="0"]
 material/0 = SubResource( 1 )
 material/1 = SubResource( 2 )
 material/2 = SubResource( 3 )
 
-[node name="eye" parent="." index="4"]
+[node name="eye" parent="." index="6"]
 visible = false
 
-[node name="eye 2" parent="." index="5"]
+[node name="eye 2" parent="." index="7"]
 visible = false
 
-[node name="front leg" parent="." index="6"]
+[node name="front leg" parent="." index="8"]
 visible = false
 
-[node name="front leg 2" parent="." index="7"]
+[node name="front leg 2" parent="." index="9"]
 visible = false
 
-[node name="head" parent="." index="8"]
+[node name="head" parent="." index="10"]
 visible = false
 
-[node name="tail" parent="." index="9"]
+[node name="tail" parent="." index="11"]
 visible = false
 
-[node name="body" parent="." index="10"]
+[node name="body" parent="." index="12"]
 visible = false
 
-[node name="back leg" parent="." index="11"]
+[node name="back leg" parent="." index="13"]
 visible = false
 
-[node name="back leg 2" parent="." index="12"]
+[node name="back leg 2" parent="." index="14"]
 visible = false
 
-[node name="AnimationPlayer" parent="." index="13"]
+[node name="AnimationPlayer" parent="." index="15"]
 playback_speed = 1.7
 anims/RESET = SubResource( 13 )
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="14"]
+[node name="AnimationTree" type="AnimationTree" parent="." index="16"]
 tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer2")
-active = true
 parameters/IdleWalk/blend_amount = 0.0
 parameters/JumpFall/blend_amount = 1.0
 parameters/TimeScale/scale = 1.5
 parameters/air_ground/current = 0
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="15"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="17"]
 anims/Fall = ExtResource( 3 )
 anims/Idle = ExtResource( 5 )
 anims/Jump1 = ExtResource( 6 )

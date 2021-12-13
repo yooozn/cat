@@ -188,35 +188,70 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 434.0
-margin_top = 128.0
-margin_right = 846.0
-margin_bottom = 228.0
+margin_left = 640.0
+margin_top = 178.0
+margin_right = 640.0
+margin_bottom = 178.0
 
-[node name="None" type="TextureButton" parent="CenterContainer/HBoxContainer"]
-margin_right = 100.0
-margin_bottom = 100.0
+[node name="None" type="TextureButton" parent="."]
+margin_left = 434.0
+margin_top = 492.0
+margin_right = 534.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 100, 100 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="None2" type="TextureButton" parent="."]
+margin_left = 335.0
+margin_top = 492.0
+margin_right = 435.0
+margin_bottom = 592.0
 rect_min_size = Vector2( 100, 100 )
 texture_normal = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton2" type="TextureButton" parent="CenterContainer/HBoxContainer"]
-margin_left = 104.0
-margin_right = 204.0
-margin_bottom = 100.0
+[node name="TextureButton2" type="TextureButton" parent="."]
+margin_left = 538.0
+margin_top = 492.0
+margin_right = 638.0
+margin_bottom = 592.0
+rect_min_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton3" type="TextureButton" parent="."]
+margin_left = 642.0
+margin_top = 492.0
+margin_right = 742.0
+margin_bottom = 592.0
 rect_min_size = Vector2( 100, 100 )
 
-[node name="TextureButton3" type="TextureButton" parent="CenterContainer/HBoxContainer"]
-margin_left = 208.0
-margin_right = 308.0
-margin_bottom = 100.0
+[node name="TextureButton4" type="TextureButton" parent="."]
+margin_left = 746.0
+margin_top = 492.0
+margin_right = 846.0
+margin_bottom = 592.0
 rect_min_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureButton4" type="TextureButton" parent="CenterContainer/HBoxContainer"]
-margin_left = 312.0
-margin_right = 412.0
-margin_bottom = 100.0
+[node name="TextureButton5" type="TextureButton" parent="."]
+margin_left = 856.0
+margin_top = 492.0
+margin_right = 956.0
+margin_bottom = 592.0
 rect_min_size = Vector2( 100, 100 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 11.0
@@ -276,6 +311,16 @@ position = Vector2( 689.25, 538.25 )
 scale = Vector2( 2.77501, 2.77501 )
 texture = ExtResource( 9 )
 
+[node name="question5" type="Sprite" parent="."]
+position = Vector2( 905.25, 538.25 )
+scale = Vector2( 2.77501, 2.77501 )
+texture = ExtResource( 9 )
+
+[node name="question4" type="Sprite" parent="."]
+position = Vector2( 482.25, 538.25 )
+scale = Vector2( 2.77501, 2.77501 )
+texture = ExtResource( 9 )
+
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 11 )
 anims/idle = SubResource( 8 )
@@ -293,9 +338,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="CenterContainer/HBoxContainer/None" to="." method="_on_None_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton3" to="." method="_on_TextureButton3_pressed"]
-[connection signal="pressed" from="CenterContainer/HBoxContainer/TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="None2" to="." method="_on_None_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="TextureButton5" to="." method="_on_TextureButton4_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
