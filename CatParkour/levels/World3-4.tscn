@@ -9,7 +9,7 @@
 [ext_resource path="res://TimerStop.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Glass.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Glass2.tscn" type="PackedScene" id=10]
 [ext_resource path="res://TeleporterObj.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
@@ -28,7 +28,7 @@ func _process(delta):
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/path = NodePath("Glass5:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -37,25 +37,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0, 1.50296, -4.09059 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("MeshInstance3:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0.718524, 1.55405, -12.044 ) ]
+"values": [ Vector3( 0.577504, 1.28166, -4.11537 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 resource_name = "target"
 tracks/0/type = "value"
-tracks/0/path = NodePath("MeshInstance3:translation")
+tracks/0/path = NodePath("Glass5:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -64,19 +52,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector3( 0.718524, -13.8334, -12.044 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("MeshInstance:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, -14.6866, -4.09059 ) ]
+"values": [ Vector3( 0.577504, -17.4224, -4.11537 ) ]
 }
 
 [node name="World3-1" type="Spatial"]
@@ -106,24 +82,6 @@ transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 
 [node name="Death" parent="." instance=ExtResource( 9 )]
 transform = Transform( 37.7164, 0, 0, 0, 1, 0, 0, 0, 28.0659, 0, -2.87808, 0 )
 
-[node name="MeshInstance" parent="." instance=ExtResource( 10 )]
-transform = Transform( 3.23057, 0, 0, 0, 1.55077, 0, 0, 0, 1, 0, 1.50296, -4.09059 )
-
-[node name="MeshInstance6" parent="." instance=ExtResource( 10 )]
-transform = Transform( 3.23057, 0, 0, 0, 1.55077, 0, 0, 0, 0.267814, 0, 1.50296, 3.84248 )
-
-[node name="MeshInstance4" parent="." instance=ExtResource( 10 )]
-transform = Transform( -9.47072e-08, 0, -0.670672, 0, 1.55077, 0, 5.01495, 0, -6.78551e-08, 3.41907, 1.50296, -0.0139034 )
-
-[node name="MeshInstance5" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.88471e-08, 0, -0.345912, 0, 1.55077, 0, 5.01495, 0, -6.78551e-08, -3.26482, 1.50296, -0.0139034 )
-
-[node name="MeshInstance3" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1.07528, 0, 0, 0, 2.14373, 0, 0, 0, 1, 0.718524, 1.55405, -12.044 )
-
-[node name="MeshInstance2" parent="." instance=ExtResource( 10 )]
-transform = Transform( 3.23057, 0, 0, 0, 0.542265, 0, 0, 0, 4.4565, 0, 3.41973, 1.51308 )
-
 [node name="Target" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2079, 2.50557, -8.06602 )
 
@@ -137,3 +95,18 @@ portalto = "2"
 
 [node name="2" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24111, -7.2814 )
+
+[node name="Glass2" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.564088, 0, 0, 0, 2.11237, 0, 0, 0, 3.28303, 3.35592, 1.28166, -0.239708 )
+
+[node name="Glass3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.564088, 0, 0, 0, 2.11237, 0, 0, 0, 3.78433, -3.29202, 1.28166, 0 )
+
+[node name="Glass4" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.89346e-08, 0, -3.44804, 0, 2.11237, 0, 0.564088, 0, -1.28437e-07, 0.577504, 1.28166, 2.89085 )
+
+[node name="Glass6" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.93316e-08, 0, -3.49534, 0.564088, -9.23347e-08, -1.28437e-07, -5.15947e-08, -4.42012, 1.17476e-14, 0.577504, 3.64247, -0.815425 )
+
+[node name="Glass5" parent="." instance=ExtResource( 10 )]
+transform = Transform( -2.89346e-08, 0, -3.44804, 0, 2.11237, 0, 0.564088, 0, -1.28437e-07, 0.577504, -17.4224, -4.11537 )
