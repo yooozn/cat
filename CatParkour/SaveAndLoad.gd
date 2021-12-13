@@ -139,7 +139,7 @@ func _on_NewGame_pressed():
 	Zoom = true
 	Animations.transition = true
 	yield(get_tree().create_timer(.5),"timeout")
-	get_tree().change_scene("res://levels/TutorialNew.tscn")
+	get_tree().change_scene("res://CutScene1.tscn")
 	
 
 
