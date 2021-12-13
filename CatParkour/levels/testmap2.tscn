@@ -174,18 +174,25 @@ DistanceTxt = "World 1"
 
 [node name="PortalLVL2" parent="." index="22" instance=ExtResource( 5 )]
 transform = Transform( 0.0465312, 0, 0.998917, 0, 1, 0, -0.998917, 0, 0.0465312, -16.6303, 13.4499, 2.2114 )
-scene = "res://levels/TestLevel.tscn"
+scene = "res://levels/World3.tscn"
 scene1 = ExtResource( 8 )
 level_text = "World 3"
 DistanceTxt = "World 3"
 
-[node name="PortalLVL6" parent="." index="23" instance=ExtResource( 5 )]
+[node name="PortalLVL7" parent="." index="23" instance=ExtResource( 5 )]
+transform = Transform( 0.812063, 0, 0.58357, 0, 1, 0, -0.58357, 0, 0.812063, -19.8874, 13.2597, -27.1904 )
+scene = "res://HatSelect.tscn"
+scene1 = ExtResource( 8 )
+level_text = "Hat Select"
+DistanceTxt = "HAT SELECT"
+
+[node name="PortalLVL6" parent="." index="24" instance=ExtResource( 5 )]
 transform = Transform( 0.0465312, 0, 0.998917, 0, 1, 0, -0.998917, 0, 0.0465312, -16.6303, 14.5483, 12.3855 )
 scene = "res://levels/TestLevel.tscn"
 scene1 = ExtResource( 8 )
 level_text = "Testing Grounds"
 
-[node name="PortalLVL4" parent="." index="24" instance=ExtResource( 5 )]
+[node name="PortalLVL4" parent="." index="25" instance=ExtResource( 5 )]
 transform = Transform( -0.0465311, 0, -0.998917, 0, 1, 0, 0.998917, 0, -0.0465311, 21.2129, 20.4876, -0.699868 )
 scene = "res://levels/World2.tscn"
 scene1 = ExtResource( 8 )
@@ -193,57 +200,57 @@ level_text = "World 2"
 extra = "2"
 DistanceTxt = "World 2"
 
-[node name="PortalLVL5" parent="." index="25" instance=ExtResource( 5 )]
+[node name="PortalLVL5" parent="." index="26" instance=ExtResource( 5 )]
 transform = Transform( -0.833876, 0, -0.551952, 0, 1, 0, 0.551952, 0, -0.833876, 8.42648, 9.01498, 29.005 )
 scene = "res://levels/TutorialNew.tscn"
 scene1 = ExtResource( 8 )
 level_text = "Tutorial"
 extra = "t"
 
-[node name="PortalLVL3" parent="." index="26" instance=ExtResource( 5 )]
+[node name="PortalLVL3" parent="." index="27" instance=ExtResource( 5 )]
 transform = Transform( -0.984479, -0.175133, -0.0114086, -0.175461, 0.980712, 0.0861256, -0.00389484, 0.0867906, -0.996219, -11.529, 14.4603, 18.2661 )
 scene = "res://levels/testlevel3.tscn"
 scene1 = ExtResource( 9 )
 level_text = "Level 3"
 extra = "3"
 
-[node name="floatingisland1" parent="." index="27" instance=ExtResource( 10 )]
+[node name="floatingisland1" parent="." index="28" instance=ExtResource( 10 )]
 transform = Transform( 0.198589, 0, 0.023712, 0, 0.2, 0, -0.023712, 0, 0.198589, 10.9488, 17.0734, 0 )
 
-[node name="floatingisland2" parent="." index="28" instance=ExtResource( 10 )]
+[node name="floatingisland2" parent="." index="29" instance=ExtResource( 10 )]
 transform = Transform( -0.541587, 0, -0.44349, 0, 0.5, 0, 0.44349, 0, -0.541587, 20.7988, 18.6268, 0 )
 
-[node name="TestEMvorpm,emt 2" parent="." index="29" instance=ExtResource( 14 )]
+[node name="TestEMvorpm,emt 2" parent="." index="30" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.5438, 0 )
 
-[node name="door1" parent="." index="30" instance=ExtResource( 12 )]
+[node name="door1" parent="." index="31" instance=ExtResource( 12 )]
 transform = Transform( 1.10248, -0.305502, 0, 0.154486, 1.7509, 0, 0, 0, 0.511215, -12.2246, 14.6649, 18.48 )
 
-[node name="KeyObj" parent="." index="31" instance=ExtResource( 6 )]
+[node name="KeyObj" parent="." index="32" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87203, 15.1316, 10.7099 )
 
-[node name="Doorlock" parent="." index="32" instance=ExtResource( 13 )]
+[node name="Doorlock" parent="." index="33" instance=ExtResource( 13 )]
 transform = Transform( -0.00436462, -0.0560293, 0.294689, 0.00495893, 0.294667, 0.0560985, -0.299927, 0.0056873, -0.00336087, -12.2907, 14.5484, 17.8535 )
 doorNum = "door1"
 
-[node name="CloudsSpawner" parent="." index="33" instance=ExtResource( 15 )]
+[node name="CloudsSpawner" parent="." index="34" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -80.179, 51.114, 128.704 )
 
-[node name="CloudsSpawner2" parent="." index="34" instance=ExtResource( 15 )]
+[node name="CloudsSpawner2" parent="." index="35" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.206, 57.6606, 128.704 )
 
-[node name="CloudsSpawner3" parent="." index="35" instance=ExtResource( 15 )]
+[node name="CloudsSpawner3" parent="." index="36" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9136, -61.049, 167.353 )
 
-[node name="CloudsSpawner4" parent="." index="36" instance=ExtResource( 15 )]
+[node name="CloudsSpawner4" parent="." index="37" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 116.415, 31.4418, 89.6023 )
 
-[node name="OceanAttempt" parent="." index="37" instance=ExtResource( 16 )]
+[node name="OceanAttempt" parent="." index="38" instance=ExtResource( 16 )]
 transform = Transform( 13.3457, 0, 0, 0, 11.1771, 0.533729, 0, -0.447355, 13.335, 0, 5.04117, 0 )
 
-[node name="TextPlay" parent="." index="38" instance=ExtResource( 19 )]
+[node name="TextPlay" parent="." index="39" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.4488, 4.0417, 48.6708 )
 text = "You found the shoot ability! Blast open destructible blocks, or annihilate your enemies! Left click to shoot explosive rockets."
 
-[node name="ShootUnlock" parent="." index="39" instance=ExtResource( 18 )]
+[node name="ShootUnlock" parent="." index="40" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5768, 3.97469, 49.4228 )
