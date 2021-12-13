@@ -1,7 +1,7 @@
 extends Node2D
 
 var musicNum = 0
-
+var musicVol = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

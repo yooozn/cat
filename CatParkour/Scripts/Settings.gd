@@ -12,11 +12,13 @@ onready var buttonPress = preload("res://ButtonPress.tscn")
 func _ready():
 	$Transition2.play("TransitionReverse")
 	$Sensitivity/HSlider.value = pStats.sens * 200
-
+	$Music/HSlider.value = (Music.musicVol + 20) * 2
 
 func _process(delta):
 	pStats.sens = $Sensitivity/HSlider.value / 200
 	$Sensitivity.text = "Sensitivity: " + str(pStats.sens * 200)
+	Music.musicVol = ($Music/HSlider.value / 2) - 20
+	$Music.text = "Music Volume: " + str((Music.musicVol + 20) * 2)
 	if timer == true:
 		time += delta
 		if time >= 1:

@@ -270,11 +270,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Music" type="RichTextLabel" parent="."]
+margin_left = 120.0
+margin_top = 244.0
+margin_right = 454.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 60, 30 )
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 18 )
+bbcode_enabled = true
+bbcode_text = "Sensitivity : 0"
+text = "Music : 50"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="Music"]
+margin_left = 9.0
+margin_top = 49.0
+margin_right = 208.0
+margin_bottom = 66.0
+custom_styles/slider = SubResource( 3 )
+value = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Fullscreen" type="RichTextLabel" parent="."]
 margin_left = 121.0
-margin_top = 261.0
+margin_top = 365.0
 margin_right = 455.0
-margin_bottom = 329.0
+margin_bottom = 433.0
 rect_min_size = Vector2( 60, 30 )
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 18 )
@@ -333,9 +359,9 @@ __meta__ = {
 
 [node name="SpeedRunText" type="RichTextLabel" parent="."]
 margin_left = 121.0
-margin_top = 357.0
+margin_top = 461.0
 margin_right = 455.0
-margin_bottom = 425.0
+margin_bottom = 529.0
 rect_min_size = Vector2( 60, 30 )
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 18 )
