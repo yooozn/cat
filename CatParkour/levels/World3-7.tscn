@@ -200,7 +200,7 @@ transform = Transform( 4.67359, 0, 0, 0, 1, 0, 0, 0, 4.38849, 0, -0.572327, 0 )
 [node name="Timer" parent="." instance=ExtResource( 8 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 1.41402, -9.83156 )
+transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.663479, 18.7708, -8.30009 )
 
 [node name="Death" parent="." instance=ExtResource( 9 )]
 transform = Transform( 137.049, 0, 0, 0, 1, 0, 0, 0, 174.577, 0, -2.87808, 0 )
