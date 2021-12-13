@@ -10,12 +10,14 @@ var deathZoom = false
 var respawn = false
 var teleport = false
 var teleport1 = false
+var hat = false
 func _ready():
 	$CanvasLayer/Hit.visible = false
 	$CanvasLayer/Heal.visible = false
 	$CanvasLayer/CenterContainer/Label.visible = false
 	$CanvasLayer/CenterContainer.visible = false
 	$Label.visible = false
+	$hat.visible = false
 
 func _process(delta):
 	if hit == true and hitImmune == false:
@@ -46,3 +48,6 @@ func _process(delta):
 		$teleport.play("teleport")
 	elif teleport == false:
 		$teleport.play("idle")
+	if hat == true:
+		hat = false
+		$hatanim.play("hat")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://art/CrosshairX.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://art/hats/Accessories_Torus.mesh" type="ArrayMesh" id=7]
 [ext_resource path="res://art/hats/Accessories_Sphere011.mesh" type="ArrayMesh" id=8]
 [ext_resource path="res://art/questionmark.png" type="Texture" id=9]
+[ext_resource path="res://Hat4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hat5.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=6]
 size = 25
@@ -193,7 +195,7 @@ margin_top = 178.0
 margin_right = 640.0
 margin_bottom = 178.0
 
-[node name="None" type="TextureButton" parent="."]
+[node name="cap" type="TextureButton" parent="."]
 margin_left = 434.0
 margin_top = 492.0
 margin_right = 534.0
@@ -292,7 +294,7 @@ mesh = ExtResource( 7 )
 material/0 = null
 
 [node name="hat3" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97844, -2.68134, 0.465703 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.57727, -2.15188, 1.93382 )
 mesh = ExtResource( 8 )
 material/0 = null
 
@@ -338,10 +340,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Hat4" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.266808, 0, 0, 0, 0.266689, 0.00796639, 0, -0.00796639, 0.266689, -1.16307, -0.355182, 3.32078 )
+
+[node name="Hat5" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.017, 0, -1.32876e-08, 0, 0.042, 0, 2.56693e-09, 0, -0.088, 2.42768, -0.532226, 3.10576 )
+visible = true
+
+[connection signal="pressed" from="cap" to="." method="_on_cap_pressed"]
 [connection signal="pressed" from="None2" to="." method="_on_None_pressed"]
 [connection signal="pressed" from="TextureButton2" to="." method="_on_TextureButton2_pressed"]
 [connection signal="pressed" from="TextureButton3" to="." method="_on_TextureButton3_pressed"]
 [connection signal="pressed" from="TextureButton4" to="." method="_on_TextureButton4_pressed"]
-[connection signal="pressed" from="TextureButton5" to="." method="_on_TextureButton4_pressed"]
+[connection signal="pressed" from="TextureButton5" to="." method="_on_TextureButton5_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

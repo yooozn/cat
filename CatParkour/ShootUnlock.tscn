@@ -9,6 +9,7 @@ func _on_DoubleJumpUnlock_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		pStats.shootUnlock = true
 		pStats.hat = 2
+		Animations.hat = true
 		var shoot = shootPart.instance()
 		get_parent().add_child(shoot)
 		shoot.translation = translation

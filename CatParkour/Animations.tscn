@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Animations.gd" type="Script" id=1]
 [ext_resource path="res://fonts/TextGeneric.tres" type="DynamicFont" id=2]
@@ -338,6 +338,55 @@ tracks/1/keys = {
 size = 27
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=14]
+size = 27
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("hat:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "hat"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("hat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("hat:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="Animations" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 1 )
@@ -428,3 +477,18 @@ text = "Hold down f to enable teleporting (for objects)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="hat" type="Label" parent="."]
+margin_left = 142.0
+margin_top = 42.0
+margin_right = 1130.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 14 )
+text = "New hat unlocked! To view your hats go to the hat menu in the main hub!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hatanim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
+anims/hat = SubResource( 16 )

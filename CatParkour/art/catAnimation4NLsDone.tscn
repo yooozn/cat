@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://art/catAnimation4NLsDone.glb" type="PackedScene" id=1]
 [ext_resource path="res://art/hats/Accessories_Torus.mesh" type="ArrayMesh" id=2]
@@ -9,17 +9,11 @@
 [ext_resource path="res://art/hats/Accessories_Sphere001.mesh" type="ArrayMesh" id=7]
 [ext_resource path="res://art/hats/Accessories_Sphere011.mesh" type="ArrayMesh" id=8]
 [ext_resource path="res://art/catAnimation4NLsDone.gd" type="Script" id=9]
-[ext_resource path="res://art/hats2/catgamehats2_Sphere005.mesh" type="ArrayMesh" id=10]
-[ext_resource path="res://art/hats2/catgamehats2_Sphere008.mesh" type="ArrayMesh" id=11]
+[ext_resource path="res://Hat5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Hat4.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 1, 0, 0.164706, 1 )
-
-[sub_resource type="SpatialMaterial" id=16]
-albedo_color = Color( 0, 1, 1, 1 )
-
-[sub_resource type="SpatialMaterial" id=17]
-albedo_color = Color( 0.898039, 1, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.105882, 0.0901961, 0.0901961, 1 )
@@ -213,17 +207,11 @@ visible = false
 mesh = ExtResource( 7 )
 material/0 = SubResource( 15 )
 
-[node name="Hat4" type="MeshInstance" parent="." index="3"]
+[node name="Hat4" parent="." index="3" instance=ExtResource( 11 )]
 transform = Transform( 0.266808, 0, 0, 0, 0.266689, 0.00796639, 0, -0.00796639, 0.266689, -0.0190238, 1.32475, -0.155144 )
-visible = false
-mesh = ExtResource( 10 )
-material/0 = SubResource( 16 )
 
-[node name="Hat5" type="MeshInstance" parent="." index="4"]
-transform = Transform( -0.017, 2.29528e-12, -1.32342e-08, 2.30015e-10, 0.041831, -0.00788542, 2.54623e-09, -0.00376349, -0.087646, -0.0414902, 1.48245, -0.102825 )
-visible = false
-mesh = ExtResource( 11 )
-material/0 = SubResource( 17 )
+[node name="Hat5" parent="." index="4" instance=ExtResource( 10 )]
+transform = Transform( -0.017, 2.29528e-12, -1.32342e-08, 2.30015e-10, 0.041831, -0.00788542, 2.54623e-09, -0.0037635, -0.087646, -0.0414902, 1.48245, -0.102825 )
 
 [node name="cat full" parent="Armature/Skeleton" index="0"]
 material/0 = SubResource( 1 )
@@ -264,6 +252,7 @@ anims/RESET = SubResource( 13 )
 [node name="AnimationTree" type="AnimationTree" parent="." index="16"]
 tree_root = SubResource( 7 )
 anim_player = NodePath("../AnimationPlayer2")
+active = true
 parameters/IdleWalk/blend_amount = 0.0
 parameters/JumpFall/blend_amount = 1.0
 parameters/TimeScale/scale = 1.5

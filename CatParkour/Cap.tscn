@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Hat4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cap.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.671482, 0.50471, 0.744546 )
+
+[node name="Cap" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Hat4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.266808, 0, 0, 0, 0.266689, 0.00796639, 0, -0.00796639, 0.266689, -0.0190238, -0.295388, -0.213737 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

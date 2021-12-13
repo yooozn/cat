@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://art/hats2/catgamehats2_Sphere005.mesh" type="ArrayMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=16]
+albedo_color = Color( 0, 1, 1, 1 )
+
+[node name="Hat4" type="MeshInstance"]
+transform = Transform( 0.266808, 0, 0, 0, 0.266689, 0.00796639, 0, -0.00796639, 0.266689, -0.0190238, 1.43688, -0.213737 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 16 )

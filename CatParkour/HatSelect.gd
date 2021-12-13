@@ -24,16 +24,16 @@ func _ready():
 		$hat3.visible = false
 		$question2.visible = true
 	if pStats.duck == true:
-		$hat3.visible = true
+		$Hat5.visible = true
 		$question5.visible = false
 	else:
-		$hat3.visible = false
+		$Hat5.visible = false
 		$question5.visible = true
 	if pStats.cap == true:
-		$hat3.visible = true
+		$Hat4.visible = true
 		$question4.visible = false
 	else:
-		$hat3.visible = false
+		$Hat4.visible = false
 		$question4.visible = true
 
 
@@ -70,3 +70,13 @@ func _on_TextureButton4_pressed():
 		pStats.hat = 3
 	else:
 		$AnimationPlayer3.play("label")
+
+
+func _on_cap_pressed():
+	if pStats.cap == true:
+		pStats.hat = 4
+
+
+func _on_TextureButton5_pressed():
+	if pStats.duck == true:
+		pStats.hat = 5
