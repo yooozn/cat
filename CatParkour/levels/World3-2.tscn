@@ -1,0 +1,65 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Destructible.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Object1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=13]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+func _ready():
+	Times.w3_2 = true
+"
+
+[node name="World3-1" type="Spatial"]
+script = SubResource( 1 )
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.60383, 0, 0, 0, 0.145981, 0, 0, 0, 2.88666, 0, 0, 0 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 4 )]
+
+[node name="Cat" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43033, 0 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51883, -18.5829 )
+scene = "res://levels/World3.tscn"
+level_text = "Back to Hub"
+
+[node name="Spatial2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.696595, 0, 0, 0, 0.505186, 0, 0, 0, 0.677158, 0.0174834, 1.49399, -9.33104 )
+health = 4
+
+[node name="OceanAttempt" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4.67359, 0, 0, 0, 1, 0, 0, 0, 4.38849, 0, -0.572327, 0 )
+
+[node name="Timer" parent="." instance=ExtResource( 8 )]
+
+[node name="TimerStop" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 1.41402, -11.5852 )
+
+[node name="Death" parent="." instance=ExtResource( 9 )]
+transform = Transform( 37.7164, 0, 0, 0, 1, 0, 0, 0, 28.0659, 0, -2.87808, 0 )
+
+[node name="KeyObj" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.37437, -8.99133 )
+
+[node name="RigidBody" parent="." instance=ExtResource( 10 )]
+transform = Transform( 8.52654, 0, 0, 0, 1, 0, 0, 0, 8.87124, -5.21339, -0.258595, -0.694061 )
+
+[node name="WallKey" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1.19783, 0, 0, 0, 2.18767, 0, 0, 0, 0.442253, 0.634738, 1.59668, -18.5805 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 13 )]
+transform = Transform( -1.82414e-08, 0, -0.417315, 0, 0.417315, 0, 0.417315, 0, -1.82414e-08, 0.676328, 1.26972, -18.0928 )

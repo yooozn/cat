@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://OceanAttempt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/Target.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://TimerStop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Timer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/Death.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Interactables/KeyObjWall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://KeyObjectNew.tscn" type="PackedScene" id=11]
+[ext_resource path="res://art/Doorlock.tscn" type="PackedScene" id=12]
+[ext_resource path="res://TextPlay.tscn" type="PackedScene" id=13]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Spatial
+
+func _ready():
+	Times.w3_3 = true
+	$AnimationPlayer.play(\"idle\")
+
+func _process(delta):
+	if GlobalWorld.target == true:
+		$AnimationPlayer.play(\"key\")
+		GlobalWorld.target = false
+"
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("KeyObj:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.103436, 0.434376, -2.18081 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("KeyObj:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -14.1269, -2.18081 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "key"
+tracks/0/type = "value"
+tracks/0/path = NodePath("KeyObj:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -14.1269, -2.18081 ), Vector3( 0.103436, 0.434376, -2.18081 ) ]
+}
+
+[node name="World3-1" type="Spatial"]
+script = SubResource( 1 )
+
+[node name="Spatial" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2.60383, 0, 0, 0, 0.145981, 0, 0, 0, 2.88666, 0, 0, 0 )
+
+[node name="TestEMvorpm,emt 2" parent="." instance=ExtResource( 4 )]
+
+[node name="Cat" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43033, 0 )
+
+[node name="PortalLVL1" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51883, -9.68163 )
+scene = "res://levels/World3.tscn"
+level_text = "Back to Hub"
+
+[node name="OceanAttempt" parent="." instance=ExtResource( 1 )]
+transform = Transform( 4.67359, 0, 0, 0, 1, 0, 0, 0, 4.38849, 0, -0.572327, 0 )
+
+[node name="Timer" parent="." instance=ExtResource( 8 )]
+
+[node name="TimerStop" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 1.41402, -9.50103 )
+
+[node name="Death" parent="." instance=ExtResource( 9 )]
+transform = Transform( 37.7164, 0, 0, 0, 1, 0, 0, 0, 28.0659, 0, -2.87808, 0 )
+
+[node name="Target" parent="." instance=ExtResource( 3 )]
+transform = Transform( -5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 0, 1.85987, 17.864 )
+
+[node name="WallKey" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1.23527, 0, 0, 0, 1.5022, 0, 0, 0, 0.490992, 0.721329, 2.09344, -9.54137 )
+
+[node name="Doorlock" parent="." instance=ExtResource( 12 )]
+transform = Transform( -1.94666e-08, 0, -0.445343, 0, 0.445343, 0, 0.445343, 0, -1.94666e-08, 0.728943, 1.29371, -8.97876 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/idle = SubResource( 4 )
+anims/key = SubResource( 3 )
+
+[node name="KeyObj" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.103436, 0.434376, -2.18081 )
+
+[node name="TextPlay" parent="." instance=ExtResource( 13 )]
+transform = Transform( 0.634164, 0, -0.773199, 0, 1, 0, 0.773199, 0, 0.634164, -2.39666, 0, -2.72171 )
+text = "Look behind you..."

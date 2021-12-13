@@ -1,6 +1,6 @@
 extends Spatial
 
-export(String) var doorNum
+export(String) var doorNum = "WallKey"
 var door
 
 func _ready():
