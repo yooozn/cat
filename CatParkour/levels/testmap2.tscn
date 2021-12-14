@@ -183,7 +183,7 @@ level_text = "World 3"
 DistanceTxt = "World 3"
 
 [node name="PortalLVL7" parent="." index="23" instance=ExtResource( 5 )]
-transform = Transform( 0.812063, 0, 0.58357, 0, 1, 0, -0.58357, 0, 0.812063, -19.8874, 13.2597, -27.1904 )
+transform = Transform( 0.312074, 0.218764, 0.924528, -0.0763211, 0.975756, -0.205124, -0.946988, -0.00654735, 0.321204, 14.0663, 7.87809, 13.6922 )
 scene = "res://HatSelect.tscn"
 scene1 = ExtResource( 8 )
 level_text = "Hat Select"
