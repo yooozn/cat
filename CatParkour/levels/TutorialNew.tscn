@@ -99,7 +99,7 @@ transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.16201, -45.2191 )
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 3.16201, -60.2286 )
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.9805, 0, 0, 0, 1, 0, 0, 0, 128.444, 0, -3.11114, 0 )
+transform = Transform( 166.411, 0, 0, 0, 1, 0, 0, 0, 846.981, 0, -3.11114, 0 )
 
 [node name="WallKey" parent="." instance=ExtResource( 4 )]
 transform = Transform( 3.50594, 0, 0, 0, 3.00725, 0, 0, 0, 0.534409, 0, 4.36705, -51.4054 )

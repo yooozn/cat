@@ -35,7 +35,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "Test out your double jump! Press space while airborne."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 77.1737, 0, 0, 0, 1, 0, 0, 0, 114.412, 0, -5.63237, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 

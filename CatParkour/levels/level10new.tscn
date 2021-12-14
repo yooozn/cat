@@ -140,7 +140,7 @@ transform = Transform( 0.645497, 0, 0, 0, 4.51647, 0, 0, 0, 0.087639, 0, 1.66778
 transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
 
 [node name="Death" parent="." index="17" instance=ExtResource( 14 )]
-transform = Transform( 65.7049, 0, 0, 0, 0.360871, 0, 0, 0, 80.9159, 0, -1.4642, 0 )
+transform = Transform( 87.9683, 0, 0, 0, 0.360871, 0, 0, 0, 117.155, 0, -1.4642, 0 )
 
 [node name="Spatial" parent="." index="18" instance=ExtResource( 15 )]
 transform = Transform( 1.37537, 0, 0, 0, 0.145981, 0, 0, 0, 1.37422, 0, 4.14724, 6.65392 )

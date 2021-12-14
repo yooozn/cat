@@ -380,7 +380,7 @@ transform = Transform( 4.67359, 0, 0, 0, 1, 0, 0, 0, 4.38849, -0.0802603, -0.572
 transform = Transform( 0.609343, 0, 0, 0, 6.70104, 0, 0, 0, 0.181426, 0.491044, 1.41402, -19.604 )
 
 [node name="Death" parent="." instance=ExtResource( 9 )]
-transform = Transform( 37.7164, 0, 0, 0, 1, 0, 0, 0, 28.0659, 0, -2.87808, 0 )
+transform = Transform( 73.5974, 0, 0, 0, 1, 0, 0, 0, 93.2311, 0, -2.87808, 0 )
 
 [node name="MeshInstance" parent="." instance=ExtResource( 3 )]
 transform = Transform( 3.60176, 0, 0, 0, 3.62979, 0, 0, 0, 0.604334, 0.0264523, -33.8925, -4.04133 )

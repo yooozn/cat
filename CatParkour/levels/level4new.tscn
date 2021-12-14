@@ -109,7 +109,6 @@ transform = Transform( 1.08149, 0, 0, 0, 1.50289, 0, 0, 0, 0.49291, 0, 5.72869, 
 
 [node name="Doorlock" parent="." index="13" instance=ExtResource( 9 )]
 transform = Transform( -1.79397e-08, 0, -0.410412, 0, 0.410412, 0, 0.410412, 0, -1.79397e-08, 0, 4.95115, -10.8188 )
-doorNum = "WallKey"
 
 [node name="Timer" parent="." index="14" instance=ExtResource( 11 )]
 
@@ -120,7 +119,7 @@ transform = Transform( 0.671681, 0, 0, 0, 4.17349, 0, 0, 0, 0.199033, 0, 5.50099
 transform = Transform( 3.78745, 0, 0, 0, 0.672785, 0, 0, 0, 3.78745, 5.2316, -1.89168, 0 )
 
 [node name="Death" parent="." index="17" instance=ExtResource( 14 )]
-transform = Transform( 65.7049, 0, 0, 0, 0.360871, 0, 0, 0, 15.0622, 0, -1.4642, 0 )
+transform = Transform( 184.634, 0, 0, 0, 0.360871, 0, 0, 0, 141.826, 0, -1.4642, 0 )
 
 [node name="RigidBody" parent="." index="18" instance=ExtResource( 15 )]
 transform = Transform( 6.94494, 0, 0, 0, 1, 0, 0, 0, 6.49206, 0, 3.86547, 11.5805 )

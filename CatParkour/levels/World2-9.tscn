@@ -58,7 +58,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "Test out your double jump! Press space while airborne."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 92.2843, 0, 0, 0, 1, 0, 0, 0, 367.041, 0, -5.63237, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
@@ -73,7 +73,6 @@ transform = Transform( 1.12306, 0, 0, 0, 0.367594, 0, 0, 0, 1.42113, 0, 4.16036,
 
 [node name="Doorlock" parent="." instance=ExtResource( 12 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 6.0976, -32.0737 )
-doorNum = "WallKey"
 
 [node name="WallKey" parent="." instance=ExtResource( 13 )]
 transform = Transform( 3.89565, 0, 0, 0, 4.52218, 0, 0, 0, 1, 0, 7.57049, -32.9337 )

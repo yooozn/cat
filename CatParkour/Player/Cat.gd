@@ -385,6 +385,11 @@ func _handle_movement(delta):
 		$SprintPart.set_emitting(false)
 	
 	if Input.is_action_pressed("CheckPos") and CheckPosCD == false:
+		if carrying == true:
+			carrying = false
+			pickObject.global_transform.origin = pickObjectLocation
+			print("true")
+			crossPICKbool = false
 		if GlobalWorld.Speedrun == false:
 			deathZoom = true
 			yield(get_tree().create_timer(.5),"timeout")
@@ -398,10 +403,6 @@ func _handle_movement(delta):
 				$camerapivot/SpringArm/Camera.fov = 46
 			global_transform.origin = CheckPos
 			CheckPosCD = true
-			if carrying == true:
-				carrying = false
-				pickObject.global_transform.origin = pickObjectLocation
-				crossPICKbool = false
 	#			print(crossPICKbool)
 			yield(get_tree().create_timer(1.5),"timeout")
 			CheckPosCD = false
@@ -423,7 +424,7 @@ func _handle_movement(delta):
 		
 		if Input.is_action_pressed("move_right"):
 			direction += transform.basis.x
-	
+	print(carrying)
 	if dashUnlock == true:
 		if Input.is_action_just_pressed("dash") and dashable == true:
 	#		var original = global_transform.origin
@@ -543,13 +544,13 @@ func _handle_movement(delta):
 				Animations.teleport1 = true
 			else:
 				pickObject.tping = false
-	else:
-		pickObject = null
+#	else:
+#		pickObject = null
 #	print(carrying)
 	if pickObject:
 		if !pickObject.is_in_group("Objects") or pickObject.pick == true or Input.is_action_just_pressed("shoot")\
 		and pickObject.interact == true or \
-		Input.is_action_just_pressed("interact") and pickObject.interact == true:
+		Input.is_action_just_pressed("interact") and pickObject.interact == true or deathZoom == true:
 			carrying = false
 			shootable = true
 			Animations.interact = false

@@ -77,7 +77,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "This one pushes the game mechanics to the limits... Teleporters obviously can be moved... and teleport objects.. maybe you need to teleport many objects..."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 127.832, 0, 0, 0, 1, 0, 0, 0, 250.133, 0, -5.63237, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 

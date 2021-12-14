@@ -63,7 +63,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "By moving teleporters, you can reach new areas... Press N to restart the scene if you really mess up..."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 102.743, 0, 0, 0, 1, 0, 0, 0, 244.952, 0, -5.63237, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 

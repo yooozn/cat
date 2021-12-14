@@ -74,7 +74,7 @@ transform = Transform( 0.0157594, 0, -0.999876, 0, 1, 0, 0.999876, 0, 0.0157594,
 text = "Yeah... The portal is straight ahead... and up.... Also this is the hardest level yet..."
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -5.63237, 0 )
+transform = Transform( 167.431, 0, 0, 0, 1, 0, 0, 0, 359.404, 0, -5.63237, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 

@@ -54,7 +54,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "Those white areas refresh your double jump. You can't land on it, so be careful!"
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -6.17275, 0 )
+transform = Transform( 63.6919, 0, 0, 0, 1, 0, 0, 0, 139.302, 0, -6.17275, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 

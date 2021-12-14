@@ -56,7 +56,7 @@ transform = Transform( 0.711278, 0, -0.702911, 0, 1, 0, 0.702911, 0, 0.711278, -
 text = "Sprinting in the air provides extra speed!"
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-transform = Transform( 21.8064, 0, 0, 0, 1, 0, 0, 0, 55.3193, 0, -6.17275, 0 )
+transform = Transform( 194.01, 0, 0, 0, 1, 0, 0, 0, 268.604, 0, -6.17275, 0 )
 
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
