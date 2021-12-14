@@ -83,10 +83,10 @@ scene = "res://levels/testmap2.tscn"
 level_text = "Back to hub"
 
 [node name="DoubleJumpUnlock" parent="." instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22093, 0.97483, -3.30895 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2697.61, 0.97483, -3.30895 )
 
 [node name="ShootUnlock" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.07331, 0.708552, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3106, 0.708552, 0 )
 
 [node name="DashUnlock" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.71259, 0.945754, 2.40299 )
@@ -101,7 +101,7 @@ jumpheight = 50.0
 
 [node name="TextPlay" parent="." instance=ExtResource( 18 )]
 transform = Transform( 0.93296, 0, 0.359981, 0, 1, 0, -0.359981, 0, 0.93296, -4.22133, 0.0193617, 6.10883 )
-text = "Each orb grants abilities. Most cubes are interactable with E.                                    All controls: Sprint - Shift, Jump - Space, WASD, E - Interact, L-Click - shoot, P - Pause, N - Reset, R-Click - Shift POV, F - Dash, Space - Double Jump"
+text = "You found the test area. This was a level used during developement to test new features. By finding this easter egg, you have also unlcoked the dash ability, and chef hat! Use F to dash."
 
 [node name="Teleporter2" parent="." instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.19131, 1.07594, 0 )
