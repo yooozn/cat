@@ -41,39 +41,25 @@ extra = "w3_3"
 DistanceTxt = "Level 3"
 
 [node name="PortalLVL4" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.335, 0.983628, -9.7529 )
-scene = "res://levels/World3-4.tscn"
-level_text = "Level 4"
-extra = "w3_4"
-DistanceTxt = "Level 4"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82645, 0.983628, 15.7168 )
+scene = "res://levels/World3-6.tscn"
+level_text = "Level 6"
+extra = "w3_6"
+DistanceTxt = "Level 6"
 
 [node name="PortalLVL7" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.335, 0.983628, 15.5372 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.693149, 0.983628, 15.5372 )
 scene = "res://levels/World3-7.tscn"
 level_text = "Level 7"
 extra = "w3_7"
 DistanceTxt = "Level 7"
 
 [node name="PortalLVL8" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.74816, 0.983628, 15.5372 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.27999, 0.983628, 15.5372 )
 scene = "res://levels/World3-8.tscn"
 level_text = "Level 8"
 extra = "w3_8"
 DistanceTxt = "Level 8"
-
-[node name="PortalLVL9" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.70885, 0.983628, 15.5372 )
-scene = "res://levels/World3-9.tscn"
-level_text = "Level 9"
-extra = "w3_9"
-DistanceTxt = "Level 9"
-
-[node name="PortalLVL10" parent="." instance=ExtResource( 6 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.80146, 0.983628, 15.5372 )
-scene = "res://levels/World3-10.tscn"
-level_text = "Level 10"
-extra = "w3_10"
-DistanceTxt = "Level 10"
 
 [node name="PortalLVL11" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.9773, 0.983628, 4.35186 )
@@ -83,17 +69,17 @@ DistanceTxt = "Back to Hub"
 
 [node name="PortalLVL5" parent="." instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.2126, 1.78961, -3.50274 )
+scene = "res://levels/World3-4.tscn"
+level_text = "Level 4"
+extra = "w3_4"
+DistanceTxt = "Level 4"
+
+[node name="PortalLVL6" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.2126, 1.78961, 8.09375 )
 scene = "res://levels/World3-5.tscn"
 level_text = "Level 5"
 extra = "w3_5"
 DistanceTxt = "Level 5"
-
-[node name="PortalLVL6" parent="." instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.2126, 1.78961, 8.09375 )
-scene = "res://levels/World3-6.tscn"
-level_text = "Level 6"
-extra = "w3_6"
-DistanceTxt = "Level 6"
 
 [node name="Spatial2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 2.2947, 0, 0, 0, 0.255721, 0, 0, 0, 8.69441, 16.9632, 0.711936, 2.88612 )
