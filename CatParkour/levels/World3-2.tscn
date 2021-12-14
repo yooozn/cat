@@ -19,6 +19,7 @@ script/source = "extends Spatial
 
 func _ready():
 	Times.w3_2 = true
+	Music.musicNum = 4
 "
 
 [node name="World3-1" type="Spatial"]

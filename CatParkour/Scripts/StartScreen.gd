@@ -80,4 +80,6 @@ func _on_Quit_pressed():
 func _on_Save_pressed():
 	var b = buttonPress.instance()
 	get_parent().add_child(b)
+	Animations.transition = true
+	yield(get_tree().create_timer(.5),"timeout")
 	get_tree().change_scene("res://SaveAndLoad.tscn")

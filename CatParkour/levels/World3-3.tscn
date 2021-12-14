@@ -20,7 +20,7 @@ script/source = "extends Spatial
 func _ready():
 	Times.w3_3 = true
 	$AnimationPlayer.play(\"idle\")
-
+	Music.musicNum = 4
 func _process(delta):
 	if GlobalWorld.target == true:
 		$AnimationPlayer.play(\"key\")

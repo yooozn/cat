@@ -20,6 +20,7 @@ var count = 0
 func _ready():
 	Times.w3_5 = true
 	$AnimationPlayer.play(\"1\")
+	Music.musicNum = 4
 func _process(delta):
 	if GlobalWorld.target == true and count == 0:
 		GlobalWorld.target = false

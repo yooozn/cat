@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fonts/ADELIA.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://NewStartScreen.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=8]
 length = 0.001
@@ -318,6 +319,7 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -325,8 +327,11 @@ __meta__ = {
 }
 
 [node name="BlackOpacity2" type="ColorRect" parent="CenterContainer"]
-margin_right = 1280.0
-margin_bottom = 720.0
+visible = false
+margin_left = -640.0
+margin_top = -360.0
+margin_right = 640.0
+margin_bottom = 360.0
 rect_min_size = Vector2( 1280, 720 )
 color = Color( 0.141176, 0.639216, 0.690196, 1 )
 __meta__ = {
@@ -347,6 +352,8 @@ anims/TransitionReverse = SubResource( 12 )
 anims/RESET = SubResource( 7 )
 anims/Start = SubResource( 2 )
 anims/Transition = SubResource( 4 )
+
+[node name="Spatial" parent="." instance=ExtResource( 3 )]
 
 [node name="Start" type="Button" parent="."]
 margin_left = 530.0

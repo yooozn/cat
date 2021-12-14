@@ -22,7 +22,7 @@ var count = 2
 
 func _ready():
 	Times.w3_7 = true
-
+	Music.musicNum = 4
 func _process(delta):
 	if GlobalWorld.target == true:
 		GlobalWorld.target = false

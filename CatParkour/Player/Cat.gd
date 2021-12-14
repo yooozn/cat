@@ -162,8 +162,6 @@ func _process(delta):
 	dubJumpUnlock = pStats.dubJumpUnlock
 	dashUnlock = pStats.dashUnlock
 	shootUnlock = pStats.shootUnlock
-	if Input.is_action_pressed("exit"):
-		get_tree().quit()
 	if Input.is_key_pressed(KEY_Y):
 		OS.window_fullscreen = true
 	if Input.is_action_just_pressed("KEY_N") and deathZoom == false:
