@@ -79,7 +79,7 @@ transform = Transform( 167.431, 0, 0, 0, 1, 0, 0, 0, 359.404, 0, -5.63237, 0 )
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 4.85157, -20.1324 )
+transform = Transform( 0.704726, 0, 0, 0, 5.60517, 0, 0, 0, 0.331218, 0.67792, 77.1293, -49.387 )
 
 [node name="JumpPad" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.276618, 0, -2.426 )

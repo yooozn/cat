@@ -60,7 +60,7 @@ transform = Transform( 195.221, 0, 0, 0, 1, 0, 0, 0, 409.432, 0, -6.17275, 0 )
 [node name="Timer" parent="." instance=ExtResource( 7 )]
 
 [node name="TimerStop" parent="." instance=ExtResource( 8 )]
-transform = Transform( 0.450288, 0, 0, 0, 4.79399, 0, 0, 0, 0.297695, 0.67792, 19.3284, -62.0474 )
+transform = Transform( 0.604109, 0, 0, 0, 6.57816, 0, 0, 0, 0.297695, 0.524363, 19.5303, -62.0474 )
 
 [node name="DoubleJumpRefresh" parent="." instance=ExtResource( 9 )]
 transform = Transform( 2.2649, 0, 0, 0, 0.53643, 0, 0, 0, 1.54991, 0, 9.55775, -17.2109 )

@@ -424,7 +424,7 @@ func _handle_movement(delta):
 		
 		if Input.is_action_pressed("move_right"):
 			direction += transform.basis.x
-	print(carrying)
+#	print(carrying)
 	if dashUnlock == true:
 		if Input.is_action_just_pressed("dash") and dashable == true:
 	#		var original = global_transform.origin
