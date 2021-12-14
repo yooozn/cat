@@ -102,4 +102,4 @@ transform = Transform( 2.2947, 0, 0, 0, 0.255721, 0, 0, 0, 8.69441, 16.9632, 0.7
 transform = Transform( 3.36257, 0, 0, 0, 1, 0, 0, 0, 3.07009, 0, -0.308543, 0 )
 
 [node name="Death" parent="." instance=ExtResource( 2 )]
-transform = Transform( 158.016, 0, 0, 0, 1, 0, 0, 0, 115.915, 0, -2.96088, 0 )
+transform = Transform( 372.274, 0, 0, 0, 1, 0, 0, 0, 154.098, 0, -2.96088, 0 )

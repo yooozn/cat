@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://art/TestEMvorpm,emt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://levels/Death.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/PortalLVL1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://aPlatform1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Cat.tscn" type="PackedScene" id=5]
-[ext_resource path="res://DoubleJumpUnlock.tscn" type="PackedScene" id=6]
 [ext_resource path="res://levels/World2.gd" type="Script" id=7]
 
 [node name="World2" type="Spatial"]
@@ -126,6 +125,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38096, -2.32829 )
 
 [node name="Death" parent="." instance=ExtResource( 2 )]
 transform = Transform( 186.385, 0, 0, 0, 1, 0, 0, 0, 56.7729, 0, -6.70505, 0 )
-
-[node name="DoubleJumpUnlock" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4656 )

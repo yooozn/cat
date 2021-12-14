@@ -544,8 +544,8 @@ func _handle_movement(delta):
 				Animations.teleport1 = true
 			else:
 				pickObject.tping = false
-#	else:
-#		pickObject = null
+	else:
+		pickObject = null
 #	print(carrying)
 	if pickObject:
 		if !pickObject.is_in_group("Objects") or pickObject.pick == true or Input.is_action_just_pressed("shoot")\

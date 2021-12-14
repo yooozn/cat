@@ -171,8 +171,8 @@ transform = Transform( 0.434791, 0, -0.590642, 0, 0.733417, 0, 0.590642, 0, 0.43
 text = "You may have to move the teleporter to move the key..."
 
 [node name="DoubleJumpUnlock" parent="." index="26" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32312, 1.34939, -37.7055 )
+transform = Transform( 2.00808, 0, 0, 0, 2.00808, 0, 0, 0, 2.00808, 0.155313, 1.89115, -37.7055 )
 
 [node name="TextPlay2" parent="." index="27" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.476955, -39.9722 )
-text = "Congrats! You beat the hardest level of World 1. You have now unlocked the Super Jump ability. Test out Super Jump by pressing space in the air. Rockets can be fired with Left Click."
+text = "Congrats! You beat the hardest level of World 1. You have now unlocked the Super Jump ability. Test out Super Jump by pressing space in the air."
